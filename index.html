@@ -96,12 +96,10 @@
   }
 
   @media only screen and (max-width: 767px) {
-    #container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px; /* Add gap between the special frames */
-  }
+    .container {
+      flex-direction: column;
+    }
+
     .photo {
       display: none;
     }
@@ -115,11 +113,16 @@
   }
 
   .special-frame {
-    flex-basis: calc(50% - 15px); /* Adjust the flex-basis of special frames */
-    margin-bottom: 30px;
-    margin-right: 0;
+    width: 100%;
+    margin-bottom: 300px;
+    margin-right: 0; /* Remove right margin */
   }
-
+}
+  .special-frame:last-child {
+    margin-bottom: 0; /* Remove the margin-bottom for the last special frame */
+  }
+}
+  
 </style>
 
 
