@@ -75,12 +75,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-      justify-content: flex-start;
+    justify-content: flex-start;
     padding: 20px;
     color: white;
     cursor: pointer;
-    width: 100%; 
-    margin-bottom: 0px; 
+    width: 100%;
+    margin-bottom: 0px;
     border: 2px solid #ffdc33;
   }
 
@@ -95,41 +95,38 @@
     background-color: #333;
   }
 
-  @media only screen and (max-width: 576px)
-    .container {
-      flex-direction: column;
-       background-color: black;
+  @media only screen and (min-width: 767px) {
+    .photo {
+      display: block;
     }
+  }
 
+  @media only screen and (max-width: 576px) {
     .photo {
       display: none;
+    }
+    
+    .container {
+      flex-direction: column;
+      background-color: black;
     }
 
     .text {
       padding-top: 20px;
     }
 
-  .container:nth-child(2) {
-    flex-direction: column; /* Set flex-direction to column */
+    #container .special-frame {
+      margin-bottom: 350px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-top: 2px solid #ffdc33;
+    }
   }
 
-  .special-frame {
-    width: 100%;
-    margin-bottom: 300px;
-    margin-right: 0; /* Remove right margin */
-    padding: 10px;
-  box-sizing: border-box;
-  border-top: 2px solid #ffdc33;
-  }
-}
   .special-frame:last-child {
     margin-bottom: 0; /* Remove the margin-bottom for the last special frame */
   }
-}
-  
 </style>
-
-
 <body>
   <div class="container">
     <div class="frame"></div>
