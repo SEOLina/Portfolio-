@@ -99,13 +99,7 @@
     .photo {
       display: block;
     }
-  }
 
-  @media only screen and (max-width: 576px) {
-    .photo {
-      display: none;
-    }
-    
     .container {
       flex-direction: column;
       background-color: black;
@@ -116,7 +110,33 @@
     }
 
     #container .special-frame {
-      margin-bottom: 350px;
+      margin-bottom: 20px; /* Adjust the vertical spacing */
+      padding: 10px;
+      box-sizing: border-box;
+      border-top: 2px solid #ffdc33;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .photo {
+      display: none;
+    }
+
+    .container {
+      flex-direction: column;
+      background-color: black;
+    }
+
+    .text {
+      padding-top: 20px;
+    }
+
+    #container {
+      flex-direction: column; /* Change to vertical stacking */
+    }
+
+    .special-frame {
+      margin-bottom: 20px; /* Adjust the vertical spacing */
       padding: 10px;
       box-sizing: border-box;
       border-top: 2px solid #ffdc33;
@@ -139,7 +159,6 @@
   </div>
 
   <div class="container">
-    <div class="photo"></div>
     <div class="text">
       <br>
       <br>
