@@ -66,7 +66,7 @@
     display: flex;
     height: 100vh;
     background-color: black;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
   }
 
@@ -80,15 +80,12 @@
     color: white;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     border: 2px solid #ffdc33;
   }
 
-  .special-frame:nth-child(1),
-  .special-frame:nth-child(2),
-  .special-frame:nth-child(3) {
-    margin-right: 0;
-    height: auto;
+  .special-frame:last-child {
+    margin-bottom: 0;
   }
 
   .special-frame:hover {
@@ -104,18 +101,9 @@
       flex-direction: column;
     }
 
-    #container {
-      flex-direction: column;
-    }
-
     .special-frame {
       margin-bottom: 20px;
-      width: 100%;
     }
-  }
-
-  .special-frame:last-child {
-    margin-bottom: 0;
   }
 </style>
 
