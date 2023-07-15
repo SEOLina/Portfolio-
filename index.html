@@ -66,8 +66,8 @@
     display: flex;
     height: 100vh;
     background-color: black;
-    flex-wrap: wrap; /* Add this line to allow wrapping */
-    justify-content: space-between; /* Add this line to distribute frames evenly */
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .special-frame {
@@ -87,8 +87,8 @@
   .special-frame:nth-child(1),
   .special-frame:nth-child(2),
   .special-frame:nth-child(3) {
-    margin-right: 0; /* Remove right margin */
-    height: auto; /* Set height to auto */
+    margin-right: 0;
+    height: auto;
   }
 
   .special-frame:hover {
@@ -98,6 +98,10 @@
   @media only screen and (min-width: 767px) {
     .photo {
       display: block;
+    }
+
+    .container .text {
+      font-size: 20px;
     }
   }
 
@@ -113,7 +117,7 @@
 
     .text {
       padding-top: 20px;
-      font-size: 24px; /* Adjust the font size as needed */
+      font-size: 48px;
     }
 
     #container .special-frame {
@@ -125,7 +129,7 @@
   }
 
   .special-frame:last-child {
-    margin-bottom: 0; /* Remove the margin-bottom for the last special frame */
+    margin-bottom: 0;
   }
 </style>
 
