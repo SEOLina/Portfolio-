@@ -99,29 +99,13 @@
     .photo {
       display: block;
     }
-
-    .container {
-      flex-direction: column;
-      background-color: black;
-    }
-
-    .text {
-      padding-top: 20px;
-    }
-
-    #container .special-frame {
-      margin-bottom: 20px; /* Adjust the vertical spacing */
-      padding: 10px;
-      box-sizing: border-box;
-      border-top: 2px solid #ffdc33;
-    }
   }
 
   @media only screen and (max-width: 576px) {
     .photo {
       display: none;
     }
-
+    
     .container {
       flex-direction: column;
       background-color: black;
@@ -131,12 +115,14 @@
       padding-top: 20px;
     }
 
-    #container {
-      flex-direction: column; /* Change to vertical stacking */
+    /* Increase the font size for the text specifically in the second container */
+    .container:nth-child(2) .text {
+      font-size: 24px; /* Adjust the font size as needed */
     }
 
-    .special-frame {
-      margin-bottom: 20px; /* Adjust the vertical spacing */
+    /* Adjust the vertical spacing */
+    #container .special-frame {
+      margin-bottom: 20px;
       padding: 10px;
       box-sizing: border-box;
       border-top: 2px solid #ffdc33;
