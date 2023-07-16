@@ -128,3 +128,26 @@ body {
 .desktop-version .mobile {
   display: none;
 }
+
+.desktop-version #container {
+  flex-direction: row;
+}
+
+.desktop-version .special-frame {
+  margin-bottom: 0;
+}
+
+.desktop-version .text {
+  font-size: 20px !important;
+}
+
+.desktop-version .special-frame:nth-child(1),
+.desktop-version .special-frame:nth-child(2),
+.desktop-version .special-frame:nth-child(3) {
+  margin-right: 20px;
+}
+
+.desktop-version .special-frame:last-child {
+  margin-right: 0;
+}
+
