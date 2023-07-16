@@ -1,9 +1,14 @@
 function toggleVersion() {
-  const body = document.querySelector('body');
-  body.classList.toggle('mobile-version');
-  body.classList.toggle('desktop-version');
+  var container = document.getElementById('container');
+  var button = document.getElementById('versionButton');
 
-  const versionButton = document.getElementById('versionButton');
-  const currentVersion = body.classList.contains('mobile-version') ? 'Mobile' : 'Desktop';
-  versionButton.textContent = `Switch to ${currentVersion} Version`;
+  container.classList.toggle('mobile-version');
+  container.classList.toggle('desktop-version');
+
+  if (container.classList.contains('mobile-version')) {
+    button.textContent = 'Switch to Desktop Version';
+  } else {
+    button.textContent = 'Switch to Mobile Version';
+  }
 }
+
