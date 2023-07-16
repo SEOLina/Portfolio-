@@ -114,17 +114,18 @@
     }
 
     .text {
-      font-size: 24px;
+      font-size: 24px !important;
     }
 
-    .special-frame img {
-      max-width: 100%;
-      height: auto;
+    .special-frame:nth-child(1),
+    .special-frame:nth-child(2),
+    .special-frame:nth-child(3) {
+      margin-bottom: 20px;
     }
-  }
 
-  .special-frame:last-child {
-    margin-bottom: 0;
+    .special-frame:last-child {
+      margin-bottom: 0;
+    }
   }
 </style>
 
