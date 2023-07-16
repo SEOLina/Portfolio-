@@ -124,4 +124,17 @@ body {
   .special-frame:last-child {
     margin-bottom: 0;
   }
+
+  #versionButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #70ad72;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
 }
+}
+
