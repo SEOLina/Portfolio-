@@ -4,6 +4,22 @@ body {
   padding: 0;
 }
 
+.button-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+#versionButton {
+  padding: 10px 20px;
+  background-color: #70ad72;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -11,6 +27,7 @@ body {
 }
 
 .container:first-child {
+  margin-top: 50px; /* Adjust the margin-top value as needed */
   background-image: url(https://i.yapx.ru/WNfLL.jpg);
   background-size: cover;
 }
@@ -97,44 +114,83 @@ body {
 
 /* Styles for mobile version */
 @media (max-width: 768px) {
-  .desktop {
+  .desktop-version {
     display: none;
   }
 
-  .photo {
+  .mobile-version {
+    display: block;
+  }
+
+  .mobile-version .desktop {
     display: none;
   }
 
-  .container:nth-child(2) {
+  .mobile-version .photo {
+    display: none;
+  }
+
+  .mobile-version .container:nth-child(2) {
     flex-direction: column;
   }
 
-  #container {
+  .mobile-version #container {
     flex-direction: column;
   }
 
-  .special-frame {
+  .mobile-version .special-frame {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .mobile-version .text {
+    font-size: 24px !important;
+  }
+
+  .mobile-version .special-frame:nth-child(1),
+  .mobile-version .special-frame:nth-child(2),
+  .mobile-version .special-frame:nth-child(3) {
     margin-bottom: 20px;
   }
 
-  .text {
-    font-size: 16px;
+  .mobile-version .special-frame:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Styles for desktop version */
+@media (min-width: 769px) {
+  .mobile-version {
+    display: none;
   }
 
-  .special-frame:last-child {
+  .desktop-version {
+    display: block;
+  }
+
+  .desktop-version .mobile {
+    display: none;
+  }
+
+  .desktop-version #container {
+    flex-direction: row;
+  }
+
+  .desktop-version .special-frame {
     margin-bottom: 0;
   }
 
-  #versionButton {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  background-color: #70ad72;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-}
-}
+  .desktop-version .text {
+    font-size: 20px !important;
+  }
 
+  .desktop-version .special-frame:nth-child(1),
+  .desktop-version .special-frame:nth-child(2),
+  .desktop-version .special-frame:nth-child(3) {
+    margin-right: 20px;
+  }
+
+  .desktop-version .special-frame:last-child {
+    margin-right: 0;
+  }
+}
