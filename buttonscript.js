@@ -2,7 +2,7 @@ function toggleVersion() {
   const body = document.querySelector('body');
   const container = document.getElementById('container');
   const versionButton = document.getElementById('versionButton');
-  
+
   if (body.classList.contains('desktop-version')) {
     body.classList.remove('desktop-version');
     body.classList.add('mobile-version');
@@ -18,7 +18,9 @@ function toggleVersion() {
   }
 }
 
-// Run toggleVersion() initially to set the correct version on page load
-toggleVersion();
+window.addEventListener('DOMContentLoaded', function () {
+  const versionButton = document.getElementById('versionButton');
+  versionButton.addEventListener('click', toggleVersion);
+});
 
-versionButton.addEventListener('click', toggleVersion);
+window.addEventListener('resize', toggleVersion);
