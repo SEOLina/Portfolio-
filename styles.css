@@ -31,6 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white; /* Added to make sure the text is white */
 }
 
 .frame:not(.portfolio) {
@@ -129,5 +130,16 @@ body {
 
   .desktop-version .special-frame:last-child {
     margin-right: 0;
+  }
+
+  /* Additional styles for the first container in desktop version */
+  .desktop-version .container:first-child .frame {
+    left: 50%; /* Center the frame horizontally */
+    top: 50%; /* Center the frame vertically */
+    transform: translate(-50%, -50%); /* Center the frame using transform */
+  }
+
+  .desktop-version .frame-content {
+    text-align: center; /* Center the text within the frame */
   }
 }
