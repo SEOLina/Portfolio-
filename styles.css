@@ -169,11 +169,50 @@ body {
     align-items: stretch; /* Stretch the third containers to fill the width */
   }
 
-  .special-frame {
-    width: 100%;
-    margin-bottom: 20px;
-    border: 2px solid #ffdc33;
+  /* Styles for the first container in mobile version */
+  .mobile-version .container:first-child {
+    background-color: #333; /* Black background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    box-sizing: border-box; /* Add this property to include padding in width calculation */
+  }
+
+  .mobile-version .frame {
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    z-index: 1;
+  }
+
+  .mobile-version .frame-content {
+    text-align: center;
+  }
+
+  .mobile-version .content h1 {
+    color: white;
+    font-size: 3em;
+  }
+
+  /* Styles for the second container in mobile version */
+  .mobile-version .container:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+  }
+
+  .mobile-version .text {
+    color: white;
+    font-size: 20px;
+  }
+
+  /* Additional styles for the "Switch to Mobile/Desktop Version" button */
+  .mobile-version .button-container {
+    text-align: center;
+    margin-top: 20px;
   }
 }
