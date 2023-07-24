@@ -49,13 +49,14 @@ body {
   flex-direction: row;
 }
 
-.photo {
+.photo-container {
   flex: 1;
   background-image: url(https://i.ibb.co/XkMBjy9/golden-monstera-leaves-background-design-resource-croped.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
+
 
 .text {
   flex: 1;
