@@ -147,3 +147,32 @@ body {
     right: 20px;
   }
 }
+
+/* Styles for mobile version */
+@media only screen and (max-width: 767px) {
+  .desktop-version {
+    display: none;
+  }
+
+  .mobile-version {
+    display: block;
+  }
+
+  /* Remove the background photo from the second container */
+  .photo-container {
+    display: none;
+  }
+
+  /* Display the third containers vertically */
+  #container {
+    flex-direction: column;
+  }
+
+  .special-frame {
+    margin-bottom: 20px; /* Add some space between the third containers */
+    width: 100%; /* Make the third containers take the full width of the screen */
+    height: auto; /* Let the height adjust to content */
+    border: 2px solid #ffdc33;
+    padding: 20px;
+  }
+}
