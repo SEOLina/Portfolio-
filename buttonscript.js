@@ -5,22 +5,38 @@ function toggleVersion() {
   if (body.classList.contains('desktop-version')) {
     body.classList.remove('desktop-version');
     body.classList.add('mobile-version');
-    versionButton.textContent = 'Switch to Desktop Version';
   } else {
     body.classList.remove('mobile-version');
     body.classList.add('desktop-version');
-    versionButton.textContent = 'Switch to Mobile Version';
   }
+
+  // Update the button label based on the current version
+  versionButton.textContent = body.classList.contains('desktop-version')
+    ? 'Switch to Mobile Version'
+    : 'Switch to Desktop Version';
 }
 
+// Function to initialize the button label
+function setInitialButtonLabel() {
+  const body = document.querySelector('body');
+  const versionButton = document.getElementById('versionButton');
+
+  // Set the initial button label based on the initial version
+  versionButton.textContent = body.classList.contains('desktop-version')
+    ? 'Switch to Mobile Version'
+    : 'Switch to Desktop Version';
+}
+
+// Attach the click event listener to the button
 window.addEventListener('DOMContentLoaded', function () {
   const versionButton = document.getElementById('versionButton');
   versionButton.addEventListener('click', toggleVersion);
 
-  // Set the initial button label based on the initial version
-  toggleVersion();
+  // Initialize the button label
+  setInitialButtonLabel();
 });
 
+// Attach the resize event listener
 function debounce(func, delay) {
   let timeoutId;
   return function (...args) {
@@ -29,4 +45,4 @@ function debounce(func, delay) {
   };
 }
 
-window.addEventListener('resize', debounce(toggleVersion, 250));
+window.addEventListener('resize', debounce(setInitialButtonLabel, 250));
