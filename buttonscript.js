@@ -2,15 +2,23 @@ function toggleVersion() {
   const body = document.querySelector('body');
   const versionButton = document.getElementById('versionButton');
 
-  body.classList.toggle('desktop-version');
-  versionButton.textContent = body.classList.contains('desktop-version')
-    ? 'Switch to Mobile Version'
-    : 'Switch to Desktop Version';
+  if (body.classList.contains('desktop-version')) {
+    body.classList.remove('desktop-version');
+    body.classList.add('mobile-version');
+    versionButton.textContent = 'Switch to Desktop Version';
+  } else {
+    body.classList.remove('mobile-version');
+    body.classList.add('desktop-version');
+    versionButton.textContent = 'Switch to Mobile Version';
+  }
 }
 
 window.addEventListener('DOMContentLoaded', function () {
   const versionButton = document.getElementById('versionButton');
   versionButton.addEventListener('click', toggleVersion);
+
+  // Set the initial button label based on the initial version
+  toggleVersion();
 });
 
 function debounce(func, delay) {
