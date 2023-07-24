@@ -1,21 +1,11 @@
 function toggleVersion() {
   const body = document.querySelector('body');
-  const container = document.getElementById('container');
   const versionButton = document.getElementById('versionButton');
 
-  if (body.classList.contains('desktop-version')) {
-    body.classList.remove('desktop-version');
-    body.classList.add('mobile-version');
-    container.classList.remove('desktop-version');
-    container.classList.add('mobile-version');
-    versionButton.textContent = 'Switch to Desktop Version';
-  } else {
-    body.classList.remove('mobile-version');
-    body.classList.add('desktop-version');
-    container.classList.remove('mobile-version');
-    container.classList.add('desktop-version');
-    versionButton.textContent = 'Switch to Mobile Version';
-  }
+  body.classList.toggle('desktop-version');
+  versionButton.textContent = body.classList.contains('desktop-version')
+    ? 'Switch to Mobile Version'
+    : 'Switch to Desktop Version';
 }
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -23,4 +13,12 @@ window.addEventListener('DOMContentLoaded', function () {
   versionButton.addEventListener('click', toggleVersion);
 });
 
-window.addEventListener('resize', toggleVersion);
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+window.addEventListener('resize', debounce(toggleVersion, 250));
