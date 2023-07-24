@@ -166,12 +166,12 @@ body {
   /* Display the third containers vertically */
   #container {
     flex-direction: column;
-    align-items: stretch; /* Stretch the third containers to fill the width */
   }
 
+  /* Adjust styles for the third containers */
   .special-frame {
-    flex: 1; /* Distribute the available space equally among the third containers */
-    margin-bottom: 20px; /* Add some space between the third containers */
+    width: 100%;
+    margin-bottom: 20px;
     border: 2px solid #ffdc33;
     padding: 20px;
   }
