@@ -1,3 +1,5 @@
+// JavaScript (buttonscript.js)
+
 function getCurrentVersion() {
   const body = document.querySelector('body');
   return body.classList.contains('desktop-version') ? 'desktop' : 'mobile';
@@ -32,21 +34,10 @@ function setInitialButtonLabel() {
 }
 
 // Attach the click event listener to the button
-window.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   const versionButton = document.getElementById('versionButton');
   versionButton.addEventListener('click', toggleVersion);
 
   // Initialize the button label
   setInitialButtonLabel();
 });
-
-// Attach the resize event listener
-function debounce(func, delay) {
-  let timeoutId;
-  return function (...args) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func.apply(this, args), delay);
-  };
-}
-
-window.addEventListener('resize', debounce(setInitialButtonLabel, 250));
