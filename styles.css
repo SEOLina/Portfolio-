@@ -9,10 +9,11 @@ body {
   height: 100vh;
 }
 
-.container:first-child {
+.container:first-of-type {
   background-image: url(https://i.yapx.ru/WNfLL.jpg);
   background-size: cover;
 }
+
 
 .frame {
   position: absolute;
@@ -34,9 +35,10 @@ body {
   color: white; /* Added to make sure the text is white */
 }
 
-.frame:not(.portfolio) {
+.special-frame:not(.portfolio) {
   cursor: pointer;
 }
+
 
 .content {
   pointer-events: none;
