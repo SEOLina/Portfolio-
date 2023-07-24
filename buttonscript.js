@@ -1,3 +1,8 @@
+function getCurrentVersion() {
+  const body = document.querySelector('body');
+  return body.classList.contains('desktop-version') ? 'desktop' : 'mobile';
+}
+
 function toggleVersion() {
   const body = document.querySelector('body');
   const versionButton = document.getElementById('versionButton');
@@ -11,18 +16,17 @@ function toggleVersion() {
   }
 
   // Update the button label based on the current version
-  versionButton.textContent = body.classList.contains('desktop-version')
+  versionButton.textContent = getCurrentVersion() === 'desktop'
     ? 'Switch to Mobile Version'
     : 'Switch to Desktop Version';
 }
 
 // Function to initialize the button label
 function setInitialButtonLabel() {
-  const body = document.querySelector('body');
   const versionButton = document.getElementById('versionButton');
 
-  // Set the initial button label based on the initial version
-  versionButton.textContent = body.classList.contains('desktop-version')
+  // Set the initial button label based on the current version
+  versionButton.textContent = getCurrentVersion() === 'desktop'
     ? 'Switch to Mobile Version'
     : 'Switch to Desktop Version';
 }
