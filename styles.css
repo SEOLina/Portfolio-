@@ -150,27 +150,29 @@ body {
 
 /* Styles for mobile version */
 @media only screen and (max-width: 767px) {
+  /* Hide desktop version */
   .desktop-version {
     display: none;
   }
 
+  /* Display mobile version */
   .mobile-version {
     display: block;
   }
 
   /* Remove the background photo from the second container */
-  .photo-container {
+  .mobile-version .photo-container {
     display: none;
   }
 
   /* Display the third containers vertically */
-  #container {
+  .mobile-version #container {
     flex-direction: column;
     align-items: stretch; /* Stretch the third containers to fill the width */
   }
 
   /* Styles for the first container in mobile version */
-  .mobile-version .container:first-child {
+  .mobile-version .container:first-of-type { /* Changed from .container:first-child */
     background-color: #333; /* Black background color */
     display: flex;
     justify-content: center;
@@ -190,12 +192,12 @@ body {
     text-align: center;
   }
 
-  .mobile-version .content h1 {
-    color: white;
-    font-size: 3em;
+  /* Additional styles for the first container's content in mobile version */
+  .mobile-version .frame-content p {
+    font-size: 20px;
   }
 
-  /* Styles for the second container in mobile version */
+  /* Additional styles for the second container in mobile version */
   .mobile-version .container:nth-child(2) {
     display: flex;
     flex-direction: column;
@@ -216,3 +218,5 @@ body {
     margin-top: 20px;
   }
 }
+
+ 
