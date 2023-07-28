@@ -1,3 +1,4 @@
+/* Universal styles for both desktop and mobile versions */
 body {
   margin: 0;
   padding: 0;
@@ -9,11 +10,6 @@ body {
   height: 100vh;
 }
 
-.container:first-of-type { /* Changed from .container:first-child */
-  background-image: url(https://i.yapx.ru/WNfLL.jpg);
-  background-size: cover;
-}
-
 .frame {
   position: absolute;
   top: 20%;
@@ -23,7 +19,7 @@ body {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.2);
   border: 2px solid white;
-  z-index: 1; /* Added z-index to bring it above the photo container */
+  z-index: 1;
 }
 
 .frame-content {
@@ -32,26 +28,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white; /* Added to make sure the text is white */
-}
-
-.container:nth-child(2) {
-  display: flex;
-  flex-direction: row;
-}
-
-.photo-container {
-  flex: 1;
-  background-image: url(https://i.ibb.co/XkMBjy9/golden-monstera-leaves-background-design-resource-croped.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-
-.text {
-  flex: 1;
-  background-color: black;
-  padding: 20px;
   color: white;
 }
 
@@ -100,7 +76,7 @@ body {
 
   .desktop-version #container {
     flex-direction: row;
-    align-items: flex-start; /* Align items at the start */
+    align-items: flex-start;
   }
 
   .desktop-version .special-frame {
@@ -122,7 +98,7 @@ body {
   }
 
   /* Additional styles for the first container in desktop version */
-  .desktop-version .container:first-of-type { /* Changed from .container:first-child */
+  .desktop-version .container:first-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +116,7 @@ body {
     text-align: center;
   }
 
-  /* Additional styles to fix button-container */
+  /* Additional styles for the button-container */
   .button-container {
     position: absolute;
     top: 20px;
@@ -150,12 +126,10 @@ body {
 
 /* Styles for mobile version */
 @media only screen and (max-width: 767px) {
-  /* Hide desktop version */
   .desktop-version {
     display: none;
   }
 
-  /* Display mobile version */
   .mobile-version {
     display: block;
   }
@@ -168,12 +142,12 @@ body {
   /* Display the third containers vertically */
   .mobile-version #container {
     flex-direction: column;
-    align-items: stretch; /* Stretch the third containers to fill the width */
+    align-items: stretch;
   }
 
   /* Styles for the first container in mobile version */
-  .mobile-version .container:first-of-type { /* Changed from .container:first-child */
-    background-color: #333; /* Black background color */
+  .mobile-version .container:first-of-type {
+    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,6 +191,5 @@ body {
     text-align: center;
     margin-top: 20px;
   }
-}
-
- 
+  }
+  
