@@ -124,17 +124,6 @@ body {
     display: block;
   }
 
-  /* Remove the background photo from the second container */
-  .mobile-version .container:nth-of-type(2) {
-    background-image: none;
-  }
-
-  /* Display the third containers vertically */
-  .mobile-version #container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   /* Styles for the first container in mobile version (leave untouched) */
   .mobile-version .container:first-of-type {
     /* Add any mobile-specific styles if needed */
@@ -163,6 +152,7 @@ body {
   .mobile-version .container:nth-of-type(3) {
     background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -178,4 +168,4 @@ body {
     text-align: center;
     margin-top: 20px;
   }
-}
+    }
