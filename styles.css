@@ -61,62 +61,82 @@ body {
 }
 
 /* Styles for desktop version */
-@media (min-width: 769px) {
-  .desktop-version {
-    display: block;
-  }
+.desktop-version {
+  display: block;
+}
 
-  /* Additional styles for the first container in desktop version */
-  .desktop-version .container:first-of-type {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(https://i.yapx.ru/WNfLL.jpg);
-    background-size: cover;
-  }
+.desktop-version #container {
+  flex-direction: row;
+  align-items: flex-start;
+}
 
-  .desktop-version .frame {
-    width: 40%;
-    height: 40%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+.desktop-version .special-frame {
+  margin-bottom: 0;
+}
 
-  .desktop-version .frame-content {
-    text-align: center;
-  }
+.desktop-version .special-frame:nth-child(1),
+.desktop-version .special-frame:nth-child(2),
+.desktop-version .special-frame:nth-child(3) {
+  margin-right: 20px;
+}
 
-  /* Additional styles for the button-container */
-  .button-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
+.desktop-version .special-frame:last-child {
+  margin-right: 0;
+}
+
+.desktop-version .container:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://i.yapx.ru/WNfLL.jpg);
+  background-size: cover;
+}
+
+.desktop-version .frame {
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.desktop-version .frame-content {
+  text-align: center;
+}
+
+.desktop-version .button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 /* Styles for mobile version */
-@media only screen and (max-width: 767px) {
-  /* Remove the background photo from the second container */
-  .container:nth-child(2) .frame {
-    background-image: none;
-  }
+.mobile-version {
+  display: block;
+}
 
-  /* Display the third containers vertically */
-  .container:nth-child(3) #container {
-    flex-direction: column;
-    align-items: center;
-  }
+.mobile-version .container:nth-child(2) .frame {
+  background-image: none;
+}
 
-  .container:nth-child(3) .special-frame {
-    margin-bottom: 30px; /* Add margin to separate the vertical frames */
-  }
+.mobile-version #container {
+  flex-direction: column;
+  align-items: center;
+}
 
-  .container:nth-child(3) .special-frame:nth-child(1),
-  .container:nth-child(3) .special-frame:nth-child(2),
-  .container:nth-child(3) .special-frame:nth-child(3) {
-    width: 100%; /* Make the frames take full width in vertical layout */
-    height: calc(33.33% - 30px); /* Adjust height to fit three frames vertically */
-    margin-right: 0; /* Remove the right margin */
-  }
-  }
+.mobile-version .special-frame {
+  margin-bottom: 30px;
+}
+
+.mobile-version .special-frame:nth-child(1),
+.mobile-version .special-frame:nth-child(2),
+.mobile-version .special-frame:nth-child(3) {
+  width: 100%;
+  height: calc(33.33% - 30px);
+  margin-right: 0;
+}
+
+.mobile-version .button-container {
+  text-align: center;
+  margin-top: 20px;
+}
