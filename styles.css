@@ -62,15 +62,31 @@ body {
 
 /* Styles for desktop version */
 @media (min-width: 769px) {
-  .desktop-version {
-    display: block;
-  }
-
   .mobile-version {
     display: none;
   }
 
-  .container:first-of-type {
+  .desktop-version {
+    display: block;
+  }
+
+  .desktop-version #container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .desktop-version .special-frame:nth-child(1),
+  .desktop-version .special-frame:nth-child(2),
+  .desktop-version .special-frame:nth-child(3) {
+    margin-right: 20px;
+  }
+
+  .desktop-version .special-frame:last-child {
+    margin-right: 0;
+  }
+
+  /* Additional styles for the first container in desktop version */
+  .desktop-version .container:first-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +94,7 @@ body {
     background-size: cover;
   }
 
-  .container:first-of-type .frame {
+  .desktop-version .frame {
     width: 80%;
     height: 80%;
     left: 50%;
@@ -86,42 +102,20 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  .container:first-of-type .frame-content {
+  .desktop-version .frame-content {
     text-align: center;
   }
 
+  /* Additional styles for the button-container */
   .button-container {
     position: absolute;
     top: 20px;
     right: 20px;
   }
-
-  .container:nth-child(2) .frame {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-
-  .container:nth-child(3) #container {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .container:nth-child(3) .special-frame {
-    margin-bottom: 0;
-  }
-
-  .container:nth-child(3) .special-frame:nth-child(1),
-  .container:nth-child(3) .special-frame:nth-child(2),
-  .container:nth-child(3) .special-frame:nth-child(3) {
-    margin-right: 20px;
-  }
-
-  .container:nth-child(3) .special-frame:last-child {
-    margin-right: 0;
-  }
 }
 
 /* Styles for mobile version */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .desktop-version {
     display: none;
   }
@@ -130,29 +124,58 @@ body {
     display: block;
   }
 
-  .container:nth-child(2) .frame {
-    background-color: rgba(0, 0, 0, 0.2);
+  /* Remove the background photo from the second container */
+  .mobile-version .container:nth-of-type(2) {
+    background-image: none;
   }
 
-  .container:nth-child(3) #container {
+  /* Display the third containers vertically */
+  .mobile-version #container {
     flex-direction: column;
     align-items: center;
   }
 
-  .container:nth-child(3) .special-frame {
-    margin-bottom: 30px;
+  /* Styles for the first container in mobile version (leave untouched) */
+  .mobile-version .container:first-of-type {
+    /* Add any mobile-specific styles if needed */
   }
 
-  .container:nth-child(3) .special-frame:nth-child(1),
-  .container:nth-child(3) .special-frame:nth-child(2),
-  .container:nth-child(3) .special-frame:nth-child(3) {
-    width: 100%;
-    height: calc(33.33% - 30px);
-    margin-right: 0;
+  /* Remove the image in the second container in mobile version */
+  .mobile-version .container:nth-of-type(2) img {
+    display: none;
   }
 
-  .button-container {
+  /* Make the three golden frames (buttons) vertical in the third container */
+  .mobile-version .special-frame {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 80%;
+    height: auto;
+    border: 2px solid #ffdc33;
+  }
+
+  .mobile-version .special-frame:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Additional styles for the third container in mobile version */
+  .mobile-version .container:nth-of-type(3) {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .mobile-version .text {
+    color: white;
+    font-size: 20px;
+  }
+
+  /* Additional styles for the "Switch to Mobile/Desktop Version" button */
+  .mobile-version .button-container {
     text-align: center;
     margin-top: 20px;
   }
-    }
+}
