@@ -108,17 +108,18 @@ body {
     background-color: #333;
   }
 
-  /* Specific styles for mobile version */
   .container:first-child .frame-content h1 {
     font-size: 3em;
-    color: white; /* Fix text color in the first container */
   }
 
   .frame-description {
-    font-size: 30px; /* Increase font size for frame descriptions */
+    font-size: 30px;
   }
 
+  /* Adjust text color and font size in both containers for mobile version */
+  .container:first-child .frame-content h1,
   .text {
-    font-size: 20px; /* Increase font size for text in the third container */
+    color: white;
+    font-size: 20px;
   }
 }
