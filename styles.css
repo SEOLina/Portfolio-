@@ -122,4 +122,20 @@ body {
     width: 100%; /* Set each frame to full width */
     height: auto; /* Set each frame to auto height based on content */
   }
+  
+  /* New styles for mobile version */
+  .frame-content {
+    justify-content: flex-start;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .portfolio-title {
+    font-size: 4em;
+  }
+
+  .frame-description {
+    margin: 20px;
+    font-size: 20px;
+  }
 }
