@@ -106,62 +106,18 @@ body {
     text-align: center;
   }
 
+  /* Additional styles for the second container in desktop version */
+  .desktop-version .container:nth-of-type(2) {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   /* Additional styles for the button-container */
   .button-container {
     position: absolute;
     top: 20px;
     right: 20px;
-  }
-}
-
-/* Styles for mobile version */
-@media only screen and (max-width: 767px) {
-  .desktop-version {
-    display: none;
-  }
-
-  .mobile-version {
-    display: block;
-  }
-
-  /* Styles for the first container in mobile version (leave untouched) */
-  .mobile-version .container:first-of-type {
-    /* Add any mobile-specific styles if needed */
-  }
-
-  /* Remove the image in the second container in mobile version */
-  .mobile-version .container:nth-of-type(2) img {
-    display: none;
-  }
-
-  /* Additional styles for the third container in mobile version */
-  .mobile-version .container:nth-of-type(3) {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    background-color: black;
-    padding: 20px;
-  }
-
-  .mobile-version .special-frame {
-    width: 100%;
-    height: auto;
-    border: 2px solid #ffdc33;
-    margin-bottom: 20px;
-  }
-
-  .mobile-version .special-frame:last-child {
-    margin-bottom: 0;
-  }
-
-  .mobile-version .text {
-    color: white;
-    font-size: 20px;
-  }
-
-  /* Additional styles for the "Switch to Mobile/Desktop Version" button */
-  .mobile-version .button-container {
-    text-align: center;
-    margin-top: 20px;
   }
 }
