@@ -100,6 +100,7 @@ body {
   .text {
     padding-top: 20px;
     overflow-y: auto;
+    font-size: 20px; /* Adjusted font size for the "About me" section */
   }
 
   .container:first-child .frame-content h1 {
