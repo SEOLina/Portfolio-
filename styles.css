@@ -70,21 +70,6 @@ body {
     display: block;
   }
 
-  .desktop-version #container {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .desktop-version .special-frame:nth-child(1),
-  .desktop-version .special-frame:nth-child(2),
-  .desktop-version .special-frame:nth-child(3) {
-    margin-right: 20px;
-  }
-
-  .desktop-version .special-frame:last-child {
-    margin-right: 0;
-  }
-
   /* Additional styles for the first container in desktop version */
   .desktop-version .container:first-of-type {
     display: flex;
@@ -107,7 +92,7 @@ body {
   }
 
   /* Additional styles for the button-container */
-  .button-container {
+  .desktop-version .button-container {
     position: absolute;
     top: 20px;
     right: 20px;
