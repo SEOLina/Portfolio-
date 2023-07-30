@@ -1,4 +1,3 @@
-/* Universal styles for both desktop and mobile versions */
 body {
   margin: 0;
   padding: 0;
@@ -10,6 +9,11 @@ body {
   height: 100vh;
 }
 
+.container:first-child {
+  background-image: url(https://i.yapx.ru/WNfLL.jpg);
+  background-size: cover;
+}
+
 .frame {
   position: absolute;
   top: 20%;
@@ -19,7 +23,6 @@ body {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.2);
   border: 2px solid white;
-  z-index: 1;
 }
 
 .frame-content {
@@ -28,6 +31,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.content {
+  pointer-events: none;
+}
+
+.container:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+}
+
+.photo {
+  flex: 1;
+  background-image: url(https://i.ibb.co/XkMBjy9/golden-monstera-leaves-background-design-resource-croped.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.text {
+  flex: 1;
+  background-color: black;
+  padding: 20px;
   color: white;
 }
 
@@ -42,9 +68,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 20px;
   color: white;
+  cursor: pointer;
 }
 
 .special-frame:nth-child(1),
@@ -60,128 +87,50 @@ body {
   background-color: #333;
 }
 
-/* Styles for desktop version */
-@media (min-width: 769px) {
-  .mobile-version {
+@media only screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .photo {
     display: none;
   }
 
-  .desktop-version {
-    display: block;
+  .text {
+    padding-top: 20px;
+    overflow-y: auto;
   }
 
-  .desktop-version #container {
-    flex-direction: row;
-    align-items: flex-start;
+  .container:first-child .frame-content h1 {
+    font-size: 3em;
   }
 
-  .desktop-version .special-frame:nth-child(1),
-  .desktop-version .special-frame:nth-child(2),
-  .desktop-version .special-frame:nth-child(3) {
-    margin-right: 20px;
+  #container {
+    flex-direction: column;
+    height: auto;
   }
 
-  .desktop-version .special-frame:last-child {
+  .special-frame {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .special-frame:nth-child(1),
+  .special-frame:nth-child(2),
+  .special-frame:nth-child(3) {
     margin-right: 0;
-  }
-
-  /* Additional styles for the first container in desktop version */
-  .desktop-version .container:first-of-type {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(https://i.yapx.ru/WNfLL.jpg);
-    background-size: cover;
-  }
-
-  .desktop-version .frame {
-    width: 80%;
-    height: 80%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .desktop-version .frame-content {
-    text-align: center;
-  }
-
-  /* Additional styles for the button-container */
-  .button-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
   }
 }
 
-/* Styles for mobile version */
-@media only screen and (max-width: 767px) {
-  .desktop-version {
-    display: none;
-  }
+/* Additional CSS styles specific to the PHP file */
 
-  .mobile-version {
-    display: block;
-  }
+.portfolio-title {
+  color: white;
+  font-size: 6em;
+  text-align: center;
+}
 
-  /* Styles for the first container in mobile version (leave untouched) */
-  .mobile-version .container:first-of-type {
-    /* Add any mobile-specific styles if needed */
-  }
-
-  /* Additional styles for the second container in mobile version */
-  .mobile-version .container:nth-of-type(2) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    padding: 20px;
-  }
-
-  .mobile-version .special-frame {
-    width: 100%;
-    height: auto;
-    border: 2px solid #ffdc33;
-    margin-bottom: 20px;
-  }
-
-  .mobile-version .special-frame:last-child {
-    margin-bottom: 0;
-  }
-
-  .mobile-version .text {
-    color: white;
-    font-size: 20px;
-  }
-
-  /* Additional styles for the third container in mobile version */
-  .mobile-version .container:nth-of-type(3) {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    background-color: black;
-    padding: 20px;
-  }
-
-  .mobile-version .special-frame {
-    width: 100%;
-    height: auto;
-    border: 2px solid #ffdc33;
-    margin-bottom: 20px;
-  }
-
-  .mobile-version .special-frame:last-child {
-    margin-bottom: 0;
-  }
-
-  .mobile-version .text {
-    color: white;
-    font-size: 20px;
-  }
-
-  /* Additional styles for the "Switch to Mobile/Desktop Version" button */
-  .mobile-version .button-container {
-    text-align: center;
-    margin-top: 20px;
-  }
+.frame-description {
+  margin: 30px;
+  font-size: 30px;
 }
