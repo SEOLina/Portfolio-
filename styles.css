@@ -72,6 +72,7 @@ body {
   padding: 20px;
   color: white;
   cursor: pointer;
+  text-align: center; /* Added to center the text inside each frame */
 }
 
 .special-frame:nth-child(1),
@@ -103,6 +104,7 @@ body {
 
   .container:first-child .frame-content h1 {
     font-size: 3em;
+    color: white; /* Set the color for the h1 in the first container */
   }
 
   #container {
@@ -113,29 +115,6 @@ body {
   .special-frame {
     width: 100%;
     margin-bottom: 30px;
-  }
-
-  .special-frame:nth-child(1),
-  .special-frame:nth-child(2),
-  .special-frame:nth-child(3) {
-    margin-right: 0;
-    width: 100%; /* Set each frame to full width */
     height: auto; /* Set each frame to auto height based on content */
-  }
-  
-  /* New styles for mobile version */
-  .frame-content {
-    justify-content: flex-start;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .portfolio-title {
-    font-size: 4em;
-  }
-
-  .frame-description {
-    margin: 20px;
-    font-size: 20px;
   }
 }
