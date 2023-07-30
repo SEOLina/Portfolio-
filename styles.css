@@ -92,7 +92,6 @@ body {
 /* CSS for mobile version */
 @media only screen and (max-width: 480px) {
   .container:nth-child(3) {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -102,11 +101,6 @@ body {
     margin-bottom: 30px;
     height: auto;
     border: 2px solid #ffdc33;
-  }
-
-  .special-frame:nth-child(1),
-  .special-frame:nth-child(2),
-  .special-frame:nth-child(3) {
     margin-right: 0;
   }
 
@@ -116,11 +110,9 @@ body {
 
   .container:first-child .frame-content h1 {
     font-size: 3em;
-    color: white;
   }
 
   .frame-description {
     font-size: 30px;
-    color: white;
   }
 }
