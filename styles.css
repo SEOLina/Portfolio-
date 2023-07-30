@@ -1,3 +1,5 @@
+/* Common styles for both desktop and mobile versions */
+
 body {
   margin: 0;
   padding: 0;
@@ -88,7 +90,6 @@ body {
 }
 
 /* CSS for mobile version */
-/* CSS for mobile version */
 @media only screen and (max-width: 480px) {
   .container:nth-child(3) {
     display: flex;
@@ -111,5 +112,15 @@ body {
 
   .special-frame:hover {
     background-color: #333;
+  }
+
+  .container:first-child .frame-content h1 {
+    font-size: 3em;
+    color: white;
+  }
+
+  .frame-description {
+    font-size: 30px;
+    color: white;
   }
 }
