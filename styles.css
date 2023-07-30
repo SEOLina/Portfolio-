@@ -92,6 +92,7 @@ body {
 /* CSS for mobile version */
 @media only screen and (max-width: 480px) {
   .container:nth-child(3) {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -118,7 +119,7 @@ body {
 
   /* Adjust text color and font size in both containers for mobile version */
   .container:first-child .frame-content h1,
-  .text {
+  .container:nth-child(2) .text {
     color: white;
     font-size: 20px;
   }
