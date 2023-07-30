@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <!-- Desktop Version -->
-  <div class="desktop-version">
-    <div class="container">
-      <div class="frame"></div>
-      <div class="frame-content">
-        <div class="content">
-          <h1 style="color: white; font-size: 6em; text-align: center;">Portfolio</h1>
-        </div>
-      </div>
-      <div class="button-container">
-        <button id="versionButton" onclick="toggleVersion()">Switch to Mobile/Desktop Version</button>
+  <div class="container">
+    <div class="frame"></div>
+    <div class="frame-content">
+      <div class="content">
+        <h1 class="portfolio-title">Portfolio</h1>
       </div>
     </div>
-    <div class="container">
-      <div class="photo-container"></div>
-      <div class="text">
-        <br>
+  </div>
+<div class="container">
+    <div class="photo"></div>
+    <div class="text">
+      <br>
         <br>
         <br>
         <br>
@@ -33,60 +25,27 @@
         <p style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.<br>
         However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.<br>
         As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
+    </div>
+  </div>
+  <div id="container">
+    <div class="special-frame" onclick="window.location.href = 'Plants.html'">
+      <img src="https://i.postimg.cc/c455JF26/1656-oooo-plus-1.png" alt="Image 1">
+      <div>
+        <p class="frame-description">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
       </div>
     </div>
-
-    <div id="container">
-      <div class="special-frame" onclick="window.location.href = 'Plants.html'">
-        <img src="https://i.postimg.cc/c455JF26/1656-oooo-plus-1.png" alt="Image 1">
-        <div>
-          <p style="margin: 30px; font-size: 30px;">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
-        </div>
+    <div class="special-frame" onclick="window.location.href = 'Dogs.html'">
+      <img src="https://i.postimg.cc/qvYkGV8x/222222222-round.png" alt="Image 2">
+      <div>
+        <p class="frame-description">Adopting a dog or puppy is an exciting experience, but it's important to be prepared. Learn what to consider before bringing a dog home, from supplies to training and care.</p>
       </div>
-      <div class="special-frame" onclick="window.location.href = 'Dogs.html'">
-        <img src="https://i.postimg.cc/qvYkGV8x/222222222-round.png" alt="Image 2">
-        <div>
-          <p style="margin: 30px; font-size: 30px;">Adopting a dog or puppy is an exciting experience, but it's important to be prepared. Learn what to consider before bringing a dog home, from supplies to training and care.</p>
-        </div>
-      </div>
-      <div class="special-frame" onclick="window.location.href = 'javascript_page3.html'">
-        <img src="https://i.postimg.cc/SQrkvz6s/33333-round.png" alt="Image 3">
-        <div>
-          <p style="margin: 30px; font-size: 30px;">Картинки так, для теста, на самом деле там будут иллюстрации к статьям. А вот тут, где ты читаешь, будет краткое описание статей, этакое краткое содержание. Вообще это портфолио СЕО копирайтера, которое я хочу показывать ибо выглядит круче чем просто файлы</p>
-        </div>
+    </div>
+    <div class="special-frame" onclick="window.location.href = 'javascript_page3.html'">
+      <img src="https://i.postimg.cc/SQrkvz6s/33333-round.png" alt="Image 3">
+      <div>
+        <p class="frame-description">Картинки так, для теста, на самом деле там будут иллюстрации к статьям. А вот тут, где ты читаешь, будет краткое описание статей, этакое краткое содержание. Вообще это портфолио СЕО копирайтера, которое я хочу показывать ибо выглядит круче чем просто файлы</p>
       </div>
     </div>
   </div>
-
-  <!-- Mobile Version -->
-<div class="mobile-version">
-  <div class="container">
-    <div class="frame"></div>
-    <div class="frame-content">
-      <div class="content">
-        <h1 style="color: white; font-size: 6em; text-align: center;">Portfolio</h1>
-      </div>
-    </div>
-    <div class="button-container">
-      <button id="versionButton" onclick="toggleVersion()">Switch to Mobile/Desktop Version</button>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="text">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h1>About me</h1>
-      <p style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.<br>
-      However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.<br>
-      As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
-    </div>
-  </div>
-
-  <script src="buttonscript.js"></script>
 </body>
 </html>
