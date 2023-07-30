@@ -88,27 +88,12 @@ body {
 }
 
 /* CSS for mobile version */
+/* CSS for mobile version */
 @media only screen and (max-width: 480px) {
-  .container {
+  .container:nth-child(3) {
+    display: flex;
     flex-direction: column;
-  }
-
-  .photo {
-    display: none;
-  }
-
-  .text {
-    padding-top: 20px;
-    overflow-y: auto;
-  }
-
-  .container:first-child .frame-content h1 {
-    font-size: 3em;
-  }
-
-  #container {
-    flex-direction: column;
-    height: auto;
+    align-items: center;
   }
 
   .special-frame {
