@@ -101,6 +101,10 @@ body {
     display: none; /* Hide the photo in the mobile version */
   }
 
+  .container:nth-child(2) {
+    flex-direction: column; /* Stack the two items in the second container */
+  }
+
   .text-container {
     padding-top: 20px;
     overflow-y: auto;
