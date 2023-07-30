@@ -87,9 +87,8 @@ body {
   background-color: #333;
 }
 
-@media only screen and (max-width: 767px) {
-  /* Styles for mobile version */
-
+/* CSS for mobile version */
+@media only screen and (max-width: 480px) {
   .container {
     flex-direction: column;
   }
@@ -115,15 +114,14 @@ body {
   .special-frame {
     width: 100%;
     margin-bottom: 30px;
-    height: auto; /* Adjusting the height to fit the content */
+    height: auto;
+    border: 2px solid #ffdc33;
   }
 
   .special-frame:nth-child(1),
   .special-frame:nth-child(2),
   .special-frame:nth-child(3) {
     margin-right: 0;
-    border: 2px solid #ffdc33;
-    width: 100%; /* Occupying the entire width of the phone screen */
   }
 
   .special-frame:hover {
