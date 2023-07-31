@@ -63,34 +63,18 @@ body, html {
   padding: 20px; /* Add padding to create space between text and container edges */
 }
 
-#container {
-  display: flex;
-  height: 100vh;
-  background-color: black;
-}
-
-.special-frame {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+.portfolio-title {
   color: white;
-  cursor: pointer;
-  margin: 0 10px;
+  font-size: 6em;
+  text-align: center;
 }
 
-.special-frame:nth-child(1),
-.special-frame:nth-child(2),
-.special-frame:nth-child(3) {
-  border: 2px solid #ffdc33;
-  width: calc(33.33% - 40px); /* Adjusted width with indentation */
-  height: calc(100% - 100px);
-  margin-right: 30px;
-}
-
-.special-frame:hover {
-  background-color: #333;
+/* Apply styles to the "portfolio" label on both small and large screens */
+@media only screen and (min-width: 481px) {
+  .portfolio-title {
+    font-size: 6em;
+    text-align: center;
+  }
 }
 
 /* Hide the .photo element in the mobile version */
@@ -106,12 +90,6 @@ body, html {
   .text {
     padding-top: 20px;
     overflow-y: auto;
-  }
-
-  .portfolio-title {
-    color: #ffdc33;
-    font-size: 3em;
-    text-align: center;
   }
 
   #container {
@@ -133,13 +111,13 @@ body, html {
     width: 100%;
     margin-right: 0;
   }
-  
+
   .text {
     color: white;
   }
-  
+
   .container .text {
     flex: initial;
     height: auto;
   }
-}
+    }
