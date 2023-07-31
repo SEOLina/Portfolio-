@@ -88,14 +88,16 @@ body {
   background-color: #333;
 }
 
-/* Hide the .photo element in the mobile version */
+/* Show the .photo element as a thin strip at the top in the mobile version */
 @media only screen and (max-width: 480px) {
-  .container:nth-child(2) .photo {
-    display: none;
+  .container:nth-child(2) {
+    flex-direction: column;
   }
 
-  .container {
-    flex-direction: column;
+  .photo {
+    flex: none; /* Remove the flex-grow to keep the height as 100vh */
+    height: 20px; /* Set the height to 20px to make it a thin strip at the top */
+    background-size: auto 20px; /* Adjust background size to fit the strip height */
   }
 
   .text {
