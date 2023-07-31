@@ -7,6 +7,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  margin-left: 15px; /* Add a small margin on the left for indentation */
 }
 
 .container:first-child {
@@ -95,6 +96,7 @@ body {
 
   .container {
     flex-direction: column;
+    margin-left: 0; /* Remove indentation for all containers in mobile version */
   }
 
   .text {
@@ -117,7 +119,7 @@ body {
     width: 100%;
     margin-bottom: 30px;
     margin-right: 0;
-    height: auto; /* Adjust height to take up available space */
+    height: auto;
   }
 
   .special-frame:nth-child(1),
@@ -129,5 +131,10 @@ body {
   
   .text {
     color: white; /* Set text color to white for mobile version */
+  }
+  
+  .container:nth-child(2) .text {
+    flex: initial;
+    height: auto;
   }
 }
