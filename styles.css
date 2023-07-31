@@ -88,16 +88,14 @@ body {
   background-color: #333;
 }
 
-/* Show the .photo element as a thin strip at the top in the mobile version */
+/* Mobile version (max-width: 480px) */
 @media only screen and (max-width: 480px) {
-  .container:nth-child(2) {
-    flex-direction: column;
+  .photo {
+    display: none; /* Hide the .photo element in the mobile version */
   }
 
-  .photo {
-    flex: none; /* Remove the flex-grow to keep the height as 100vh */
-    height: 20px; /* Set the height to 20px to make it a thin strip at the top */
-    background-size: auto 20px; /* Adjust background size to fit the strip height */
+  .container:nth-child(2) {
+    flex-direction: column;
   }
 
   .text {
@@ -123,6 +121,13 @@ body {
   .special-frame:nth-child(2),
   .special-frame:nth-child(3) {
     margin-right: 0;
+  }
+}
+
+/* Desktop version (min-width: 742px) */
+@media only screen and (min-width: 742px) {
+  .photo {
+    display: block; /* Show the .photo element on desktop */
   }
 }
 
