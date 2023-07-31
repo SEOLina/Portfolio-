@@ -102,8 +102,10 @@ body {
     overflow-y: auto;
   }
 
-  .container:first-child .frame-content h1 {
+  .portfolio-title {
+    color: #ffdc33; /* Apply the gold color to the portfolio title */
     font-size: 3em;
+    text-align: center;
   }
 
   #container {
