@@ -50,15 +50,11 @@ body {
   height: 100vh;
 }
 
-.text-container {
+.text {
   flex: 1;
   background-color: black;
   padding: 20px;
   color: white;
-}
-
-.text {
-  font-size: 20px;
 }
 
 #container {
@@ -76,7 +72,6 @@ body {
   padding: 20px;
   color: white;
   cursor: pointer;
-  text-align: center; /* Added to center the text inside each frame */
 }
 
 .special-frame:nth-child(1),
@@ -97,22 +92,18 @@ body {
     flex-direction: column;
   }
 
+  /* Hide the .photo element in the mobile version */
   .photo {
-    display: none; /* Hide the photo in the mobile version */
+    display: none;
   }
 
-  .container:nth-child(2) {
-    flex-direction: column; /* Stack the two items in the second container */
-  }
-
-  .text-container {
+  .text {
     padding-top: 20px;
     overflow-y: auto;
   }
 
   .container:first-child .frame-content h1 {
     font-size: 3em;
-    color: white; /* Set the color for the h1 in the first container */
   }
 
   #container {
@@ -123,6 +114,24 @@ body {
   .special-frame {
     width: 100%;
     margin-bottom: 30px;
-    height: auto; /* Set each frame to auto height based on content */
   }
-} 
+
+  .special-frame:nth-child(1),
+  .special-frame:nth-child(2),
+  .special-frame:nth-child(3) {
+    margin-right: 0;
+  }
+}
+
+/* Additional CSS styles specific to the PHP file */
+
+.portfolio-title {
+  color: white;
+  font-size: 6em;
+  text-align: center;
+}
+
+.frame-description {
+  margin: 30px;
+  font-size: 30px;
+    }
