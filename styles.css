@@ -69,8 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  padding: 20px; /* Adjusted padding to center elements vertically */
   color: white;
   cursor: pointer;
 }
@@ -88,13 +87,13 @@ body {
   background-color: #333;
 }
 
-/* Mobile version (max-width: 480px) */
+/* Hide the .photo element in the mobile version */
 @media only screen and (max-width: 480px) {
-  .photo {
-    display: none; /* Hide the .photo element in the mobile version */
+  .container:nth-child(2) .photo {
+    display: none;
   }
 
-  .container:nth-child(2) {
+  .container {
     flex-direction: column;
   }
 
@@ -115,31 +114,6 @@ body {
   .special-frame {
     width: 100%;
     margin-bottom: 30px;
-  }
-
-  .special-frame:nth-child(1),
-  .special-frame:nth-child(2),
-  .special-frame:nth-child(3) {
     margin-right: 0;
   }
-}
-
-/* Desktop version (min-width: 742px) */
-@media only screen and (min-width: 742px) {
-  .photo {
-    display: block; /* Show the .photo element on desktop */
-  }
-}
-
-/* Additional CSS styles specific to the PHP file */
-
-.portfolio-title {
-  color: white;
-  font-size: 6em;
-  text-align: center;
-}
-
-.frame-description {
-  margin: 30px;
-  font-size: 30px;
 }
