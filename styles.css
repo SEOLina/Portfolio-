@@ -117,7 +117,7 @@ body {
     width: 100%;
     margin-bottom: 30px;
     margin-right: 0;
-    height: 100%; /* Adjust height to take up full vertical space */
+    height: auto; /* Adjust height to take up available space */
   }
 
   .special-frame:nth-child(1),
@@ -126,4 +126,8 @@ body {
     width: 100%;
     margin-right: 0;
   }
-    }
+  
+  .text {
+    color: white; /* Set text color to white for mobile version */
+  }
+}
