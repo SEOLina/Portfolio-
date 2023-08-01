@@ -144,7 +144,7 @@ body, html {
   .special-frame {
     width: 60%;
     margin-right: 0;
-    margin-left: 70px; /* Add indentation from the left side */
+    margin-left: 150px; /* Add indentation from the left side */
   }
 
   .special-frame:nth-child(1),
