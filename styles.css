@@ -158,20 +158,9 @@ body, html {
     height: auto;
   }
 
-  /* Additional container styles for Contact Me */
-  .container:nth-child(3) .frame {
-    background-color: black;
-    z-index: 1;
+  .contact-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
   }
-
-  .container:nth-child(3) .frame .frame-content {
-    background-color: white;
-    height: 20px;
-    width: 100%;
-  }
-
-  .container:nth-child(3) .frame .content {
-    color: white;
-    padding: 20px;
-  }
-    }
