@@ -48,10 +48,6 @@ body, html {
   z-index: 2;
 }
 
-.content {
-  /* Content inside the frame */
-}
-
 .container:nth-child(2) {
   display: flex;
   flex-direction: row;
@@ -105,11 +101,15 @@ body, html {
   background-color: #333;
 }
 
-/* Hide <br> tags with class "desktop-br" in mobile view */
 @media only screen and (max-width: 480px) {
   .desktop-br {
     display: none;
   }
+
+  .container:nth-child(2) {
+    flex-direction: column;
+  }
+  
   .container:nth-child(2) .photo {
     display: none;
     height: auto; 
@@ -120,7 +120,7 @@ body, html {
   }
 
   .text {
-    padding-top: 20px;
+    padding-top: 0px;
     overflow-y: auto;
   }
 
