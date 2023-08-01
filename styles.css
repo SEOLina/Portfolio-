@@ -89,15 +89,16 @@ body, html {
   padding: 20px;
   color: white;
   cursor: pointer;
-  margin: 0;
+  margin: 0 10px;
 }
 
 .special-frame:nth-child(1),
 .special-frame:nth-child(2),
 .special-frame:nth-child(3) {
   border: 2px solid #ffdc33;
-  width: 100%; /* Occupies 90% of the screen width */
+  width: calc(33.33% - 40px); /* Adjusted width with indentation */
   height: calc(100% - 100px);
+  margin-right: 30px;
 }
 
 .special-frame:hover {
@@ -136,6 +137,7 @@ body, html {
   .special-frame {
     width: 100%;
     margin-bottom: 30px;
+    margin-right: 0;
     height: auto;
     margin: 10px 0;
   }
@@ -143,16 +145,33 @@ body, html {
   .special-frame:nth-child(1),
   .special-frame:nth-child(2),
   .special-frame:nth-child(3) {
-    width: 90%;
+    width: 80%;
     margin-right: 0;
   }
-  
+
   .text {
     color: white;
   }
-  
+
   .container .text {
     flex: initial;
     height: auto;
   }
-}
+
+  /* Additional container styles for Contact Me */
+  .container:nth-child(3) .frame {
+    background-color: black;
+    z-index: 1;
+  }
+
+  .container:nth-child(3) .frame .frame-content {
+    background-color: white;
+    height: 20px;
+    width: 100%;
+  }
+
+  .container:nth-child(3) .frame .content {
+    color: white;
+    padding: 20px;
+  }
+    }
