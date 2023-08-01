@@ -138,6 +138,7 @@ body, html {
   .special-frame {
     width: 100%;
     margin-bottom: 30px;
+    margin-left: 10px
     margin-right: 0;
     height: auto;
     margin: 10px 0;
