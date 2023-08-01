@@ -112,7 +112,7 @@ body, html {
   
   .container:nth-child(2) .photo {
     display: none;
-    height: auto; 
+    height: 120vh;
   }
 
   .container {
