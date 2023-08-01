@@ -59,8 +59,6 @@ body, html {
   background-image: url(https://i.ibb.co/XkMBjy9/golden-monstera-leaves-background-design-resource-croped.jpg);
   background-size: cover;
   background-position: center;
-  display: block; /* Display the photo in desktop version */
-  height: 100vh; /* Fixed height for desktop version */
 }
 
 .text {
@@ -116,10 +114,11 @@ body, html {
 
   .container:nth-child(2) {
     flex-direction: column;
+    align-items: center; /* Center text and photo vertically */
   }
-  
+
   .container:nth-child(2) .photo {
-    display: none; /* Hide the photo in mobile version */
+    display: none; /* Hide photo in mobile version */
   }
 
   .text {
@@ -155,19 +154,22 @@ body, html {
     padding: 20px;
     text-align: center;
     height: auto; /* Set height to auto for the third container on mobile devices */
-    width: 60%; /* Set the width to 60% for the third container in mobile version */
-    margin-left: 30px; /* Add 30px indentation on the left */
   }
 
   /* New styles for mobile version */
   .container:nth-child(2) {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column layout for text and photo */
-    grid-template-rows: 1fr auto; /* First row for text, second row for photo */
+    width: 60%; /* Set the second container width to 60% of the screen */
+    margin-left: 30px; /* Add indentation of 30px on the left */
   }
 
-  .container:nth-child(2) .photo {
-    display: block;
-    height: 120vh; /* Set height for the photo */
+  .container:nth-child(3) {
+    width: 60%; /* Set the third container width to 60% of the screen */
+    margin-left: 30px; /* Add indentation of 30px on the left */
   }
-}
+
+  .container:nth-child(2) .text,
+  .container:nth-child(3) .text {
+    flex-grow: 1; /* Allow the text section to take available space and fill the container */
+    overflow-y: auto; /* Add scroll if content overflows */
+  }
+  }
