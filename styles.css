@@ -28,6 +28,7 @@ body, html {
   border: 2px solid white;
   z-index: 1;
 }
+
 .portfolio-title {
   position: absolute;
   top: 50%;
@@ -37,7 +38,6 @@ body, html {
   color: white;
   z-index: 2;
 }
-
 
 .frame-content {
   height: 100%;
@@ -49,6 +49,7 @@ body, html {
 }
 
 .content {
+  /* Content inside the frame */
 }
 
 .container:nth-child(2) {
@@ -109,7 +110,7 @@ body, html {
   .desktop-br {
     display: none;
   }
-    .container:nth-child(2) .photo {
+  .container:nth-child(2) .photo {
     display: none;
   }
 
@@ -157,5 +158,3 @@ body, html {
     height: auto;
   }
 }
-
-
