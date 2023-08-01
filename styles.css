@@ -106,6 +106,15 @@ body, html {
   height: 100vh; /* Fixed height for desktop version */
 }
 
+  .contact-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    height: auto; /* Set height to auto for the third container on mobile devices */
+  }
+}
+
 /* Updated styles for mobile version */
 @media only screen and (max-width: 480px) {
   .desktop-br {
@@ -144,7 +153,7 @@ body, html {
   .special-frame {
     width: 60%;
     margin-right: 0;
-    margin-left: 70px; /* Add indentation from the left side */
+    margin-left: 60px; /* Add indentation from the left side */
   }
 
   .special-frame:nth-child(1),
@@ -158,17 +167,6 @@ body, html {
     color: white;
   }
 
-  .container .text {
-    /* Remove flex and height properties */
-  }
 
-  .contact-container {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    height: auto; /* Set height to auto for the third container on mobile devices */
-  }
-}
 
 /* Existing styles... */
