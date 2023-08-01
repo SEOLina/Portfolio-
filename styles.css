@@ -166,6 +166,8 @@ body, html {
     color: white;
     padding: 20px;
     text-align: center;
+   margin-top: 90px; /* Adjust the third container's position to prevent overlap */
+  }
     height: auto; /* Set height to auto for the third container on mobile devices */
   }
 }
