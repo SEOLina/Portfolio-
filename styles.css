@@ -98,4 +98,53 @@ body, html {
   .desktop-br {
     display: none;
   }
+    .container:nth-child(2) .photo {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .text {
+    padding-top: 20px;
+    overflow-y: auto;
+  }
+
+  .portfolio-title {
+    color: #ffdc33;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  #container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .special-frame {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-right: 0;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .special-frame:nth-child(1),
+  .special-frame:nth-child(2),
+  .special-frame:nth-child(3) {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .text {
+    color: white;
+  }
+  
+  .container .text {
+    flex: initial;
+    height: auto;
+  }
+}
+
   
