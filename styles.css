@@ -141,6 +141,8 @@ body, html {
     width: 60%;
     margin-right: 0;
     margin-left: 60px; /* Add indentation from the left side */
+  font-size: 24px; /* Adjust the font size as desired */
+    
   }
 
   .special-frame:nth-child(1),
