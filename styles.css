@@ -161,12 +161,29 @@ body, html {
 
   /* New styles for mobile version */
   .container:nth-child(2) {
-    width: 60%; /* Set the second container width to 60% of the screen */
-    margin-left: 30px; /* Add indentation of 30px on the left */
+    width: 100%; /* Set the second container width to 100% of the screen */
+    margin-left: 0; /* Remove indentation on the left */
   }
 
   .container:nth-child(2) .text {
     flex-grow: 1; /* Allow the text section to take available space and fill the container */
     overflow-y: auto; /* Add scroll if content overflows */
   }
-    }
+
+  .container:nth-child(3) {
+    width: 100%; /* Set the third container width to 100% of the screen */
+    margin-left: 0; /* Remove indentation on the left */
+  }
+
+  .container:nth-child(3) .text {
+    flex-grow: 1; /* Allow the text section to take available space and fill the container */
+    overflow-y: auto; /* Add scroll if content overflows */
+  }
+
+  /* Center the golden frames */
+  .container:nth-child(2) .special-frame,
+  .container:nth-child(3) .special-frame {
+    width: 90%; /* Set the width of golden frames to 90% of the screen */
+    margin: 5px auto; /* Center the golden frames horizontally */
+  }
+}
