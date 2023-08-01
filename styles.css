@@ -120,6 +120,10 @@ body, html {
     min-height: 120vh; /* Set a minimum height for the text container on mobile */
     overflow-y: auto;
 
+.container:nth-child(3) {
+    flex-basis: auto; /* Allow the third container to take up only required space */
+}
+    
   .container {
     flex-direction: column;
     
