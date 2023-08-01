@@ -24,7 +24,7 @@ body, html {
   width: 60%;
   height: 60%;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
   border: 2px solid white;
 }
 
@@ -112,7 +112,7 @@ body, html {
   }
 
   .portfolio-title {
-    color: #ffdc33;
+    color: white;
     font-size: 3em;
     text-align: center;
   }
