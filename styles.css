@@ -112,7 +112,7 @@ body, html {
   
   .container:nth-child(2) .photo {
     display: none;
-    height: 150vh;
+    height: 200vh;
   }
 
   .container {
@@ -138,7 +138,7 @@ body, html {
   .special-frame {
     width: 100%;
     margin-bottom: 30px;
-    margin-left: 10px
+    margin-left: 30px
     margin-right: 0;
     height: auto;
     margin: 10px 0;
@@ -147,7 +147,7 @@ body, html {
   .special-frame:nth-child(1),
   .special-frame:nth-child(2),
   .special-frame:nth-child(3) {
-    width: 80%;
+    width: 60%;
     margin-right: 0;
   }
 
