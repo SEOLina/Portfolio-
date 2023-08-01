@@ -129,9 +129,9 @@ body, html {
     padding: 20px;
   }
 
-  /* Adjust the width and margin of the special frames */
+  /* Adjust the width and margin of the special frames to 90% */
   .special-frame {
-    width: calc(100% - 40px); /* Adjust the width with indentation */
+    width: calc(90% - 40px); /* Adjust the width with indentation */
     margin-bottom: 30px;
   }
 
@@ -139,5 +139,4 @@ body, html {
   .special-frame:last-child {
     margin-bottom: 0;
   }
-  }
-  
+      }
