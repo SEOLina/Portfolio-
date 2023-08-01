@@ -122,7 +122,8 @@ body, html {
 
   .text {
     padding-top: 0px;
-    overflow-y: auto;
+    height: 120vh; /* Set height to approximately 120vh for mobile version */
+  }
   }
 
   .portfolio-title {
