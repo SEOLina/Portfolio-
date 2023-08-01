@@ -120,7 +120,7 @@ body, html {
 
   .text {
     padding-top: 0px;
-    /* Remove overflow-y: auto; to allow the text section to expand naturally */
+    /* Remove height property to allow the text section to expand naturally */
     flex-grow: 1; /* Allow the text section to take available space and fill the container */
   }
 
@@ -162,5 +162,6 @@ body, html {
     color: white;
     padding: 20px;
     text-align: center;
+    height: auto; /* Set height to auto for the third container on mobile devices */
   }
-    }
+}
