@@ -108,6 +108,7 @@ body, html {
 
   .container:nth-child(2) {
     flex-direction: column;
+    height: auto; /* Remove fixed height for mobile version */
   }
   
   .container:nth-child(2) .photo {
@@ -116,12 +117,15 @@ body, html {
 
   .container {
     flex-direction: column;
+    height: auto; /* Increase the canvas size for mobile devices */
+    min-height: 300vh; /* Set minimum canvas size to 300vh */
   }
 
   .text {
     padding-top: 0px;
     /* Remove height property to allow the text section to expand naturally */
     flex-grow: 1; /* Allow the text section to take available space and fill the container */
+    overflow-y: auto; /* Add scroll if content overflows */
   }
 
   .portfolio-title {
@@ -164,4 +168,6 @@ body, html {
     text-align: center;
     height: auto; /* Set height to auto for the third container on mobile devices */
   }
-  }
+}
+
+/* Existing styles... */
