@@ -108,15 +108,22 @@ body, html {
 
   .container:nth-child(2) {
     flex-direction: column;
+    justify-content: center;
   }
   
   .container:nth-child(2) .photo {
     display: none;
-    min-height: 120vh
+    
   }
+
+  .container:nth-child(2) .text {
+    min-height: 120vh; /* Set a minimum height for the text container on mobile */
+    overflow-y: auto;
 
   .container {
     flex-direction: column;
+    
+  }
   }
 
   .text {
