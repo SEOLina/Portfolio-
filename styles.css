@@ -10,6 +10,7 @@ body, html {
 .container:first-child {
   background-image: url(https://i.yapx.ru/WNfLL.jpg);
   background-size: cover;
+  position: relative; /* Add position relative to ensure content is visible */
 }
 
 /* Styles for the frame in the first container */
@@ -85,7 +86,7 @@ body, html {
 .special-frame:nth-child(2),
 .special-frame:nth-child(3) {
   border: 2px solid #ffdc33;
-  width: calc(33.33% - 40px); /* Adjusted width with indentation */
+  width: 90%; /* Changed width to 90% */
   height: calc(100% - 100px);
   margin-right: 30px;
 }
@@ -129,14 +130,15 @@ body, html {
     padding: 20px;
   }
 
-  /* Adjust the width and margin of the special frames to 90% */
+  /* Adjust the width of the special frames to 90% without indentation */
   .special-frame {
-    width: calc(90% - 40px); /* Adjust the width with indentation */
+    width: 90%;
     margin-bottom: 30px;
+    margin-right: 0;
   }
 
   /* Remove margin from the last special frame to prevent excessive spacing at the bottom */
   .special-frame:last-child {
     margin-bottom: 0;
   }
-      }
+}
