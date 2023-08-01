@@ -115,7 +115,10 @@ body, html {
   }
 }
 
-/* Updated styles for mobile version */
+.email-link {
+  color: #ffdc33;
+}
+
 @media only screen and (max-width: 480px) {
   .desktop-br {
     display: none;
