@@ -59,7 +59,6 @@ body, html {
   background-image: url(https://i.ibb.co/XkMBjy9/golden-monstera-leaves-background-design-resource-croped.jpg);
   background-size: cover;
   background-position: center;
-  display: none; /* Hide the photo by default */
 }
 
 .text {
@@ -123,7 +122,9 @@ body, html {
   .desktop-br {
     display: none;
   }
-
+.photo {
+  display: none; /* Hide the photo by default */
+}
   .container:nth-child(2) {
     flex-direction: column;
     height: auto; /* Allow the container to adjust its height based on content */
