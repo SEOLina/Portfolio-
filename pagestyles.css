@@ -32,15 +32,6 @@ img {
   height: auto;
 }
 
-.important-banner {
-  background-color: #FFDFB9;
-  color: black;
-  font-weight: bold;
-  padding: 10px 20px;
-  text-align: center;
-  margin: 20px auto;
-  border-radius: 4px;
-}
 
 
 @media (max-width: 576px) {
