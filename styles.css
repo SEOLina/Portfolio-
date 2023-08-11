@@ -19,23 +19,22 @@ body, html {
 
 .frame {
   position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 40%; /* Adjust the width to make it smaller */
-  height: 40%; /* Adjust the height to make it smaller */
-  padding: 10px; /* Adjust the padding as needed */
+  top: 40%;
+  left: 30%;
+  width: 60%; /* Adjusted width */
+  height: 60%; /* Adjusted height */
+  padding: 10px; /* Adjusted padding */
   background-color: rgba(0, 0, 0, 0.4);
   border: 2px solid white;
   z-index: 1;
 }
-
 
 .portfolio-title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 4rem;
+  font-size: 3rem; /* Increased font size */
   color: white;
   z-index: 2;
 }
@@ -82,7 +81,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Center align vertically */
   padding: 20px;
   color: white;
   cursor: pointer;
@@ -117,6 +116,7 @@ body, html {
 }
 
 @media only screen and (max-width: 480px) {
+  /* Media query for smaller screens */
   .desktop-br {
     display: none;
   }
@@ -161,9 +161,8 @@ body, html {
   }
 }
 
-  @media only screen and (min-width: 481px) {
-  /* Apply styles only for screens with a minimum width of 481px (desktop) */
-
+@media only screen and (min-width: 481px) {
+  /* Media query for larger screens */
   #container {
     display: flex;
     background-color: black;
@@ -176,13 +175,13 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px;
     color: white;
     cursor: pointer;
     margin: 0 10px;
     border: 2px solid #ffdc33;
     width: calc(33.33% - 40px);
-    height: 80vh; /* Set a fixed height of 80% of viewport height */
+    height: 100%;
   }
-  }
+}
