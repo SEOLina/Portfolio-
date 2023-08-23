@@ -19,8 +19,8 @@ body, html {
 
 .frame {
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: 40%;
+  left: 40%;
   width: 50%; /* Adjust the width to make it smaller */
   height: 50%; /* Adjust the height to make it smaller */
   padding: 10px; /* Adjust the padding as needed */
