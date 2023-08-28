@@ -22,34 +22,53 @@
   border-radius: 4px;
 }
 
-nav {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 5px;
-    }
-    a {
-      color: white;
-      text-decoration: none;
-    }
-    h1 {
-      margin-top: 40px;
-   }
+      
+    .content {
+  list-style: none;
+  padding-left: 20px; /* Отступ для цифры и текста */
+}
 
-   
+.content li {
+  position: relative;
+  padding-left: 30px; /* Отступ для самого текста */
+  margin-bottom: 10px;
+}
+
+. content li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px; /* Регулируйте вертикальное положение цифры */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #007bff; /* Цвет круга */
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+/* Указываем номер для каждого пункта */
+.content li:nth-child(1)::before {
+  content: '1';
+}
+
+.custom-list li:nth-child(2)::before {
+  content: '2';
+}
+
+. content li:nth-child(3)::before {
+  content: '3';
+}
+
   </style>
 </head>
 <body>
   <a href="index.html" class="button">Home</a>
   <div class="column">
    <nav>
-    <ul>
+    <ul class="content">
       <li><a href="#section1">Puppy-proofing your home</a></li>
       <li><a href="#section2">Gathering the essentials</a></li>
       <li><a href="#section3">First Days at Home</a></li>
