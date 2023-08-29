@@ -39,6 +39,7 @@ img {
     max-width: 50%;
     height: 50%;
   }
-  column {
-  width: 100%;
+  .column {
+    width: 70% !important;
+  }
 }
