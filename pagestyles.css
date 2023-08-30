@@ -32,7 +32,7 @@
     height: auto; /* Default height to maintain aspect ratio */
   }
 
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 576px)
     img {
       max-width: 50%; /* Adjusted maximum width for smaller screens */
       height: 50%; /* Adjusted height for smaller screens */
