@@ -4,7 +4,6 @@ body {
 }
 
 .column {
-  width: 50%;
   margin: 0 auto;
   background-color: white;
   padding: 20px;
@@ -36,10 +35,16 @@ img {
 
 @media (max-width: 480px) {
   img {
-    max-width: 50%;
-    height: 50%;
+    max-width: 100%;
+    height: auto;
   }
   .column {
-    width: 70% !important;
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .column {
+    width: 50%;
   }
 }
