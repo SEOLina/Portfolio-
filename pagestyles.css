@@ -34,9 +34,9 @@ img {
 
 
 @media (max-width: 480px) {
-  img {
-    max-width: 100%;
-    height: auto;
+    img {
+      max-width: 50%; /* Adjusted maximum width for smaller screens */
+      height: 50%;
   }
   .column {
     width: 80%;
