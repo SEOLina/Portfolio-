@@ -39,12 +39,6 @@ img {
       height: 50%;
   }
   .column {
-    width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  .column {
     width: 50%;
   }
 }
