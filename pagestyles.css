@@ -34,7 +34,7 @@ img {
 
 
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   img {
     max-width: 50%;
     height: 50%;
