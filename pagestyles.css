@@ -34,7 +34,15 @@
 
   @media (max-width: 576px) {
     img {
-      max-width: 50%; /* Adjusted maximum width for smaller screens */
-      height: 50%; /* Adjusted height for smaller screens */
+      max-width: 70%; /* Adjusted maximum width for smaller screens */
+      height: 70%; /* Adjusted height for smaller screens */
     }
+     .column {
+      width: 70%;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border: 1px solid white;
+      box-sizing: border-box;
+     }
   }
