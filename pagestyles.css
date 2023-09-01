@@ -26,7 +26,7 @@ img {
   height: auto;
 }
 
-@media only screen and (min-width: 577px) {
+@media only screen and (min-width: 482px) {
   .column {
     width: 50%;
     margin: 0 auto;
@@ -37,7 +37,7 @@ img {
   }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 481px) {
   .column {
     width: 80%; /* Указываем ширину в медиа-запросе */
  margin: 0 auto;
