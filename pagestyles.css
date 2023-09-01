@@ -1,26 +1,34 @@
-
 /* Общие стили для всех страниц */
 body {
   margin: 0;
   padding: 0;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 /* Стиль для десктопной версии */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   body {
+    background-attachment: fixed; /* Фиксированный фон */
+    background-size: 100% auto; /* Ширина изображения во всю ширину страницы */
+  }
+
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
   }
-  .content {
-    background: rgba(255, 255, 255); /* Прозрачный белый фон */
+
+  .white-column {
+    background-color: white;
+    opacity: 0.8;
+    width: 50%; /* 50% ширины страницы */
     padding: 20px;
-    width: 50%;
-    text-align: center;
   }
+
   .highlight {
     font-size: 18px;
     font-weight: bold;
@@ -28,16 +36,12 @@ body {
 }
 
 /* Стиль для мобильной версии */
-@media (max-width: 767px) {
-
-  .content {
-    background: rgba(255, 255, 255, 0.7); /* Прозрачный белый фон */
-    padding: 20px;
-    width: 80%;
-    text-align: center;
+@media screen and (max-width: 767px) {
+  body {
+    background-size: 50% auto; /* Уменьшение изображения в два раза */
   }
-  .highlight {
-    font-size: 9px; /* Уменьшение размера шрифта в два раза */
-    font-weight: bold;
+
+  .container {
+    width: 80%; /* 80% ширины страницы */
   }
 }
