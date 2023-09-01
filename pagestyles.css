@@ -1,57 +1,43 @@
+
+/* Общие стили для всех страниц */
 body {
-  background-image: url("https://i.postimg.cc/kGRybGNR/colorful-veronica-flower-and-heart-shape-leaves-on-white-background.jpg");
+  margin: 0;
+  padding: 0;
   background-size: cover;
   background-position: center;
-  color: black;
-  font-size: 18px;
+  background-attachment: fixed;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #70ad72;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-.highlight {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media only screen and (min-width: 482px) {
-  .column {
-    width: 50%;
-    margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  border: 1px solid white;
-  box-sizing: border-box;
-  }
-}
-
-@media only screen and (max-width: 481px) {
-  .column {
-    width: 80%; /* Указываем ширину в медиа-запросе */
- margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  border: 1px solid white;
-  box-sizing: border-box;
-  }
-  }
-  img {
-    max-width: 80%;
-    height: auto;
-  }
+/* Стиль для десктопной версии */
+@media (min-width: 768px) {
   body {
-    font-size: 24px; /* Измените размер шрифта по желанию */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    background: rgba(255, 255, 255); /* Прозрачный белый фон */
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+  }
+  .highlight {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+/* Стиль для мобильной версии */
+@media (max-width: 767px) {
+
+  .content {
+    background: rgba(255, 255, 255, 0.7); /* Прозрачный белый фон */
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+  }
+  .highlight {
+    font-size: 9px; /* Уменьшение размера шрифта в два раза */
+    font-weight: bold;
   }
 }
