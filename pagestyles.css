@@ -6,14 +6,6 @@ body {
   font-size: 18px;
 }
 
-.column {
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  border: 1px solid white;
-  box-sizing: border-box;
-}
-
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -37,12 +29,23 @@ img {
 @media only screen and (min-width: 577px) {
   .column {
     width: 50%;
+    margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid white;
+  box-sizing: border-box;
   }
 }
 
 @media only screen and (max-width: 576px) {
   .column {
-    width: 80%;
+    width: 80%; /* Указываем ширину в медиа-запросе */
+ margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  }
   }
   img {
     max-width: 80%;
