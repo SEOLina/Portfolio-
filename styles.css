@@ -66,7 +66,6 @@ body, html {
   background-color: black;
   padding: 20px;
   color: white;
-  padding: 20px;
 }
 
 #container {
@@ -84,6 +83,7 @@ body, html {
   align-items: center;
   justify-content: center; /* Center align vertically */
   padding: 20px;
+   font-size: 24px;
   color: white;
   cursor: pointer;
   margin: 0 10px;
