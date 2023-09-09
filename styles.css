@@ -79,22 +79,23 @@ body, html {
   flex: 1;
   display: flex;
   flex-direction: column;
- line-height: 1.5;
+  line-height: 1.5;
   align-items: center;
-  justify-content: center; /* Center align vertically */
+  justify-content: center;
   padding: 20px;
-   font-size: 48px;
   color: white;
   cursor: pointer;
   margin: 0 10px;
   border: 2px solid #ffdc33;
   width: calc(33.33% - 40px);
   height: 100%;
+  font-size: 24px;
 }
 
 .special-frame:hover {
   background-color: #333;
 }
+
 
 .container:nth-child(2) .photo {
   flex: 1;
