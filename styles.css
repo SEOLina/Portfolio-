@@ -1,78 +1,189 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            overflow-x: hidden;
-        }
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-        .container {
-            position: relative;
-            width: 100%;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-        }
+.container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-        .container:first-child {
-            background-image: url('https://i.yapx.ru/WNfLL.jpg');
-            background-size: cover;
-        }
+.container:first-child {
+  background-image: url(https://i.yapx.ru/WNfLL.jpg);
+  background-size: cover;
+  height: 100vh;
+}
 
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            background: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
+.frame {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%; /* Adjust the width to make it smaller */
+  height: 50%; /* Adjust the height to make it smaller */
+  padding: 10px; /* Adjust the padding as needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid white;
+  z-index: 1;
+}
 
-        .button {
-            background: none;
-            border: 2px solid #F70BF3;
-            color: #F70BF3;
-            padding: 5px 10px;
-            margin: 0 10px;
-            border-radius: 5px;
-        }
+.portfolio-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem; /* Increased font size */
+  color: white;
+  z-index: 2;
+}
 
-        .left-section {
-            width: 50%;
-            background: url('https://im.wampi.ru/2023/10/13/BEZ-NAZVANIY27_20231013124339.png') no-repeat;
-            background-size: contain;
-            padding-bottom: 50%;
-            position: relative;
-        }
+.frame-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
 
-        .text-in-circle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #F70BF3;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="sticky-header">
-            <button class="button">Блог</button>
-            <button class="button">Уроки</button>
-            <button class="button">Контакты</button>
-        </div>
-        <div class="left-section">
-            <div class="text-in-circle">
-                <h2>О нас</h2>
-                <p>Сначала ИИ, потом нейросети, названия разные, а суть одна. Но что это такое, мы понимаем лишь поверхностно. А хотите? Легко, нужно лишь понять что такое линейная регрессия, кластеризация… не понятно? О, сейчас я обьясню…</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+.container:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.photo {
+  flex: 1;
+  background-image: url(https://i.ibb.co/XkMBjy9/golden-monstera-leaves-background-design-resource-croped.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.text {
+  flex: 1;
+  background-color: black;
+  padding: 20px;
+  color: white;
+}
+
+#container {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.special-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  border: 2px solid #ffdc33;
+  width: calc(33.33% - 40px);
+  height: 100%;
+  font-size: 24px; 
+}
+
+.special-frame:hover {
+  background-color: #333;
+}
+
+
+.container:nth-child(2) .photo {
+  flex: 1;
+  background-image: url(https://i.ibb.co/XkMBjy9/golden-monstera-leaves-background-design-resource-croped.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.contact-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.email-link {
+  color: #ffdc33;
+}
+
+@media only screen and (max-width: 480px) {
+  /* Media query for smaller screens */
+  .desktop-br {
+    display: none;
+  }
+  .photo {
+    display: none;
+  }
+  .container:nth-child(2) {
+    flex-direction: column;
+    height: auto;
+  }
+  .container:nth-child(2) .photo {
+    display: none;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .text {
+    padding-top: 0px;
+  }
+  .portfolio-title {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+  }
+  #container {
+    flex-direction: column;
+    height: auto;
+  }
+  .special-frame {
+    width: 60%;
+    margin-right: 0;
+    margin-left: 60px;
+  }
+  .special-frame:nth-child(1),
+  .special-frame:nth-child(2),
+  .special-frame:nth-child(3) {
+    width: 60%;
+    margin-right: 0;
+  }
+  .text {
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  /* Media query for larger screens */
+  #container {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .special-frame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 2px solid #ffdc33;
+    width: calc(33.33% - 40px);
+    height: 100%;
+  }
+}
