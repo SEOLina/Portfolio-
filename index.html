@@ -4,10 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .language-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: black;
+      border: 2px solid #ffdc33;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <button id="language-toggle">Change Language</button>
   <div class="container">
+    <button class="language-button" onclick="toggleLanguage()">Change Language</button>
     <div class="frame">
       <div class="frame-content">
         <div class="content">
@@ -25,30 +37,39 @@
       <br class="desktop-br">
       <br class="desktop-br">
       <br class="desktop-br">
-      <h1>About me</h1>
-      <p style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
-      <p style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
-      <p style="font-size: 20px;">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
+      <h1 class="ru">Обо мне</h1>
+      <h1 class="eng" style="display:none">About me</h1>
+      <p class="ru" style="font-size: 20px;">С самого раннего возраста мой естественный талант к языкам стал очевиден. Их изучение приходило ко мне легко и естественно, и когда я стремился заработать свои первые деньги в юности, было ясно, какой путь выбрать. На протяжении четырех лет я посвятил себя фрилансу, начиная как переводчик на таких языках, как английский, немецкий и японский. Со временем я расширил свои навыки, включив в них копирайтинг SEO.</p>
+      <p class="eng" style="font-size: 20px; display:none">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
+      <p class="ru" style="font-size: 20px;">Однако в конечном итоге я решила отойти от фриланс-обменов, понимая, что это арена в основном для начинающих, где успех часто зависел от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда нужно было всего лишь немного денег на развлечения студента; я превратилась в того, кто желает личного и профессионального роста.</p>
+      <p class="eng" style="font-size: 20px; display:none">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
+      <p class="ru" style="font-size: 20px;">С течением времени я осознала, что хочу получить не только финансовое вознаграждение. Я хотела внести свой вклад в общество и способствовать благополучию других. Один из значительных шагов, который я предприняла, был присоединиться к организации, посвященной помощи людям с серьезными психическими и физическими проблемами. Хотя это начиналось как небольшая группа страстных людей, неуверенных в своем направлении, я внесла свой вклад, переведя важные ресурсы, включая целую книгу, которая и сегодня остается ценным активом.</p>
+      <p class="eng" style="font-size: 20px; display:none">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
+  
     </div>
   </div>
 
   <div id="container">
-    <div class="special-frame" onclick="window.location.href = 'Plants.html'">
+    <div class="special-frame" onclick="togglePage('Plants')">
       <img src="https://i.postimg.cc/c455JF26/1656-oooo-plus-1.png" alt="Image 1">
       <div>
-        <p class="frame-description">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
+        <p class="frame-description ru">Вы новичок в цветоводстве и испытываете трудности с выращиванием даже самых простых цветов? Узнайте основы того, как поливать, где располагать свои растения для достаточного солнца и что делать, если листья становятся желтыми, с помощью этого быстрого руководства для начинающих цветоводов.</p>
+        <p class="frame-description eng" style="display:none">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
       </div>
     </div>
-    <div class="special-frame" onclick="window.location.href = 'Dogs.html'">
+    <div class="special-frame" onclick="togglePage('Dogs')">
       <img src="https://i.postimg.cc/8PK37gGX/pexels-valeria-boltneva-7960255-1-round.png" alt="Image 2">
       <div>
-        <p class="frame-description"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
+        <p class="frame-description ru">Прием собаки или щенка - это захватывающий опыт, и мы все хотим быть готовыми. Узнайте, что нужно учитывать перед тем, как принести собаку домой, из пошагового руководства, начиная с покупки принадлежностей и подготовки к обучению, уходу и адаптации в первые дни.</p>
+        <p class="frame-description eng" style="display:none">Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
       </div>
     </div>
-    <div class="special-frame" onclick="window.location.href = 'Handmade.html'">
+    <div class="special-frame" onclick="togglePage('Handmade')">
       <img src="https://i.postimg.cc/X7pLDGMx/pexels-antoni-shkraba-5486829-round.png" alt="Image 3">
       <div>
-        <p class="frame-description">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today
+        <p class="frame-description ru">Откройте для себя радость создания подарков своими руками с личным прикосновением. Исследуйте мир рукоделия, включая вязание и вязание крючком, и получите некоторые идеи, как создать красивые шарфы, уютные чехлы для кружек и игрушки амигуруми. Начните свое творческое путешествие сегодня
+        </p>
+        <p class="frame-description eng" style="display:none">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today
         </p>
       </div>
     </div>
@@ -59,26 +80,65 @@
     <p>If you want to contact me, please email me at:</p>
    <a href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
   </div>
-<script>
-  document.getElementById("languageButton").addEventListener("click", function() {
-  // Изменяем тексты и ссылки
-  var aboutMeText = document.querySelector(".text p");
-  aboutMeText.innerHTML = "Новый переведенный текст о себе...";
-  
-  var contactLink = document.querySelector(".contact-container a");
-  contactLink.innerHTML = "название на русском языке...";
-  
-  // Изменяем ссылки на изображения
-  var plantImage = document.querySelector(".special-frame:nth-of-type(1) img");
-  plantImage.src = "новый путь к изображению...";
-  
-  var dogImage = document.querySelector(".special-frame:nth-of-type(2) img");
-  dogImage.src = "новый путь к изображению...";
-  
-  var handmadeImage = document.querySelector(".special-frame:nth-of-type(3) img");
-  handmadeImage.src = "новый путь к изображению...";
-});
 
-</script>
+  <script>
+    function toggleLanguage() {
+      var elementsRu = document.querySelectorAll('.ru');
+      var elementsEng = document.querySelectorAll('.eng');
+      
+      elementsRu.forEach(function(element) {
+        if (element.style.display === 'none') {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      });
+      
+      elementsEng.forEach(function(element) {
+        if (element.style.display === 'none') {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      });
+    }
+
+    function togglePage(page) {
+      var ruPages = {
+        'Plants': 'Plants_ru.html',
+        'Dogs': 'Dogs_ru.html',
+        'Handmade': 'Handmade_ru.html'
+      };
+
+      var engPages = {
+        'Plants': 'Plants_eng.html',
+        'Dogs': 'Dogs_eng.html',
+        'Handmade': 'Handmade_eng.html'
+      };
+
+      var elementsRu = document.querySelectorAll('.ru');
+      var elementsEng = document.querySelectorAll('.eng');
+      var images = document.querySelectorAll('.special-frame img');
+
+      elementsRu.forEach(function(element) {
+        element.style.display = 'none';
+      });
+      
+      elementsEng.forEach(function(element) {
+        element.style.display = 'none';
+      });
+
+      images.forEach(function(image) {
+        image.src = 'https://placeholder.com/150';
+      });
+
+      if (document.querySelector('.ru').style.display !== 'none') {
+        window.location.href = ruPages[page];
+      } else {
+        window.location.href = engPages[page];
+      }
+    }
+  </script>
+
 </body>
 </html>
