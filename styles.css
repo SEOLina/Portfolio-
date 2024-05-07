@@ -5,6 +5,20 @@ body, html {
   overflow-x: hidden;
 }
 
+#language-toggle {
+  background-color: black;
+  border: 2px solid #ffdc33;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#language-toggle:hover {
+  background-color: #ffdc33;
+  color: black;
+}
+
 .container {
   position: relative;
   width: 100%;
