@@ -60,33 +60,25 @@
    <a href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
   </div>
 <script>
-  const languageToggle = document.getElementById('language-toggle');
-const paragraphs = document.querySelectorAll('.content p');
-
-let russian = false;
-
-languageToggle.addEventListener('click', () => {
-  russian = !russian;
-  paragraphs.forEach(paragraph => {
-    if (russian) {
-      paragraph.textContent = russianText[paragraph.dataset.key];
-    } else {
-      paragraph.textContent = originalText[paragraph.dataset.key];
-    }
-  });
+  document.getElementById("languageButton").addEventListener("click", function() {
+  // Изменяем тексты и ссылки
+  var aboutMeText = document.querySelector(".text p");
+  aboutMeText.innerHTML = "Новый переведенный текст о себе...";
+  
+  var contactLink = document.querySelector(".contact-container a");
+  contactLink.innerHTML = "название на русском языке...";
+  
+  // Изменяем ссылки на изображения
+  var plantImage = document.querySelector(".special-frame:nth-of-type(1) img");
+  plantImage.src = "новый путь к изображению...";
+  
+  var dogImage = document.querySelector(".special-frame:nth-of-type(2) img");
+  dogImage.src = "новый путь к изображению...";
+  
+  var handmadeImage = document.querySelector(".special-frame:nth-of-type(3) img");
+  handmadeImage.src = "новый путь к изображению...";
 });
 
-const originalText = {
-  0: "From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.",
-  1: "However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.",
-  2: "As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today."
-};
-
-const russianText = {
-  0: "С самого раннего возраста стало очевидным мое естественный талант к языкам. Их изучение было легким и естественным, и когда я решил заработать свои первые деньги в молодости, было ясно, какой путь выбрать. Четыре года я посвятил себя фрилансу, начав с работы переводчиком на таких языках, как английский, немецкий и японский. Со временем я расширил свои навыки, включив в них копирайтинг с использованием SEO.",
-  1: "Однако в конце концов я решил отойти от фриланса, поняв, что это прежде всего арена для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я понял, что вырос из фазы, когда мне нужно было всего лишь немного денег на развлечения для студентов; Я превратился в человека, который желает личного и профессионального роста.",
-  2: "Со временем я понял, что хочу получить не только финансовые вознаграждения. Я хотел вернуть обществу и внести свой вклад в благополучие других людей. Одним из значимых шагов, который я сделал, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами. Хотя это начиналось как маленькая группа страстных людей, неуверенных в своем направлении, я внес свой вклад, переведя важные ресурсы, включая целую книгу, которая до сих пор остается ценным активом."
-};
 </script>
 </body>
 </html>
