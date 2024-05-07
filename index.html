@@ -4,9 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    #language-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: black;
+      color: white;
+      border: 1px solid #ffdc33;
+      border-radius: 50px;
+      padding: 10px 20px;
+      transition: border-radius 0.3s ease;
+    }
+
+    #language-button:hover {
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-  <button id="language-button" onclick="switchLanguage()" style="position: fixed; top: 20px; right: 20px; background-color: black; color: white; border: 1px solid #ffdc33; border-radius: 50px; padding: 10px 20px; transition: border-radius 0.3s ease;">Русский</button>
+  <button id="language-button" onclick="switchLanguage()">Русский</button>
   <div class="container">
     <div class="frame">
       <div class="frame-content">
@@ -19,7 +36,7 @@
 
   <div class="container">
     <div class="photo"></div>
-    <div class="text" id="about-me">
+    <div class="text">
       <br class="desktop-br">
       <br class="desktop-br">
       <br class="desktop-br">
@@ -60,3 +77,22 @@
    <a href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
   </div>
 <script>
+  let isRussian = false;
+
+  function switchLanguage() {
+    const aboutMe = document.getElementById('about-me');
+    isRussian = !isRussian;
+
+    if (isRussian) {
+      aboutMe.innerHTML = `<p id="about-me" style="font-size: 20px;">С самого раннего возраста у меня проявился природный талант к языкам. Их изучение давалось мне легко и непринужденно, и когда в юности я захотел заработать свои первые деньги, стало ясно, какой путь выбрать. В течение четырех лет я посвятил себя фрилансу, сначала в качестве переводчика с английского, немецкого и японского языков. Со временем я расширил свои навыки и стал заниматься SEO-копирайтингом.</p>
+      <p style="font-size: 20px;">Но в конце концов я решил отойти от бирж фриланса, осознав, что это арена в основном для новичков, где успех часто зависит от делегирования работы более низкооплачиваемым специалистам. Я осознал, что перерос тот этап, когда мне нужны были лишь небольшие деньги для студенческих развлечений; я превратился в человека, желающего личностного и профессионального роста.</p>
+      <p style="font-size: 20px;">С течением времени я понял, что мне нужно не только финансовое вознаграждение. Я хотел приносить пользу обществу и способствовать благополучию других людей. Одним из важных шагов, который я сделал, стало вступление в организацию, занимающуюся помощью людям с серьезными проблемами психического и физического здоровья. Хотя она начиналась как небольшая группа увлеченных людей, не знающих своего направления, благодаря моей активной работе ныне это крупный некоммерческий проект, часто мелькающий в инфополе.</p>`;
+    } else {
+      aboutMe.innerHTML = `<p id="about-me" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
+      <p style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
+      <p style="font-size: 20px;">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>`;
+    }
+  }
+</script>
+</body>
+</html>
