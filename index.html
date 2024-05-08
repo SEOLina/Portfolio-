@@ -50,21 +50,21 @@
   </div>
 
   <div id="container">
-    <div class="special-frame" onclick="togglePage('Plants')">
+    <div class="special-frame" onclick="togglePage('First')">
       <img src="https://i.postimg.cc/c455JF26/1656-oooo-plus-1.png" alt="Image 1">
       <div>
         <p class="frame-description ru">Вы новичок в цветоводстве и испытываете трудности с выращиванием даже самых простых цветов? Узнайте основы того, как поливать, где располагать свои растения для достаточного солнца и что делать, если листья становятся желтыми, с помощью этого быстрого руководства для начинающих цветоводов.</p>
         <p class="frame-description eng" style="display:none">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
       </div>
     </div>
-    <div class="special-frame" onclick="togglePage('Dogs')">
+    <div class="special-frame" onclick="togglePage('Second')">
       <img src="https://i.postimg.cc/8PK37gGX/pexels-valeria-boltneva-7960255-1-round.png" alt="Image 2">
       <div>
         <p class="frame-description ru">Прием собаки или щенка - это захватывающий опыт, и мы все хотим быть готовыми. Узнайте, что нужно учитывать перед тем, как принести собаку домой, из пошагового руководства, начиная с покупки принадлежностей и подготовки к обучению, уходу и адаптации в первые дни.</p>
         <p class="frame-description eng" style="display:none">Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
       </div>
     </div>
-    <div class="special-frame" onclick="togglePage('Handmade')">
+    <div class="special-frame" onclick="togglePage('Third')">
       <img src="https://i.postimg.cc/X7pLDGMx/pexels-antoni-shkraba-5486829-round.png" alt="Image 3">
       <div>
         <p class="frame-description ru">Откройте для себя радость создания подарков своими руками с личным прикосновением. Исследуйте мир рукоделия, включая вязание и вязание крючком, и получите некоторые идеи, как создать красивые шарфы, уютные чехлы для кружек и игрушки амигуруми. Начните свое творческое путешествие сегодня
@@ -105,15 +105,15 @@
 
     function togglePage(page) {
       var ruPages = {
-        'Plants': 'Plants_ru.html',
-        'Dogs': 'Dogs_ru.html',
-        'Handmade': 'Handmade_ru.html'
+        'First': 'Plants_ru.html',
+        'Second': 'Dogs_ru.html',
+        'Third': 'Handmade_ru.html'
       };
 
       var engPages = {
-        'Plants': 'Plants_eng.html',
-        'Dogs': 'Dogs_eng.html',
-        'Handmade': 'Handmade_eng.html'
+        'First': 'Plants_eng.html',
+        'Second': 'Dogs_eng.html',
+        'Third': 'Handmade_eng.html'
       };
 
       var elementsRu = document.querySelectorAll('.ru');
