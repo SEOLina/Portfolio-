@@ -123,7 +123,6 @@
       var elementsEng = document.querySelectorAll('.eng');
       var imagesRu = document.querySelectorAll('.ru');
       var imagesEng = document.querySelectorAll('.eng');
-      var links = document.querySelectorAll('.special-frame');
 
       elementsRu.forEach(function(element) {
         element.style.display = 'none';
@@ -134,11 +133,11 @@
       });
 
       imagesRu.forEach(function(image) {
-        image.src = 'https://placeholder.com/150';
+        image.style.display = 'none';
       });
 
       imagesEng.forEach(function(image) {
-        image.src = 'https://placeholder.com/150';
+        image.style.display = 'none';
       });
 
       if (document.querySelector('.ru').style.display !== 'none') {
@@ -148,6 +147,7 @@
       }
     }
   </script>
+
 
 </body>
 </html>
