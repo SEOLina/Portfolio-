@@ -79,6 +79,18 @@ body, html {
   align-items: stretch;
 }
 
+#language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: 2px solid #ffdc33; /* золотая рамка */
+  background-color: black; /* черный фон */
+  color: white; /* белый текст */
+  padding: 10px 20px; /* отступы */
+  cursor: pointer;
+}
+
 .special-frame {
   flex: 1;
   display: flex;
