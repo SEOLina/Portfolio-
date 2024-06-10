@@ -10,11 +10,13 @@
       top: 20px;
       right: 20px;
       z-index: 1000;
-      border: 2px solid #ffdc33; /* золотая рамка */
-      background-color: black; /* черный фон */
-      color: white; /* белый текст */
-      padding: 10px 20px; /* отступы */
-      cursor: pointer;
+    }
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
   </style>
 </head>
@@ -23,7 +25,7 @@
     <div class="frame">
       <div class="frame-content">
         <div class="content">
-          <h1 class="portfolio-title" id="portfolio-title">Portfolio</h1>
+          <h1 class="portfolio-title">Portfolio</h1>
         </div>
       </div>
     </div>
@@ -45,26 +47,28 @@
     <div class="special-frame" onclick="window.location.href = 'Plants.html'">
       <img class="ru" src="https://i.postimg.cc/c455JF26/1656-oooo-plus-1.png" alt="Image 1">
       <div>
-        <p class="frame-description" id="description-1">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
+        <p class="frame-description">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
       </div>
     </div>
     <div class="special-frame" onclick="window.location.href = 'Dogs.html'">
       <img class="ru" src="https://i.postimg.cc/8PK37gGX/pexels-valeria-boltneva-7960255-1-round.png" alt="Image 2">
       <div>
-        <p class="frame-description" id="description-2"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
+        <p class="frame-description"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
       </div>
     </div>
     <div class="special-frame" onclick="window.location.href = 'Handmade.html'">
       <img class="ru" src="https://i.postimg.cc/X7pLDGMx/pexels-antoni-shkraba-5486829-round.png" alt="Image 3">
       <div>
-        <p class="frame-description" id="description-3">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today</p>
+        <p class="frame-description">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today
+        </p>
       </div>
     </div>
   </div>
 
   <div class="contact-container">
-    <h1 id="contact-heading">Contact Me</h1>
-    <p id="contact-text">If you want to contact me, please email me at: <a href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;" id="contact-email">alina.gladkova.05@mail.ru</a></p>
+    <h1>Contact Me</h1>
+    <p>If you want to contact me, please email me at:</p>
+   <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
   </div>
 
   <button id="language-toggle" onclick="toggleLanguage()">Toggle Language</button>
@@ -73,37 +77,33 @@
     function toggleLanguage() {
       var currentLanguage = document.documentElement.lang || 'en';
       if (currentLanguage === 'en') {
-        // Change text to Russian
+        // Change text and links to Russian
         document.documentElement.lang = 'ru';
-        document.getElementById('portfolio-title').innerText = 'Портфолио';
         document.getElementById('about-heading').innerText = 'Обо мне';
         var aboutTexts = document.getElementsByClassName('about-text');
         for (var i = 0; i < aboutTexts.length; i++) {
           aboutTexts[i].innerText = 'С самого раннего возраста мой естественный талант к языкам стал очевидным. Их изучение происходило легко и естественно, и когда я решила заработать свои первые деньги в молодости, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начиная с работы переводчиком на языках, таких как английский, немецкий и японский. Со временем я расширила свои навыки, включив в них копирайтинг для SEO.';
         }
-        document.getElementById('contact-heading').innerText = 'Связаться со мной';
-        document.getElementById('contact-text').innerText = 'Если вы хотите со мной связаться, пожалуйста, напишите на следующий адрес: ';
+        document.getElementById('contact-text').innerText = 'Если хотите со мной связаться, пожалуйста напишите по адресу:';
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
         document.querySelectorAll('.frame-description').forEach(function(el) {
           el.innerText = 'Вы начинающий цветовод и испытываете трудности даже с самыми простыми цветами? Узнайте основы того, как поливать, где располагать растения для достаточного солнца и что делать, если листья становятся желтыми, с помощью этого быстрого руководства для начинающих цветоводов.';
         });
-        document.getElementById('language-toggle').innerText = 'Изменить язык';
+        document.getElementById('language-toggle').innerText = 'Change Language';
       } else {
-        // Change text to English
+        // Change text and links to English
         document.documentElement.lang = 'en';
-        document.getElementById('portfolio-title').innerText = 'Portfolio';
         document.getElementById('about-heading').innerText = 'About me';
         var aboutTexts = document.getElementsByClassName('about-text');
         for (var i = 0; i < aboutTexts.length; i++) {
           aboutTexts[i].innerText = 'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.';
         }
-        document.getElementById('contact-heading').innerText = 'Contact Me';
-        document.getElementById('contact-text').innerText = 'If you want to contact me, please email me at: ';
+        document.getElementById('contact-text').innerText = 'If you want to contact me, please email me at:';
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
         document.querySelectorAll('.frame-description').forEach(function(el) {
           el.innerText = 'Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.';
         });
-        document.getElementById('language-toggle').innerText = 'Change Language';
+        document.getElementById('language-toggle').innerText = 'Изменить язык';
       }
     }
   </script>
