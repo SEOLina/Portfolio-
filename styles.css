@@ -52,6 +52,7 @@ body, html {
   display: flex;
   flex-direction: row;
   position: relative;
+  background-color: black; /* Добавлено */
 }
 
 .photo {
