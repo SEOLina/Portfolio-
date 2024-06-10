@@ -16,15 +16,11 @@
       padding: 10px 20px; /* отступы */
       cursor: pointer;
     }
-    .contact-container {
-      background-color: black;
-      color: white;
+    #contact-container {
+      background-color: black; /* черный фон */
+      color: white; /* белый текст */
       padding: 20px;
       text-align: center;
-      height: auto;
-    }
-    .email-link {
-      color: #ffdc33;
     }
   </style>
 </head>
@@ -73,9 +69,10 @@
     </div>
   </div>
 
-  <div class="contact-container">
+  <div class="contact-container" id="contact-container">
     <h1>Contact Me</h1>
-    <p>If you want to contact me, please email me at: <a class="email-link" href="mailto:Alina.gladkova.05@mail.ru">alina.gladkova.05@mail.ru</a></p>
+    <p id="contact-text">If you want to contact me, please email me at:</p>
+    <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
   </div>
 
   <button id="language-toggle" onclick="toggleLanguage()">Toggle Language</button>
@@ -92,12 +89,8 @@
           aboutTexts[i].innerText = 'С самого раннего возраста мой естественный талант к языкам стал очевидным. Их изучение происходило легко и естественно, и когда я решила заработать свои первые деньги в молодости, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начиная с работы переводчиком на языках, таких как английский, немецкий и японский. Со временем я расширила свои навыки, включив в них копирайтинг для SEO.';
         }
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description').forEach(function(el) {
-          el.innerText = 'Вы начинающий цветовод и испытываете трудности даже с самыми простыми цветами? Узнайте основы того, как поливать, где располагать растения для достаточного солнца и что делать, если листья становятся желтыми, с помощью этого быстрого руководства для начинающих цветоводов.';
-        });
+        document.getElementById('contact-text').innerText = 'Если вы хотите со мной связаться, напишите, пожалуйста, на следующий адрес:';
         document.getElementById('language-toggle').innerText = 'Change Language';
-        document.querySelector('.contact-container h1').innerText = 'Свяжитесь со мной';
-        document.querySelector('.contact-container p').innerHTML = 'Если вы хотите связаться со мной, напишите, пожалуйста, на следующий адрес: <a class="email-link" href="mailto:Alina.gladkova.05@mail.ru">alina.gladkova.05@mail.ru</a>';
       } else {
         // Change text and links to English
         document.documentElement.lang = 'en';
@@ -107,12 +100,8 @@
           aboutTexts[i].innerText = 'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.';
         }
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description').forEach(function(el) {
-          el.innerText = 'Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.';
-        });
+        document.getElementById('contact-text').innerText = 'If you want to contact me, please email me at:';
         document.getElementById('language-toggle').innerText = 'Изменить язык';
-        document.querySelector('.contact-container h1').innerText = 'Contact Me';
-        document.querySelector('.contact-container p').innerHTML = 'If you want to contact me, please email me at: <a class="email-link" href="mailto:Alina.gladkova.05@mail.ru">alina.gladkova.05@mail.ru</a>';
       }
     }
   </script>
