@@ -23,7 +23,7 @@
     <div class="frame">
       <div class="frame-content">
         <div class="content">
-          <h1 class="portfolio-title">Portfolio</h1>
+          <h1 class="portfolio-title" id="portfolio-title">Portfolio</h1>
         </div>
       </div>
     </div>
@@ -45,19 +45,19 @@
     <div class="special-frame" onclick="window.location.href = 'Plants.html'">
       <img class="ru" src="https://i.postimg.cc/c455JF26/1656-oooo-plus-1.png" alt="Image 1">
       <div>
-        <p class="frame-description">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
+        <p class="frame-description" id="description-1">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
       </div>
     </div>
     <div class="special-frame" onclick="window.location.href = 'Dogs.html'">
       <img class="ru" src="https://i.postimg.cc/8PK37gGX/pexels-valeria-boltneva-7960255-1-round.png" alt="Image 2">
       <div>
-        <p class="frame-description"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
+        <p class="frame-description" id="description-2"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
       </div>
     </div>
     <div class="special-frame" onclick="window.location.href = 'Handmade.html'">
       <img class="ru" src="https://i.postimg.cc/X7pLDGMx/pexels-antoni-shkraba-5486829-round.png" alt="Image 3">
       <div>
-        <p class="frame-description">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today</p>
+        <p class="frame-description" id="description-3">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today</p>
       </div>
     </div>
   </div>
@@ -75,6 +75,7 @@
       if (currentLanguage === 'en') {
         // Change text to Russian
         document.documentElement.lang = 'ru';
+        document.getElementById('portfolio-title').innerText = 'Портфолио';
         document.getElementById('about-heading').innerText = 'Обо мне';
         var aboutTexts = document.getElementsByClassName('about-text');
         for (var i = 0; i < aboutTexts.length; i++) {
@@ -90,6 +91,7 @@
       } else {
         // Change text to English
         document.documentElement.lang = 'en';
+        document.getElementById('portfolio-title').innerText = 'Portfolio';
         document.getElementById('about-heading').innerText = 'About me';
         var aboutTexts = document.getElementsByClassName('about-text');
         for (var i = 0; i < aboutTexts.length; i++) {
