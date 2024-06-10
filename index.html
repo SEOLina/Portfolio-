@@ -4,14 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    #language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999; /* Устанавливаем высокий индекс, чтобы кнопка была поверх других элементов */
+    }
+  </style>
 </head>
 <body>
+  <button id="language-toggle" onclick="toggleLanguage()">Toggle Language</button>
+
   <div class="container">
     <div class="frame">
       <div class="frame-content">
         <div class="content">
           <h1 class="portfolio-title">Portfolio</h1>
-          <button id="language-toggle" onclick="toggleLanguage()">Toggle Language</button>
         </div>
       </div>
     </div>
@@ -20,10 +29,14 @@
   <div class="container">
     <div class="photo"></div>
     <div class="text">
+      <br class="desktop-br">
+      <br class="desktop-br">
+      <br class="desktop-br">
+      <br class="desktop-br">
+      <br class="desktop-br">
       <h1 id="about-heading">About me</h1>
       <p id="about-text" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
-      <p style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
-      <p style="font-size: 20px;">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
+      <p style="font-size: 20px;">Однако в конечном итоге я решил отойти от фриланса, поняв, что это арена в основном для начинающих, где успех часто зависит от делегирования работы более низкооплачиваемым лицам. Я понял, что я вырос из фазы, когда нужно было всего лишь немного денег на развлечения для студентов; Я превратился в человека, желающего личного и профессионального роста. Со временем я осознал, что хочу большего, чем просто финансовые вознаграждения. Я хотел внести свой вклад в общество и способствовать благополучию других людей. Один из значимых шагов, который я сделал, был вступление в организацию, посвященную помощи людям с серьезными психическими и физическими проблемами здоровья. Хотя это началось как небольшая группа страстных людей, неуверенных в своем направлении, я внес свой вклад, переведя важные ресурсы, включая целую книгу, которая до сих пор является ценным ресурсом.</p>
   
     </div>
   </div>
@@ -56,38 +69,31 @@
    <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
   </div>
 
-<script>
+  <script>
     function toggleLanguage() {
       var currentLanguage = document.documentElement.lang || 'en';
       if (currentLanguage === 'en') {
         // Change text and links to Russian
         document.documentElement.lang = 'ru';
         document.getElementById('about-heading').innerText = 'Обо мне';
-        document.getElementById('about-text-en').style.display = 'none';
-        document.getElementById('about-text-ru').style.display = 'block';
+        document.getElementById('about-text').innerText = 'С самого раннего возраста мой естественный талант к языкам стал очевидным. Их изучение происходило легко и естественно, и когда я решила заработать свои первые деньги в молодости, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начиная с работы переводчиком на языках, таких как английский, немецкий и японский. Со временем я расширила свои навыки, включив в них копирайтинг для SEO. Однако в конечном итоге я решил отойти от фриланса, поняв, что это арена в основном для начинающих, где успех часто зависит от делегирования работы более низкооплачиваемым лицам. Я понял, что я вырос из фазы, когда нужно было всего лишь немного денег на развлечения для студентов; Я превратился в человека, желающего личного и профессионального роста. Со временем я осознал, что хочу большего, чем просто финансовые вознаграждения. Я хотел внести свой вклад в общество и способствовать благополучию других людей. Один из значимых шагов, который я сделал, был вступление в организацию, посвященную помощи людям с серьезными психическими и физическими проблемами здоровья. Хотя это началось как небольшая группа страстных людей, неуверенных в своем направлении, я внес свой вклад, переведя важные ресурсы, включая целую книгу, которая до сих пор является ценным ресурсом.';
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
         document.querySelectorAll('.frame-description').forEach(function(el) {
           el.innerText = 'Вы начинающий цветовод и испытываете трудности даже с самыми простыми цветами? Узнайте основы того, как поливать, где располагать растения для достаточного солнца и что делать';
         });
-        document.getElementById('language-toggle').innerText = 'Изменить язык';
+        document.getElementById('language-toggle').innerText = 'Toggle Language';
       } else {
         // Change text and links to English
         document.documentElement.lang = 'en';
         document.getElementById('about-heading').innerText = 'About me';
-        document.getElementById('about-text-en').style.display = 'block';
-        document.getElementById('about-text-ru').style.display = 'none';
+        document.getElementById('about-text').innerText = 'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting. However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth. As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.';
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
         document.querySelectorAll('.frame-description').forEach(function(el) {
           el.innerText = 'Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.';
         });
-        document.getElementById('language-toggle').innerText = 'Toggle Language';
+        document.getElementById('language-toggle').innerText = 'Изменить язык';
       }
     }
   </script>
-
-
-
-
-
 </body>
 </html>
