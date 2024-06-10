@@ -10,13 +10,21 @@
       top: 20px;
       right: 20px;
       z-index: 1000;
+      border: 2px solid #ffdc33; /* золотая рамка */
+      background-color: black; /* черный фон */
+      color: white; /* белый текст */
+      padding: 10px 20px; /* отступы */
+      cursor: pointer;
     }
-    .text-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+    .contact-container {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      height: auto;
+    }
+    .email-link {
+      color: #ffdc33;
     }
   </style>
 </head>
@@ -67,8 +75,7 @@
 
   <div class="contact-container">
     <h1>Contact Me</h1>
-    <p>If you want to contact me, please email me at:</p>
-   <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
+    <p>If you want to contact me, please email me at: <a class="email-link" href="mailto:Alina.gladkova.05@mail.ru">alina.gladkova.05@mail.ru</a></p>
   </div>
 
   <button id="language-toggle" onclick="toggleLanguage()">Toggle Language</button>
@@ -89,6 +96,8 @@
           el.innerText = 'Вы начинающий цветовод и испытываете трудности даже с самыми простыми цветами? Узнайте основы того, как поливать, где располагать растения для достаточного солнца и что делать, если листья становятся желтыми, с помощью этого быстрого руководства для начинающих цветоводов.';
         });
         document.getElementById('language-toggle').innerText = 'Change Language';
+        document.querySelector('.contact-container h1').innerText = 'Свяжитесь со мной';
+        document.querySelector('.contact-container p').innerHTML = 'Если вы хотите связаться со мной, напишите, пожалуйста, на следующий адрес: <a class="email-link" href="mailto:Alina.gladkova.05@mail.ru">alina.gladkova.05@mail.ru</a>';
       } else {
         // Change text and links to English
         document.documentElement.lang = 'en';
@@ -102,6 +111,8 @@
           el.innerText = 'Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.';
         });
         document.getElementById('language-toggle').innerText = 'Изменить язык';
+        document.querySelector('.contact-container h1').innerText = 'Contact Me';
+        document.querySelector('.contact-container p').innerHTML = 'If you want to contact me, please email me at: <a class="email-link" href="mailto:Alina.gladkova.05@mail.ru">alina.gladkova.05@mail.ru</a>';
       }
     }
   </script>
