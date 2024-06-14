@@ -1,134 +1,110 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дело в Собаке</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    #language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <img src="logo.svg" alt="Дело в Собаке Лого" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Наша деятельность</a></li>
-                    <li><a href="#">Статьи</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">Партнёры</a></li>
-                </ul>
-            </nav>
+  <div class="container">
+    <div class="frame">
+      <div class="frame-content">
+        <div class="content">
+          <h1 class="portfolio-title">Portfolio</h1>
         </div>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="hero-title">
-                <div class="hero-title-top">
-                    <h1>Обучаем собак</h1>
-                    <button class="volunteer-button">Стать волонтёром</button>
-                </div>
-                <div class="hero-title-bottom">
-                    <h1>Помогать людям</h1>
-                    <img src="Highlight_05.svg" alt="Highlight" class="highlight">
-                </div>
-            </div>
-            <div class="hero-content">
-                <img src="person_with_dog.svg" alt="Человек с собакой">
-                <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.</p>
-                <button class="help-button">Получить помощь</button>
-            </div>
-        </section>
-        <section class="mission">
-            <h2>Наша миссия</h2>
-            <p>Реабилитация людей с хроническими заболеваниями с помощью обученных собак.</p>
-        </section>
-        <section class="about-us">
-            <h2>Кто мы</h2>
-            <p>Мы команда энтузиастов, которые занимаются обучением собак для помощи людям.</p>
-            <button class="volunteer-button">Стать волонтёром</button>
-            <div class="statistics">
-                <div>
-                    <h3>14</h3>
-                    <p>Кинологов</p>
-                </div>
-                <div>
-                    <h3>26</h3>
-                    <p>Благополучателей</п>
-                </div>
-                <div>
-                    <h3>64</h3>
-                    <p>Волонтёров</п>
-                </div>
-            </div>
-        </section>
-        <section class="help">
-            <h2>Кому мы можем помочь</h2>
-            <img src="person_with_dog_2.svg" alt="Человек с собакой 2">
-            <ul>
-                <li>Гражданам РФ, достигшим 18 лет</li>
-                <li>У которых есть собака, подходящая для дрессировки, или возможность её приобрести</ли>
-                <li>Имеющим хронические заболевания, контролируемые врачом</ли>
-            </ul>
-            <button class="help-button">Получить помощь</button>
-        </section>
-        <section class="faq">
-            <h2>Вопросы и ответы</h2>
-            <div class="faq-item">
-                <h3>Это платно?</h3>
-                <p>Ответ на вопрос</п>
-            </div>
-            <div class="faq-item">
-                <h3>Как долго длится обучение собак?</h3>
-                <п>Ответ на вопрос</п>
-            </div>
-            <div class="faq-item">
-                <h3>С какими заболеваниями помогают собаки?</h3>
-                <п>Ответ на вопрос</п>
-            </div>
-            <div class="faq-item">
-                <h3>Подходит ли для работы собака из приюта?</h3>
-                <п>Ответ на вопрос</п>
-            </div>
-            <div class="faq-item">
-                <h3>Кто будет обучать собаку?</h3>
-                <п>Ответ на вопрос</п>
-            </div>
-            <div class="faq-item">
-                <h3>Что, если я живу далеко?</h3>
-                <п>Ответ на вопрос</п>
-            </div>
-        </section>
-        <section class="articles">
-            <h2>Полезно знать</h2>
-            <div class="article">
-                <img src="dog_evaluation.svg" alt="Оценка собаки">
-                <h3>Оценка потенциальной собаки-помощника</h3>
-                <button>Читать статью</button>
-            </div>
-            <div class="article">
-                <img src="psychiatric_dog.svg" alt="Психиатрическая собака">
-                <h3>Психиатрическая служебная собака</h3>
-                <button>Читать статью</button>
-            </div>
-            <div class="article">
-                <img src="alert_dog.svg" alt="Собака предупреждающая">
-                <h3>Собаки, предупреждающие заболевания</h3>
-                <button>Читать статью</button>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <п>© 2024 Дело в Собаке. Все права защищены.</п>
-        <nav>
-            <ul>
-                <li><a href="#">О нас</a></ли>
-                <li><a href="#">Наша деятельность</a></ли>
-                <li><a href="#">Статьи</a></ли>
-                <ли><a href="#">Контакты</a></ли>
-                <ли><a href="#">Партнёры</a></ли>
-            </ул>
-        </нав>
-    </footer>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="photo"></div>
+    <div class="text">
+      <div class="text-container">
+        <h1 id="about-heading">About me</h1>
+        <p class="about-text" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
+        <p class="about-text" style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
+        <p class="about-text" style="font-size: 20px;">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="container">
+    <div class="special-frame" onclick="window.location.href = 'Plants.html'">
+      <img class="ru" src="Portugal.png" alt="Image 1">
+      <div>
+        <p class="frame-description">Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.</p>
+      </div>
+    </div>
+    <div class="special-frame" onclick="window.location.href = 'Dogs.html'">
+      <img class="ru" src="OIG1 (6)-round.png" alt="Image 2">
+      <div>
+        <p class="frame-description"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
+      </div>
+    </div>
+    <div class="special-frame" onclick="window.location.href = 'Handmade.html'">
+      <img class="ru" src="https://i.postimg.cc/X7pLDGMx/pexels-antoni-shkraba-5486829-round.png" alt="Image 3">
+      <div>
+        <p class="frame-description">Discover the joy of creating handmade gifts with a personal touch. Explore the world of needlework, including crochet and knitting, and got some ideas how to craft beautiful scarves, cozy mug cases and amigurumi toys. Start your crafting journey today
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <h1>Contact Me</h1>
+    <p>If you want to contact me, please email me at:</p>
+   <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
+  </div>
+
+  <button id="language-toggle" onclick="toggleLanguage()">Toggle Language</button>
+
+  <script>
+    function toggleLanguage() {
+      var currentLanguage = document.documentElement.lang || 'en';
+      if (currentLanguage === 'en') {
+        // Change text and links to Russian
+        document.documentElement.lang = 'ru';
+        document.getElementById('about-heading').innerText = 'Обо мне';
+        var aboutTexts = document.getElementsByClassName('about-text');
+        for (var i = 0; i < aboutTexts.length; i++) {
+          aboutTexts[i].innerText = 'С самого раннего возраста мой естественный талант к языкам стал очевидным. Их изучение происходило легко и естественно, и когда я решила заработать свои первые деньги в молодости, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начиная с работы переводчиком на языках, таких как английский, немецкий и японский. Со временем я расширила свои навыки, включив в них копирайтинг для SEO.';
+        }
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description').forEach(function(el) {
+          el.innerText = 'Вы начинающий цветовод и испытываете трудности даже с самыми простыми цветами? Узнайте основы того, как поливать, где располагать растения для достаточного солнца и что делать, если листья становятся желтыми, с помощью этого быстрого руководства для начинающих цветоводов.';
+        });
+        document.getElementById('language-toggle').innerText = 'Change Language';
+      } else {
+        // Change text and links to English
+        document.documentElement.lang = 'en';
+        document.getElementById('about-heading').innerText = 'About me';
+        var aboutTexts = document.getElementsByClassName('about-text');
+        for (var i = 0; i < aboutTexts.length; i++) {
+          aboutTexts[i].innerText = 'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.';
+        }
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description').forEach(function(el) {
+          el.innerText = 'Are you a beginner to floriculture and having trouble growing even the simplest flowers? Learn the basics of how to water, where to put your plants for enough sun, and what to do if the leaves turn yellow with this quick guide to floriculture for beginners.';
+        });
+        document.getElementById('language-toggle').innerText = 'Изменить язык';
+      }
+    }
+  </script>
+
 </body>
-            </html>
+</html>
