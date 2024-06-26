@@ -11,6 +11,11 @@
       top: 20px;
       right: 20px;
       z-index: 1000;
+      border: 2px solid #ffdc33; /* золотая рамка */
+      background-color: black; /* черный фон */
+      color: white; /* белый текст */
+      padding: 10px 20px; /* отступы */
+      cursor: pointer;
     }
     .text-container {
       display: flex;
@@ -22,20 +27,18 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="frame">
-      <div class="frame-content">
-        <div class="content">
-          <h1 class="portfolio-title">Portfolio</h1>
-        </div>
+  <div class="container" style="background-image: url(https://i.yapx.ru/WNfLL.jpg); background-size: cover; height: 100vh;">
+    <div class="frame" style="position: absolute; top: 20%; left: 25%; width: 50%; height: 50%; padding: 10px; background-color: rgba(0, 0, 0, 0.4); border: 2px solid white; z-index: 1;">
+      <div class="frame-content" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 2;">
+        <h1 class="portfolio-title" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 5rem; color: white; z-index: 2;">Portfolio</h1>
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <div class="photo"></div>
-    <div class="text">
-      <div class="text-container">
+  <div class="container" style="display: flex; flex-direction: row; position: relative; background-color: black;">
+    <div class="photo" style="flex: 1; background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg); background-size: cover; background-position: center; height: 100%; max-width: 50%;"></div>
+    <div class="text" style="flex: 1; background-color: black; padding: 20px; color: white;">
+      <div class="text-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
         <h1 id="about-heading">About me</h1>
         <p class="about-text" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
         <p class="about-text" style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
@@ -44,21 +47,21 @@
     </div>
   </div>
 
-  <div id="container">
-    <div class="special-frame" onclick="window.location.href = 'Portugal.html'">
+  <div id="container" style="display: flex; background-color: black; justify-content: space-between; align-items: stretch;">
+    <div class="special-frame" id="frame1" onclick="window.location.href = 'Portugal.html'" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; color: white; cursor: pointer; margin: 0 10px; border: 2px solid #ffdc33; width: calc(33.33% - 40px); height: 100%;">
       <img class="ru" src="Portugal.png" alt="Image 1">
       <div>
         <p class="frame-description-en">Planning to travel to Portugal? Explore stunning Atlantic beaches, historic cities, and local cuisine in our travel guide. Discover attractions and tips for the perfect getaway.</p>
         <p class="frame-description-ru">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики, исторические города и местную кухню в нашем путеводителе. Подробности о достопримечательностях и советы для идеального отдыха.</p>
       </div>
     </div>
-    <div class="special-frame" onclick="window.location.href = 'Adopt_Dog.html'">
+    <div class="special-frame" id="frame2" onclick="window.location.href = 'Adopt_Dog.html'" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; color: white; cursor: pointer; margin: 0 10px; border: 2px solid #ffdc33; width: calc(33.33% - 40px); height: 100%;">
       <img class="ru" src="OIG1 (6)-round.png" alt="Image 2">
       <div>
-        <p class="frame-description">Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
+        <p class="frame-description"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
       </div>
     </div>
-    <div class="special-frame" onclick="window.location.href = 'Zarabotat_na_neyrosetyakh.html'">
+    <div class="special-frame" id="frame3" onclick="window.location.href = 'Zarabotat_na_neyrosetyakh.html'" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; color: white; cursor: pointer; margin: 0 10px; border: 2px solid #ffdc33; width: calc(33.33% - 40px); height: 100%;">
       <img class="ru" src="Money.png" alt="Image 3">
       <div>
         <p class="frame-description-en">Unveiling the truth about earning with neural networks: debunking myths of quick money with AI.</p>
@@ -67,13 +70,13 @@
     </div>
   </div>
 
-  <div class="contact-container">
+  <div class="contact-container" style="background-color: black; color: white; padding: 20px; text-align: center; height: auto;">
     <h1>Contact Me</h1>
     <p>If you want to contact me, please email me at:</p>
     <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
   </div>
 
-  <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
+  <button id="language-toggle" onclick="toggleLanguage()" style="position: fixed; top: 20px; right: 20px; z-index: 1000; border: 2px solid #ffdc33; background-color: black; color: white; padding: 10px 20px; cursor: pointer;">Change Language</button>
 
   <script>
     function toggleLanguage() {
@@ -87,12 +90,15 @@
           el.innerText = ruTexts[index];
         });
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'block';
-        });
+        document.getElementById('frame1').onclick = function() {
+          window.location.href = 'Portugal.html';
+        };
+        document.getElementById('frame2').onclick = function() {
+          window.location.href = 'Adopt_Dog.html';
+        };
+        document.getElementById('frame3').onclick = function() {
+          window.location.href = 'Zarabotat_na_neyrosetyakh.html';
+        };
         document.getElementById('language-toggle').innerText = 'Изменить язык';
       } else {
         // Change to English
@@ -102,28 +108,18 @@
           el.innerText = enTexts[index];
         });
         document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'none';
-        });
+        document.getElementById('frame1').onclick = function() {
+          window.location.href = 'Portugal.html';
+        };
+        document.getElementById('frame2').onclick = function() {
+          window.location.href = 'Adopt_Dog.html';
+        };
+        document.getElementById('frame3').onclick = function() {
+          window.location.href = 'Zarabotat_na_neyrosetyakh.html';
+        };
         document.getElementById('language-toggle').innerText = 'Change Language';
       }
     }
-
-    // Initial texts for English and Russian
-    var enTexts = [
-      'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
-      'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
-      'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
-    ];
-
-    var ruTexts = [
-      'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
-      'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было всего лишь немного денег на типичные студенческие развлечения: я превратилась в того, кто стремится к личному и профессиональному росту.',
-      'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она начиналась как небольшая группа энтузиастов, я внесла свой вклад, переведя необходимые материалы, включая целую книгу, которая до сих пор является ценным активом.'
-    ];
   </script>
 </body>
 </html>
