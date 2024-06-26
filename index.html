@@ -55,7 +55,7 @@
     <div class="special-frame" onclick="window.location.href = 'Adopt_Dog.html'">
       <img class="ru" src="OIG1 (6)-round.png" alt="Image 2">
       <div>
-        <p class="frame-description"> Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
+        <p class="frame-description">Adopting a dog or puppy is an exciting experience, and we all want to be prepared. Learn what to consider before bringing a dog home from the step-by-step guide, from buying supplies and puppy-proofing, to training, care and adaptation in the early days.</p>
       </div>
     </div>
     <div class="special-frame" onclick="window.location.href = 'Zarabotat_na_neyrosetyakh.html'">
@@ -122,49 +122,8 @@
     var ruTexts = [
       'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
       'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было всего лишь немного денег на типичные студенческие развлечения: я превратилась в того, кто стремится к личному и профессиональному росту.',
-      'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она началась как малая группа страстных людей, не уверенных в своем направлении, я внесла свой вклад в перевод важных ресурсов, включая целую книгу, которая по сей день остается ценным активом.'
+      'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она началась как небольшая группа увлечённых людей, не знавших своего направления, я внесла свой вклад, переводя важные материалы, включая целую книгу, которая по сей день является ценным ресурсом.'
     ];
-
-    function toggleLanguage() {
-      var currentLanguage = document.documentElement.lang || 'en';
-
-      if (currentLanguage === 'en') {
-        // Change to Russian
-        document.documentElement.lang = 'ru';
-        document.getElementById('about-heading').innerText = 'Обо мне';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = ruTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.getElementById('language-toggle').innerText = 'Изменить язык';
-      } else {
-        // Change to English
-        document.documentElement.lang = 'en';
-        document.getElementById('about-heading').innerText = 'About me';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = enTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.getElementById('language-toggle').innerText = 'Change Language';
-      }
-    }
-
-    // Initially hide Russian descriptions
-    document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-      el.style.display = 'none';
-    });
   </script>
 </body>
 </html>
