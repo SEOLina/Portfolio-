@@ -1,79 +1,92 @@
-/* Основные стили */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .container {
   display: flex;
-  justify-content: space-around;
-  align-items: stretch; /* Растягиваем рамки по высоте самой высокой */
-}
-
-.frame {
-  width: 100%;
-  height: 200px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  background-color: #1b2631;
+  padding: 10px;
 }
 
-.special-frame {
-  width: 30%;
-  margin-bottom: 20px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-.special-frame img {
-  width: 200px; /* Фиксируем ширину изображения */
-  height: 200px; /* Фиксируем высоту изображения */
-  border-radius: 50%; /* Обрезаем изображение в виде круга */
-}
-
-.frame-description-en,
-.frame-description-ru {
-  display: none;
-}
-
-.frame-description-ru {
-  display: block;
-}
-
-/* Стили для кнопки смены языка */
-#language-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.text-container {
+.frame, .special-frame {
+  border: 5px solid #ffdc33;
+  border-radius: 30px;
+  width: 35%;
+  height: 100%;
+  margin: 0 10px;
+  background-color: #1b2631;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Контактный контейнер */
+.frame img, .special-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.frame-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.frame-description {
+  margin-top: 10px;
+}
+
 .contact-container {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
+  color: white;
 }
 
-.contact-container h1 {
-  font-size: 36px;
+#language-toggle {
+  background-color: #ffdc33;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.contact-container p {
-  font-size: 20px;
+.special-frame {
+  width: 30%;
+  height: 250px;
+  margin: 10px;
+  position: relative;
 }
 
-.contact-container a {
-  font-size: 20px;
-  text-decoration: none;
+.special-frame img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.special-frame p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+}
+
+.frame-description-ru {
+  display: none;
 }
