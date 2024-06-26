@@ -1,205 +1,79 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-
+/* Основные стили */
 .container {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.container:first-child {
-  background-image: url(https://i.yapx.ru/WNfLL.jpg);
-  background-size: cover;
-  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; /* Растягиваем рамки по высоте самой высокой */
 }
 
 .frame {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 50%; /* Adjust the width to make it smaller */
-  height: 50%; /* Adjust the height to make it smaller */
-  padding: 10px; /* Adjust the padding as needed */
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 2px solid white;
-  z-index: 1;
-}
-
-.portfolio-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem; /* Increased font size */
-  color: white;
-  z-index: 2;
-}
-
-.frame-content {
-  height: 100%;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  z-index: 2;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-.container:nth-child(2) {
+.special-frame {
+  width: 30%;
+  margin-bottom: 20px;
+  cursor: pointer;
   display: flex;
-  flex-direction: row;
-  position: relative;
-  background-color: black; /* Добавлено */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-.photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  max-width: 50%; /* чтобы занимало 50% ширины */
+.special-frame img {
+  width: 200px; /* Фиксируем ширину изображения */
+  height: 200px; /* Фиксируем высоту изображения */
+  border-radius: 50%; /* Обрезаем изображение в виде круга */
 }
 
-
-.text {
-  flex: 1;
-  background-color: black;
-  padding: 20px;
-  color: white;
+.frame-description-en,
+.frame-description-ru {
+  display: none;
 }
 
-#container {
-  display: flex;
-  background-color: black;
-  justify-content: space-between;
-  align-items: stretch;
+.frame-description-ru {
+  display: block;
 }
 
+/* Стили для кнопки смены языка */
 #language-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1000;
-  border: 2px solid #ffdc33; /* золотая рамка */
-  background-color: black; /* черный фон */
-  color: white; /* белый текст */
-  padding: 10px 20px; /* отступы */
-  cursor: pointer;
 }
 
-.special-frame {
-  flex: 1;
+.text-container {
   display: flex;
   flex-direction: column;
-  line-height: 1.5;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
-  color: white;
-  cursor: pointer;
-  margin: 0 10px;
-  border: 2px solid #ffdc33;
-  width: calc(33.33% - 40px);
+  align-items: center;
   height: 100%;
-  font-size: 24px; 
 }
 
-.special-frame:hover {
-  background-color: #333;
-}
-
-
-.container:nth-child(2) .photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-
+/* Контактный контейнер */
 .contact-container {
-  background-color: black;
-  color: white;
-  padding: 20px;
   text-align: center;
-  height: auto;
+  margin-top: 50px;
 }
 
-.email-link {
-  color: #ffdc33;
+.contact-container h1 {
+  font-size: 36px;
 }
 
-@media only screen and (max-width: 480px) {
-  /* Media query for smaller screens */
-  .desktop-br {
-    display: none;
-  }
-  .photo {
-    display: none;
-  }
-  .container:nth-child(2) {
-    flex-direction: column;
-    height: auto;
-  }
-  .container:nth-child(2) .photo {
-    display: none;
-  }
-  .container {
-    flex-direction: column;
-  }
-  .text {
-    padding-top: 0px;
-  }
-  .portfolio-title {
-    color: white;
-    font-size: 3em;
-    text-align: center;
-  }
-  #container {
-    flex-direction: column;
-    height: auto;
-  }
-  .special-frame {
-    width: 60%;
-    margin-right: 0;
-    margin-left: 60px;
-  }
-  .special-frame:nth-child(1),
-  .special-frame:nth-child(2),
-  .special-frame:nth-child(3) {
-    width: 60%;
-    margin-right: 0;
-  }
-  .text {
-    color: white;
-  }
+.contact-container p {
+  font-size: 20px;
 }
 
-@media only screen and (min-width: 481px) {
-  /* Media query for larger screens */
-  #container {
-    display: flex;
-    background-color: black;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-
-  .special-frame {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: white;
-    cursor: pointer;
-    margin: 0 10px;
-    border: 2px solid #ffdc33;
-    width: calc(33.33% - 40px);
-    height: 100%;
-  }
+.contact-container a {
+  font-size: 20px;
+  text-decoration: none;
 }
