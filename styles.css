@@ -1,57 +1,101 @@
-/* Reset CSS */
-* {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: black;
-  color: white;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container:first-child {
+  background-image: url(https://i.yapx.ru/WNfLL.jpg);
+  background-size: cover;
+  height: 100vh;
 }
 
 .frame {
   position: absolute;
-  width: 50%;
-  height: 50%;
-  padding: 10px;
+  top: 20%;
+  left: 25%;
+  width: 50%; /* Adjust the width to make it smaller */
+  height: 50%; /* Adjust the height to make it smaller */
+  padding: 10px; /* Adjust the padding as needed */
   background-color: rgba(0, 0, 0, 0.4);
   border: 2px solid white;
   z-index: 1;
 }
 
-.photo {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
+.portfolio-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem; /* Increased font size */
+  color: white;
+  z-index: 2;
 }
 
-.text {
-  flex: 1;
-  padding: 20px;
-}
-
-.text-container {
+.frame-content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
+}
+
+.container:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: black; /* Добавлено */
+}
+
+.photo {
+  flex: 1;
+  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
+  background-size: cover;
+  background-position: center;
   height: 100%;
+  max-width: 50%; /* чтобы занимало 50% ширины */
+}
+
+
+.text {
+  flex: 1;
+  background-color: black;
+  padding: 20px;
+  color: white;
+}
+
+#container {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: 2px solid #ffdc33; /* золотая рамка */
+  background-color: black; /* черный фон */
+  color: white; /* белый текст */
+  padding: 10px 20px; /* отступы */
+  cursor: pointer;
 }
 
 .special-frame {
   flex: 1;
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -59,6 +103,22 @@ body {
   cursor: pointer;
   margin: 0 10px;
   border: 2px solid #ffdc33;
+  width: calc(33.33% - 40px);
+  height: 100%;
+  font-size: 24px; 
+}
+
+.special-frame:hover {
+  background-color: #333;
+}
+
+
+.container:nth-child(2) .photo {
+  flex: 1;
+  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 .contact-container {
@@ -69,26 +129,77 @@ body {
   height: auto;
 }
 
-/* Media queries */
-@media (max-width: 768px) {
+.email-link {
+  color: #ffdc33;
+}
+
+@media only screen and (max-width: 480px) {
+  /* Media query for smaller screens */
+  .desktop-br {
+    display: none;
+  }
+  .photo {
+    display: none;
+  }
+  .container:nth-child(2) {
+    flex-direction: column;
+    height: auto;
+  }
+  .container:nth-child(2) .photo {
+    display: none;
+  }
   .container {
     flex-direction: column;
   }
-  .frame {
-    width: 80%;
-    height: 30%;
+  .text {
+    padding-top: 0px;
   }
-  .photo, .text {
-    max-width: 100%;
+  .portfolio-title {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+  }
+  #container {
+    flex-direction: column;
+    height: auto;
+  }
+  .special-frame {
+    width: 60%;
+    margin-right: 0;
+    margin-left: 60px;
+  }
+  .special-frame:nth-child(1),
+  .special-frame:nth-child(2),
+  .special-frame:nth-child(3) {
+    width: 60%;
+    margin-right: 0;
+  }
+  .text {
+    color: white;
   }
 }
 
-@media (max-width: 480px) {
-  .frame {
-    width: 90%;
-    height: 20%;
+@media only screen and (min-width: 481px) {
+  /* Media query for larger screens */
+  #container {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: stretch;
   }
-  .text {
-    padding: 10px;
+
+  .special-frame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 2px solid #ffdc33;
+    width: calc(33.33% - 40px);
+    height: 100%;
   }
 }
