@@ -27,6 +27,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            justify-content: center; /* Выравнивание по центру */
         }
         
         .item {
@@ -38,6 +39,8 @@
             text-align: justify;
             display: flex;
             align-items: center;
+            justify-content: center; /* Выравнивание по центру */
+            position: relative; /* Позиционирование для дочерних элементов */
         }
         
         .circle {
@@ -45,11 +48,14 @@
             height: 30px;
             border-radius: 50%;
             background-color: #FFFFFF;
-            border: 1px solid #C0C0C0;
+            border: 3px solid #C0C0C0; /* Толщина обводки 3px */
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 10px;
+            position: absolute; /* Абсолютное позиционирование */
+            top: -15px; /* Смещение вверх на половину высоты */
+            left: 50%; /* Выравнивание по центру горизонтально */
+            transform: translateX(-50%); /* Корректировка положения по центру */
             font-weight: bold;
         }
     </style>
