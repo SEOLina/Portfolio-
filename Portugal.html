@@ -7,12 +7,41 @@
    
    <style>
     body {
-      background-colour: white;
-      background-size: cover;
-      background-position: center;
-      color: black;
-      font-size: 18px;
+    margin: 0;
+    padding: 0;
+    background-colour: white;
+    background-size: 100% auto; /* Занимает 100% по горизонтали и автоматический размер по высоте */
     }
+
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-column {
+  background-color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+}
+
+.blog-column img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-column {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blog-column {
+    width: 33.33%;
+  }
+}
     
     .button {
       display: inline-block;
