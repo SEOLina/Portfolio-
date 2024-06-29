@@ -27,35 +27,36 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            justify-content: center; /* Выравнивание по центру */
+            justify-content: center;
         }
         
         .item {
             padding: 10px;
-            width: 20vw; /* Ширина 20vw */
+            width: 20vw;
             border-radius: 8px;
-            border: 5px solid #C0C0C0; /* Толщина обводки 5px */
+            border: 5px solid #C0C0C0;
             box-sizing: border-box;
             text-align: justify;
             display: flex;
             align-items: center;
-            justify-content: center; /* Выравнивание по центру */
-            position: relative; /* Позиционирование для дочерних элементов */
+            justify-content: center;
+            position: relative;
+            padding-top: calc(30px / 2 + 15px); /* Отступ сверху на половину высоты круга + смещение */
         }
         
         .circle {
-            width: 30px;
-            height: 30px;
+            width: calc(20vw / 3); /* Ширина круга треть ширины элемента item */
+            height: calc(20vw / 3);
             border-radius: 50%;
             background-color: #FFFFFF;
-            border: 3px solid #C0C0C0; /* Толщина обводки 3px */
+            border: 3px solid #C0C0C0;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute; /* Абсолютное позиционирование */
-            top: -15px; /* Смещение вверх на половину высоты */
-            left: 50%; /* Выравнивание по центру горизонтально */
-            transform: translateX(-50%); /* Корректировка положения по центру */
+            position: absolute;
+            top: -calc(20vw / 3 / 2); /* Смещение вверх на половину высоты круга */
+            left: 50%;
+            transform: translateX(-50%);
             font-weight: bold;
         }
     </style>
