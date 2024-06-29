@@ -47,22 +47,23 @@
             position: relative;
         }
         
-        .circle {
-            width: 5vw;
-            height: 5vw;
-            border-radius: 50%;
-            background-color: #FFFFFF;
-            border: 3px solid #C0C0C0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: -5vw;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-            font-size: 3vw;
-        }
+       .circle {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 3px solid #C0C0C0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -2.5vw; /* Изменяем отрицательное смещение на половину высоты круга */
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 1.5vw; /* Размер текста в зависимости от ширины окна */
+}
+
         
         @media screen and (max-width: 600px) {
             .list-container {
@@ -71,11 +72,13 @@
             }
             
             .item {
-               left: 50%;
-               transform: translateX(-50%);
-                width: 50vw;
-                max-width: calc(100% - 20px);
-            }
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    max-width: calc(100% - 20px);
+    margin-bottom: 25vw; /* Добавляем отступ между элементами */
+}
+
             
             .circle {
                 width: 20vw;
