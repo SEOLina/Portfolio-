@@ -150,15 +150,25 @@ body, html {
   .special-frames-container {
   display: flex;
   gap: 20px; /* Расстояние между special-frame */
+  background-color: black; /* Черный фон */
+  justify-content: space-between; /* Выравнивание по краям */
 }
 
 .special-frame {
-  flex: 1; /* Растягивает special-frame, чтобы они занимали одинаковую ширину */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  border: 2px solid #ffdc33;
+  width: calc(33.33% - 40px); /* Учитываем отступы */
+  max-width: calc(33.33% - 40px); /* Для большей надежности добавим max-width */
 }
+
 
 .special-frame:hover {
   cursor: pointer;
