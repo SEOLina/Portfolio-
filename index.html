@@ -167,6 +167,44 @@
     document.querySelectorAll('.frame-description-ru').forEach(function(el) {
       el.style.display = 'none';
     });
+
+    // Функция для динамического растяжения .special-frame
+function adjustSpecialFramesHeight() {
+  // Находим все .special-frames-container на странице
+  const specialFramesContainers = document.querySelectorAll('.special-frames-container');
+
+  // Проходимся по каждому контейнеру
+  specialFramesContainers.forEach(container => {
+    // Находим все .special-frame в текущем контейнере
+    const specialFrames = container.querySelectorAll('.special-frame');
+    
+    // Ищем максимальную высоту среди .special-frame в текущем контейнере
+    let maxHeight = 0;
+    specialFrames.forEach(frame => {
+      const frameHeight = frame.clientHeight; // Высота текущего .special-frame
+      if (frameHeight > maxHeight) {
+        maxHeight = frameHeight; // Обновляем максимальную высоту
+      }
+    });
+    
+    // Устанавливаем всем .special-frame в текущем контейнере максимальную высоту
+    specialFrames.forEach(frame => {
+      frame.style.height = maxHeight + 'px';
+    });
+  });
+}
+
+// Функция для смены языка (пример)
+function toggleLanguage() {
+  // Ваш код смены языка
+  
+  // После смены языка вызываем функцию для коррекции высоты .special-frame
+  adjustSpecialFramesHeight();
+}
+
+// Вызываем функцию для первоначальной настройки после загрузки страницы
+window.addEventListener('load', adjustSpecialFramesHeight);
+
   </script>
 </body>
 </html>
