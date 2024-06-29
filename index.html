@@ -78,97 +78,65 @@
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
   <script>
-    function toggleLanguage() {
-      var currentLanguage = document.documentElement.lang || 'en';
-
-      if (currentLanguage === 'en') {
-        // Change to Russian
-        document.documentElement.lang = 'ru';
-        document.getElementById('about-heading').innerText = 'Обо мне';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = ruTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.getElementById('language-toggle').innerText = 'Изменить язык';
-      } else {
-        // Change to English
-        document.documentElement.lang = 'en';
-        document.getElementById('about-heading').innerText = 'About me';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = enTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.getElementById('language-toggle').innerText = 'Change Language';
-      }
-    }
-
-    // Initial texts for English and Russian
-    var enTexts = [
-      'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
-      'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
-      'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
-    ];
-
-    var ruTexts = [
-      'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
-      'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было всего лишь немного денег на типичные студенческие развлечения: я превратилась в того, кто стремится к личному и профессиональному росту.',
-      'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она началась как малая группа страстных людей, не уверенных в своем направлении, я внесла свой вклад в перевод важных ресурсов, включая целую книгу, которая по сей день остается ценным активом.'
-    ];
-
-    function toggleLanguage() {
-      var currentLanguage = document.documentElement.lang || 'en';
-
-      if (currentLanguage === 'en') {
-        // Change to Russian
-        document.documentElement.lang = 'ru';
-        document.getElementById('about-heading').innerText = 'Обо мне';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = ruTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.getElementById('language-toggle').innerText = 'Изменить язык';
-      } else {
-        // Change to English
-        document.documentElement.lang = 'en';
-        document.getElementById('about-heading').innerText = 'About me';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = enTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.getElementById('language-toggle').innerText = 'Change Language';
-      }
-    }
-
     // Initially hide Russian descriptions
+document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+  el.style.display = 'none';
+});
+
+// Initial texts for English and Russian
+var enTexts = [
+  'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
+  'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
+  'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
+];
+
+var ruTexts = [
+  'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
+  'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было всего лишь немного денег на типичные студенческие развлечения: я превратилась в того, кто стремится к личному и профессиональному росту.',
+  'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она началась как малая группа страстных людей, не уверенных в своем направлении, я внесла свой вклад в перевод важных ресурсов, включая целую книгу, которая по сей день остается ценным активом.'
+];
+
+// Функция для смены языка и обновления текстов на странице
+function toggleLanguage() {
+  var currentLanguage = document.documentElement.lang || 'en';
+
+  if (currentLanguage === 'en') {
+    // Change to Russian
+    document.documentElement.lang = 'ru';
+    document.getElementById('about-heading').innerText = 'Обо мне';
+    document.querySelectorAll('.about-text').forEach(function(el, index) {
+      el.innerText = ruTexts[index];
+    });
+    document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+    document.querySelectorAll('.frame-description-en').forEach(function(el) {
+      el.style.display = 'none';
+    });
+    document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+      el.style.display = 'block';
+    });
+    document.getElementById('language-toggle').innerText = 'Изменить язык';
+  } else {
+    // Change to English
+    document.documentElement.lang = 'en';
+    document.getElementById('about-heading').innerText = 'About me';
+    document.querySelectorAll('.about-text').forEach(function(el, index) {
+      el.innerText = enTexts[index];
+    });
+    document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+    document.querySelectorAll('.frame-description-en').forEach(function(el) {
+      el.style.display = 'block';
+    });
     document.querySelectorAll('.frame-description-ru').forEach(function(el) {
       el.style.display = 'none';
     });
+    document.getElementById('language-toggle').innerText = 'Change Language';
+  }
 
-    // Функция для динамического растяжения .special-frame
+  // После смены языка вызываем функцию для коррекции высоты .special-frame
+  adjustSpecialFramesHeight();
+}
+
+// Функция для динамического растяжения .special-frame
 function adjustSpecialFramesHeight() {
   // Находим все .special-frames-container на странице
   const specialFramesContainers = document.querySelectorAll('.special-frames-container');
@@ -177,7 +145,12 @@ function adjustSpecialFramesHeight() {
   specialFramesContainers.forEach(container => {
     // Находим все .special-frame в текущем контейнере
     const specialFrames = container.querySelectorAll('.special-frame');
-    
+
+    // Сбрасываем высоту .special-frame перед вычислением максимальной высоты
+    specialFrames.forEach(frame => {
+      frame.style.height = 'auto';
+    });
+
     // Ищем максимальную высоту среди .special-frame в текущем контейнере
     let maxHeight = 0;
     specialFrames.forEach(frame => {
@@ -186,7 +159,7 @@ function adjustSpecialFramesHeight() {
         maxHeight = frameHeight; // Обновляем максимальную высоту
       }
     });
-    
+
     // Устанавливаем всем .special-frame в текущем контейнере максимальную высоту
     specialFrames.forEach(frame => {
       frame.style.height = maxHeight + 'px';
@@ -194,17 +167,8 @@ function adjustSpecialFramesHeight() {
   });
 }
 
-// Функция для смены языка (пример)
-function toggleLanguage() {
-  // Ваш код смены языка
-  
-  // После смены языка вызываем функцию для коррекции высоты .special-frame
-  adjustSpecialFramesHeight();
-}
-
 // Вызываем функцию для первоначальной настройки после загрузки страницы
 window.addEventListener('load', adjustSpecialFramesHeight);
-
   </script>
 </body>
 </html>
