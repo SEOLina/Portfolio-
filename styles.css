@@ -1,3 +1,4 @@
+/* Common styles for all screen sizes */
 body, html {
   margin: 0;
   padding: 0;
@@ -64,7 +65,6 @@ body, html {
   max-width: 50%; /* чтобы занимало 50% ширины */
 }
 
-
 .text {
   flex: 1;
   background-color: black;
@@ -112,69 +112,17 @@ body, html {
   background-color: #333;
 }
 
-
-.container:nth-child(2) .photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-
-.contact-container {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height: auto;
-}
-
-.email-link {
-  color: #ffdc33;
-}
- .special-frame {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: white;
-    cursor: pointer;
-    margin: 0 10px;
-    border: 2px solid #ffdc33;
-    width: calc(33.33% - 40px);
-    height: 100%;
-  }
-
- .special-frames-container {
+.special-frames-container {
   display: flex;
   gap: 20px; /* Расстояние между special-frame */
-  background-color: black; /* Черный фон */
-  justify-content: space-between; /* Выравнивание по краям */
-  align-items: stretch; /* Растягивание дочерних элементов по высоте */
 }
 
 .special-frame {
-  flex: 1;
+  flex: 1; /* Растягивает special-frame, чтобы они занимали одинаковую ширину */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px;
-  color: white;
-  cursor: pointer;
-  margin: 0 10px;
-  border: 2px solid #ffdc33;
-  width: calc(33.33% - 40px); /* Учитываем отступы */
-  max-width: calc(33.33% - 40px); /* Для большей надежности добавим max-width */
-  height: 100%; /* Растягиваем на всю высоту */
-}
-
-
-.special-frame:hover {
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .special-frame img {
@@ -197,53 +145,59 @@ body, html {
   display: none;
 }
 
-
+/* Media queries */
 @media only screen and (max-width: 480px) {
   /* Media query for smaller screens */
   .desktop-br {
     display: none;
   }
+
   .photo {
     display: none;
   }
+
   .container:nth-child(2) {
     flex-direction: column;
     height: auto;
   }
+
   .container:nth-child(2) .photo {
     display: none;
   }
+
   .container {
     flex-direction: column;
   }
+
   .text {
     padding-top: 0px;
   }
+
   .portfolio-title {
     color: white;
     font-size: 3em;
     text-align: center;
   }
+
   #container {
     flex-direction: column;
     height: auto;
   }
+
+  .special-frames-container {
+    flex-direction: column;
+    align-items: center; /* Центрирует рамки по горизонтали */
+  }
+
   .special-frame {
-    width: 60%;
-    margin-right: 0;
-    margin-left: 60px;
+    width: 90%;
+    margin-bottom: 20px;
   }
-  .special-frame:nth-child(1),
-  .special-frame:nth-child(2),
-  .special-frame:nth-child(3) {
-    width: 60%;
-    margin-right: 0;
-  }
+
   .text {
     color: white;
   }
 }
-
 
 @media only screen and (min-width: 481px) {
   /* Media query for larger screens */
@@ -253,6 +207,4 @@ body, html {
     justify-content: space-between;
     align-items: stretch;
   }
-
- 
 }
