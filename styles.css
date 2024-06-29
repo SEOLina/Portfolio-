@@ -202,12 +202,23 @@ body, html {
   }
 
   .special-frame {
-    width: 90%;
-    margin-bottom: 20px;
+    width: 90%; /* Устанавливает ширину на 90% */
+    margin: 0 auto 20px auto; /* Центрирует рамку и добавляет нижний отступ */
   }
 
   .text {
     color: white;
+  }
+
+  .contact-container {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  .email-link {
+    color: #ffdc33;
   }
 }
 
