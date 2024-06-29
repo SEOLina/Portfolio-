@@ -114,7 +114,7 @@ function toggleLanguage() {
     document.querySelectorAll('.frame-description-ru').forEach(function(el) {
       el.style.display = 'block';
     });
-    document.getElementById('language-toggle').innerText = 'Изменить язык';
+    document.getElementById('language-toggle').innerText = 'Change Language';
   } else {
     // Change to English
     document.documentElement.lang = 'en';
@@ -129,7 +129,7 @@ function toggleLanguage() {
     document.querySelectorAll('.frame-description-ru').forEach(function(el) {
       el.style.display = 'none';
     });
-    document.getElementById('language-toggle').innerText = 'Change Language';
+    document.getElementById('language-toggle').innerText = 'Изменить язык';
   }
 
   // После смены языка вызываем функцию для коррекции высоты .special-frame
