@@ -27,37 +27,38 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            justify-content: center;
+            justify-content: center; /* Выравнивание по центру */
         }
         
         .item {
             padding: 10px;
-            width: 20vw;
+            padding-top: 5vw; /* Отступ сверху 5vw */
+            width: 20vw; /* Ширина 20vw */
             border-radius: 8px;
-            border: 5px solid #C0C0C0;
+            border: 5px solid #C0C0C0; /* Толщина обводки 5px */
             box-sizing: border-box;
             text-align: justify;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            padding-top: calc(30px / 2 + 15px); /* Отступ сверху на половину высоты круга + смещение */
+            justify-content: center; /* Выравнивание по центру */
+            position: relative; /* Позиционирование для дочерних элементов */
         }
         
         .circle {
-            width: calc(20vw / 3); /* Ширина круга треть ширины элемента item */
-            height: calc(20vw / 3);
+            width: 10vw; /* Ширина 10vw */
+            height: 10vw; /* Высота 10vw */
             border-radius: 50%;
             background-color: #FFFFFF;
-            border: 3px solid #C0C0C0;
+            border: 3px solid #C0C0C0; /* Толщина обводки 3px */
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
-            top: -calc(20vw / 3 / 2); /* Смещение вверх на половину высоты круга */
-            left: 50%;
-            transform: translateX(-50%);
+            position: absolute; /* Абсолютное позиционирование */
+            top: -5vw; /* Смещение вверх на половину высоты */
+            left: 50%; /* Выравнивание по центру горизонтально */
+            transform: translateX(-50%); /* Корректировка положения по центру */
             font-weight: bold;
+            font-size: 1.5vw; /* Размер текста в зависимости от ширины окна */
         }
     </style>
 </head>
