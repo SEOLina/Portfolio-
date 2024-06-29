@@ -202,4 +202,45 @@ body, html {
     width: calc(33.33% - 40px);
     height: 100%;
   }
+
+  .special-frames-container {
+  display: flex;
+  gap: 20px; /* Расстояние между special-frame */
+}
+
+.special-frame {
+  flex: 1; /* Растягивает special-frame, чтобы они занимали одинаковую ширину */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f0f0f0; /* Пример цвета фона */
+  padding: 20px;
+}
+
+.special-frame:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.special-frame img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.special-frame p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.special-frame .frame-description-en {
+  display: block;
+}
+
+.special-frame .frame-description-ru {
+  display: none;
+}
+
+
 }
