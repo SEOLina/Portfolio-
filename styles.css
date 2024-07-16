@@ -239,3 +239,13 @@ body, html {
     align-items: stretch;
   }
 }
+.left img {
+    display: none;
+  }
+
+  /* Adjust width of special frames in the third container */
+  .special-frame {
+    width: 90vw;
+    max-width: 300px; /* Limit maximum width of each frame */
+  }
+}
