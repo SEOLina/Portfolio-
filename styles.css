@@ -56,14 +56,20 @@ body, html {
   background-color: black; /* Добавлено */
 }
 
-.photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 50%; /* чтобы занимало 50% ширины */
-  display: flex;
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.left {
+    width: 50%;
+}
+
+.left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
 }
 
 
