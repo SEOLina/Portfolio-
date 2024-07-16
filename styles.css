@@ -56,22 +56,14 @@ body, html {
   background-color: black; /* Добавлено */
 }
 
-.container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
+.photo {
+  flex: 1;
+  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  max-width: 50%; /* чтобы занимало 50% ширины */
 }
-
-.left {
-    width: 50%;
-}
-
-.left img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire container */
-}
-
 
 .text {
   flex: 1;
@@ -237,15 +229,5 @@ body, html {
     background-color: black;
     justify-content: space-between;
     align-items: stretch;
-  }
-}
-.left img {
-    display: none;
-  }
-
-  /* Adjust width of special frames in the third container */
-  .special-frame {
-    width: 90vw;
-    max-width: 300px; /* Limit maximum width of each frame */
   }
 }
