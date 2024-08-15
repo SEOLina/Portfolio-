@@ -11,18 +11,88 @@
       background-size: cover;
       background-position: center;
       color: black;
-      font-size: 18px;
-    }
-    
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #70ad72;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
+      font-size: 18px
+            margin: 0;
+            padding: 0;
+            background-color: #C0C0C0;
+        }
+        
+        .column {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+        
+        .list-container {
+            margin-top: 5hw;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 3vw;
+        }
+        
+        .item {
+            padding: 10px;
+            padding-top: 2.5vw;
+            width: 10vw;
+            border-radius: 8px;
+            border: 5px solid #C0C0C0;
+            box-sizing: border-box;
+            text-align: justify;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+       .circle {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 3px solid #C0C0C0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -2.5vw; /* Изменяем отрицательное смещение на половину высоты круга */
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 1.5vw; /* Размер текста в зависимости от ширины окна */
+}
+
+        
+        @media screen and (max-width: 600px) {
+            .list-container {
+                flex-direction: column;
+                align-items: stretch;
+                   margin-top: 5vh; /* Увеличение отступа до 5vh */
+            }
+            
+            .item {
+                padding-top: 10vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    max-width: calc(100% - 20px);
+    margin-bottom: 10vw; /* Добавляем отступ между элементами */
+}
+
+            
+            .circle {
+                width: 20vw;
+                height: 20vw;
+                font-size: 5vw;
+                top: -10vw;
+            }
+        }
    </style>
 </head>
 <body>
