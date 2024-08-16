@@ -11,99 +11,98 @@
       background-size: cover;
       background-position: center;
       color: black;
-      font-size: 18px
-            margin: 0;
-            padding: 0;
-            background-color: #C0C0C0;
-        }
-        
-        .column {
-            width: 30vw;
-            margin: 0 auto;
-            padding: 40px;
-            box-sizing: border-box;
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: justify;
-        }
-        .button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #70ad72;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-        }
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+      background-color: #C0C0C0;
+    }
+    
+    .column {
+      width: 80vw;
+      margin: 20px auto;
+      padding: 40px;
+      box-sizing: border-box;
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #70ad72;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    
+    .list-container {
+      margin-top: 5vh;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    
+    .item {
+      padding: 10px;
+      padding-top: 2.5vw;
+      width: 20vw;
+      max-width: 200px;
+      border-radius: 8px;
+      border: 5px solid #C0C0C0;
+      box-sizing: border-box;
+      text-align: justify;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .circle {
+      width: 5vw;
+      height: 5vw;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      border: 3px solid #C0C0C0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -2.5vw;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+      font-size: 1.5vw;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .list-container {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 5vh;
+      }
       
-        .list-container {
-            margin-top: 5hw;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 3vw;
-        }
-        
-        .item {
-            padding: 10px;
-            padding-top: 2.5vw;
-            width: 10vw;
-            border-radius: 8px;
-            border: 5px solid #C0C0C0;
-            box-sizing: border-box;
-            text-align: justify;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-       .circle {
-    width: 5vw;
-    height: 5vw;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    border: 3px solid #C0C0C0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -2.5vw; /* Изменяем отрицательное смещение на половину высоты круга */
-    left: 50%;
-    transform: translateX(-50%);
-    font-weight: bold;
-    font-size: 1.5vw; /* Размер текста в зависимости от ширины окна */
-}
-
-        
-        @media screen and (max-width: 600px) {
-            .list-container {
-                flex-direction: column;
-                align-items: stretch;
-                   margin-top: 5vh; /* Увеличение отступа до 5vh */
-            }
-            
-            .item {
-                padding-top: 10vw;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50vw;
-    max-width: calc(100% - 20px);
-    margin-bottom: 10vw; /* Добавляем отступ между элементами */
-}
-
-            
-            .circle {
-                width: 20vw;
-                height: 20vw;
-                font-size: 5vw;
-                top: -10vw;
-            }
-           .column {
-            width: 90vw;
-        }
+      .item {
+        padding-top: 10vw;
+        width: 50vw;
+        max-width: calc(100% - 20px);
+        margin-bottom: 10vw;
+      }
+      
+      .circle {
+        width: 20vw;
+        height: 20vw;
+        font-size: 5vw;
+        top: -10vw;
+      }
+      
+      .column {
+        width: 90vw;
+      }
+    }
    </style>
 </head>
 <body>
@@ -112,14 +111,16 @@
     <h1>Why Are My Plants Dying? Quick Guide to Floriculture for Beginners</h1>
     <p>Once upon a time, a dear friend presented me with a nice ivy plant, assuring me it was the perfect companion for someone with little gardening experience. "Just water it occasionally," she said with a reassuring smile. Without further ado, it dried up after a few days. This happens sometimes even to professionals, including me, so don't worry too much. But I can help you make it happen less frequently.</p>
     <h2>Tips for Keeping Plants Alive</h2>
-    <img src="https://i.postimg.cc/FH8twWGj/AAAAAAAAAAAAAA-1.jpg" alt="Houseplants watering">
+    <div style="overflow: hidden; margin-bottom: 20px;">
+      <img src="https://i.postimg.cc/FH8twWGj/AAAAAAAAAAAAAA-1.jpg" alt="Houseplants watering" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+    </div>
     <p><span class="highlight">Water Regularly:</span> Ensuring your plants receive an adequate water supply is crucial to their well-being. However, it's important to pay attention to the quality of water you use. Avoid using water that contains high levels of salts and chemicals, as these can be harmful to plants. Instead, opt for clean, preferably distilled or rainwater. Regularly check the moisture levels in the soil to determine when watering is needed; overwatering can lead to root rot and other issues.</p>
     <p><span class="highlight">Fertilize:</span> Fertilizers have unfairly gained a negative reputation as harmful substances, but in reality, they play a vital role in plant nutrition. Think of fertilizing as providing a nutritious meal for your plants, much like you would feed pets. However, it's important to follow instructions to avoid overdoing it; excessive fertilizer can be detrimental. Strike a balance by fertilizing to maintain healthy, flourishing plants.</p>
     <p><span class="highlight">Prune:</span> Pruning is a vital aspect of plant care that involves removing dead, damaged, or overgrown parts of plants. This practice not only enhances the appearance of plants but also promotes overall health. When pruning, use clean, sharp pruning tools to make precise cuts, minimizing the risk of introducing diseases to plants. Focus on removing any diseased or infested branches, maintaining the balanced shape of the plant.</p>
     <p><span class="highlight">Monitor Pests:</span> Pests can wreak havoc on plants, causing damage and potentially even killing them if left unchecked. Regular monitoring is essential to identify and address pest infestations promptly. Look for signs such as chewed leaves, discolored foliage, or the presence of insects. Depending on the severity of the infestation, various measures can be taken, such as using organic pest control methods like neem oil or introducing beneficial insects to combat pests naturally. Avoid using harmful chemical pesticides unless absolutely necessary, as they can have adverse effects on beneficial insects and the environment.</p>
     
     <figure>
-      <img src="https://i.postimg.cc/zD0mSGmb/plant-lady-resting-and-sipping-t.jpg" alt="Effects of pest exposure">
+      <img src="https://i.postimg.cc/zD0mSGmb/plant-lady-resting-and-sipping-t.jpg" alt="Effects of pest exposure" style="width: 100%; height: auto; border-radius: 8px;">
       <figcaption>This photo from Freepik perfectly illustrates what my house looked like before I gained experience.</figcaption>
     </figure>
     
