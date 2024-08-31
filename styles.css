@@ -15,7 +15,6 @@ body, html {
 .container:first-child {
   background-image: url(https://i.yapx.ru/WNfLL.jpg);
   background-size: cover;
-  background-position: center;
   height: 100vh;
 }
 
@@ -26,7 +25,7 @@ body, html {
   width: 50%;
   height: 50%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.4); /* Затемнение */
+  background-color: rgba(0, 0, 0, 0.4);
   border: 2px solid white;
   z-index: 1;
 }
@@ -158,28 +157,37 @@ body, html {
   color: #ffdc33;
 }
 
-/* Styles for the new container4 */
 .container4 {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding-top: 30vh;
-  box-sizing: border-box;
+  justify-content: center;
+  background-color: black;
+  padding: 20px;
 }
 
-.rectangle {
-  width: 20%;
-  background-color: black;
+.container4 .rectangle {
+  width: 80%;
+  padding: 20px;
+  color: white;
   border: 2px solid #ffdc33;
-  color: #ffdc33;
-  border-radius: 15px;
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.container4 img {
+  width: 20vw;
+  height: auto;
+  position: relative;
+  top: -50px;
+  z-index: 2;
+}
+
+.container4 .rectangle {
+  margin-top: -30px; /* Отодвигаем текст вверх, чтобы картинки как бы стояли на них */
+  z-index: 1;
 }
 
 /* Media queries */
@@ -245,26 +253,8 @@ body, html {
     color: #ffdc33;
   }
 
-  /* Mobile styles for container4 */
-  .container4 {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20% 0; /* 20% отступы сверху и снизу */
-    gap: 10%;
+  .container4 img {
+    width: 90vw;
+    height: auto;
   }
-
-  .rectangle {
-    width: 80%;
-    margin-bottom: 10%;
   }
-}
-
-@media only screen and (min-width: 481px) {
-  #container {
-    display: flex;
-    background-color: black;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-    }
