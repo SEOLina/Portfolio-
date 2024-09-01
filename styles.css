@@ -204,7 +204,9 @@ body, html {
 .container4 img {
   width: 20vw;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: -10px; /* Отрицательный отступ для перемещения картинки вверх */
+  position: relative;
+  top: -10px; /* Поднимает изображение вверх */
 }
 
 @media only screen and (max-width: 480px) {
@@ -277,7 +279,8 @@ body, html {
   .container3 img, .container4 img {
     width: 90vw;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
+    top: -10px;
   }
 
   .container3 .rectangle, .container4 .rectangle {
