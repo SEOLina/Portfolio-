@@ -174,14 +174,12 @@ body, html {
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
-  margin-top: 50px;
 }
 
 .container3 img {
   width: 20vw;
   height: auto;
-  position: absolute;
-  top: -50px;
+  margin-bottom: 10px;
 }
 
 .container4 {
@@ -201,14 +199,12 @@ body, html {
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
-  margin-top: 50px;
 }
 
 .container4 img {
   width: 20vw;
   height: auto;
-  position: absolute;
-  top: -50px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -281,8 +277,7 @@ body, html {
   .container3 img, .container4 img {
     width: 90vw;
     height: auto;
-    top: 0;
-    position: relative;
+    margin-bottom: 10px;
   }
 
   .container3 .rectangle, .container4 .rectangle {
