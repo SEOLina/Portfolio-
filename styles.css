@@ -201,12 +201,18 @@ body, html {
   position: relative;
 }
 
-.container4 img {
+.frame-with-image {
+  position: relative;
+}
+
+.frame-with-image img {
   width: 20vw;
   height: auto;
-  margin-bottom: -10px; /* Отрицательный margin для перемещения изображения к рамке */
-  position: relative;
-  top: -10px; /* Поднимаем изображение над рамкой */
+  position: absolute;
+  top: -50px; /* Поднимаем изображение над рамкой */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Изображение должно быть выше рамки */
 }
 
 @media only screen and (max-width: 480px) {
@@ -279,17 +285,16 @@ body, html {
   .container3 img, .container4 img {
     width: 90vw;
     height: auto;
-    margin-bottom: -10px; /* Отрицательный margin для перемещения изображения к рамке */
-    top: -10px; /* Поднимаем изображение над рамкой */
+    top: -30px; /* Поднимаем изображение над рамкой */
   }
 
   .container3 .rectangle, .container4 .rectangle {
     width: 90vw;
-    margin-top: 0;
+    margin-top: 40px;
+    text-align: center;
   }
 
   .container:first-child {
     height: auto;
   }
 }
-
