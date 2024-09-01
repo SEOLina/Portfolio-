@@ -257,4 +257,8 @@ body, html {
     width: 90vw;
     height: auto;
   }
+
+  .container:first-child {
+    height: auto; /* Для мобильной версии, чтобы контейнер занимал автоматическую высоту */
+  }
 }
