@@ -101,24 +101,40 @@ body, html {
   padding: 20px;
   color: white;
   cursor: pointer;
-  margin: 20px 0; /* Вертикальный отступ */
+  margin: 0 10px;
   border: 2px solid #ffdc33;
-  width: 20vw; /* Ширина рамок в декстопе */
-  position: relative;
+  width: calc(33.33% - 40px);
+  height: 100%;
+  font-size: 24px; 
+}
+
+.special-frame:hover {
+  background-color: #333;
+}
+
+.special-frames-container {
+  display: flex;
+  gap: 20px;
+}
+
+.special-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .special-frame img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  position: absolute;
-  top: -100%; /* Поднимаем изображение над рамкой */
-  left: 0;
+  margin-bottom: 10px;
 }
 
 .special-frame p {
   font-size: 16px;
   line-height: 1.5;
-  margin-top: 150px; /* Отступ от изображения, чтобы текст не перекрывался */
+  margin-bottom: 10px;
 }
 
 .special-frame .frame-description-en {
@@ -141,7 +157,33 @@ body, html {
   color: #ffdc33;
 }
 
-/* Media queries */
+.container4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* чтобы располагать прямоугольники и картинки в ряд */
+  align-items: flex-start;
+  background-color: black;
+  padding: 20px;
+}
+
+.container4 .rectangle {
+  width: 20vw; /* узкие рамки */
+  padding: 20px;
+  color: white;
+  border: 2px solid #ffdc33;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  margin-top: 50px; /* добавляем отступ, чтобы фото как бы стояло на прямоугольнике */
+}
+
+.container4 img {
+  width: 20vw; /* узкие картинки */
+  height: auto;
+  position: absolute;
+  top: -50px; /* смещаем картинку наверх, чтобы она "стояла" на прямоугольнике */
+}
+
 @media only screen and (max-width: 480px) {
   .desktop-br {
     display: none;
@@ -185,7 +227,7 @@ body, html {
   }
 
   .special-frame {
-    width: 80vw; /* Ширина рамок в мобильной версии */
+    width: 80%;
     margin: 0 auto 20px auto;
   }
 
@@ -203,13 +245,25 @@ body, html {
   .email-link {
     color: #ffdc33;
   }
-}
 
-@media only screen and (min-width: 481px) {
-  #container {
-    display: flex;
-    background-color: black;
-    justify-content: space-between;
-    align-items: stretch;
+  .container4 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container4 img {
+    width: 90vw; /* Широкие картинки на мобильной версии */
+    height: auto;
+    top: 0; /* Сброс отступа для мобильной версии */
+    position: relative;
+  }
+
+  .container4 .rectangle {
+    width: 90vw; /* Широкие рамки на мобильной версии */
+    margin-top: 0;
+  }
+
+  .container:first-child {
+    height: auto; /* Для мобильной версии, чтобы контейнер занимал автоматическую высоту */
   }
 }
