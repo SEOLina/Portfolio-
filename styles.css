@@ -157,31 +157,58 @@ body, html {
   color: #ffdc33;
 }
 
-.container4 {
+.container3 {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; /* чтобы располагать прямоугольники и картинки в ряд */
+  justify-content: space-around;
   align-items: flex-start;
   background-color: black;
   padding: 20px;
 }
 
-.container4 .rectangle {
-  width: 20vw; /* узкие рамки */
+.container3 .rectangle {
+  width: 20vw;
   padding: 20px;
   color: white;
   border: 2px solid #ffdc33;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
-  margin-top: 50px; /* добавляем отступ, чтобы фото как бы стояло на прямоугольнике */
+  margin-top: 50px;
+}
+
+.container3 img {
+  width: 20vw;
+  height: auto;
+  position: absolute;
+  top: -50px;
+}
+
+.container4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: black;
+  padding: 20px;
+}
+
+.container4 .rectangle {
+  width: 20vw;
+  padding: 20px;
+  color: white;
+  border: 2px solid #ffdc33;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
 }
 
 .container4 img {
-  width: 20vw; /* узкие картинки */
+  width: 20vw;
   height: auto;
   position: absolute;
-  top: -50px; /* смещаем картинку наверх, чтобы она "стояла" на прямоугольнике */
+  top: -50px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -246,24 +273,24 @@ body, html {
     color: #ffdc33;
   }
 
-  .container4 {
+  .container3, .container4 {
     flex-direction: column;
     align-items: center;
   }
 
-  .container4 img {
-    width: 90vw; /* Широкие картинки на мобильной версии */
+  .container3 img, .container4 img {
+    width: 90vw;
     height: auto;
-    top: 0; /* Сброс отступа для мобильной версии */
+    top: 0;
     position: relative;
   }
 
-  .container4 .rectangle {
-    width: 90vw; /* Широкие рамки на мобильной версии */
+  .container3 .rectangle, .container4 .rectangle {
+    width: 90vw;
     margin-top: 0;
   }
 
   .container:first-child {
-    height: auto; /* Для мобильной версии, чтобы контейнер занимал автоматическую высоту */
+    height: auto;
   }
 }
