@@ -22,9 +22,9 @@ body, html {
   position: absolute;
   top: 20%;
   left: 25%;
-  width: 50%;
-  height: 50%;
-  padding: 10px;
+  width: 50%; /* Adjust the width to make it smaller */
+  height: 50%; /* Adjust the height to make it smaller */
+  padding: 10px; /* Adjust the padding as needed */
   background-color: rgba(0, 0, 0, 0.4);
   border: 2px solid white;
   z-index: 1;
@@ -35,7 +35,7 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
+  font-size: 5rem; /* Increased font size */
   color: white;
   z-index: 2;
 }
@@ -53,7 +53,7 @@ body, html {
   display: flex;
   flex-direction: row;
   position: relative;
-  background-color: black;
+  background-color: black; /* Добавлено */
 }
 
 .photo {
@@ -62,7 +62,7 @@ body, html {
   background-size: cover;
   background-position: center;
   height: 100%;
-  max-width: 50%;
+  max-width: 50%; /* чтобы занимало 50% ширины */
 }
 
 .text {
@@ -84,10 +84,10 @@ body, html {
   top: 20px;
   right: 20px;
   z-index: 1000;
-  border: 2px solid #ffdc33;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
+  border: 2px solid #ffdc33; /* золотая рамка */
+  background-color: black; /* черный фон */
+  color: white; /* белый текст */
+  padding: 10px 20px; /* отступы */
   cursor: pointer;
 }
 
@@ -114,11 +114,11 @@ body, html {
 
 .special-frames-container {
   display: flex;
-  gap: 20px;
+  gap: 20px; /* Расстояние между special-frame */
 }
 
 .special-frame {
-  flex: 1;
+  flex: 1; /* Растягивает special-frame, чтобы они занимали одинаковую ширину */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -157,41 +157,38 @@ body, html {
   color: #ffdc33;
 }
 
+/* Styles for container4 */
 .container4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: black;
   padding: 20px;
 }
 
 .container4 .rectangle {
-  width: 80%;
-  padding: 20px;
-  color: white;
+  position: relative;
+  background-color: black;
+  color: #ffdc33;
   border: 2px solid #ffdc33;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 90vw; /* Full width of viewport */
+  margin-bottom: 20px; /* Vertical spacing between rectangles */
   text-align: center;
-  margin-bottom: 20px;
-  position: relative;
 }
 
-.container4 img {
-  width: 20vw;
+.container4 .rectangle img {
+  position: absolute;
+  top: -20%; /* Position the image above the rectangle */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20vw; /* Width for desktop */
   height: auto;
-  position: relative;
-  top: -50px;
-  z-index: 2;
-}
-
-.container4 .rectangle {
-  margin-top: -30px; /* Отодвигаем текст вверх, чтобы картинки как бы стояли на них */
-  z-index: 1;
 }
 
 /* Media queries */
 @media only screen and (max-width: 480px) {
+  /* Media query for smaller screens */
   .desktop-br {
     display: none;
   }
@@ -230,12 +227,12 @@ body, html {
 
   .special-frames-container {
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Центрирует рамки по горизонтали */
   }
 
   .special-frame {
-    width: 80%;
-    margin: 0 auto 20px auto;
+    width: 80%; /* Устанавливает ширину на 80% */
+    margin: 0 auto 20px auto; /* Центрирует рамку и добавляет нижний отступ */
   }
 
   .text {
@@ -253,12 +250,18 @@ body, html {
     color: #ffdc33;
   }
 
-  .container4 img {
-    width: 90vw;
-    height: auto;
+  .container4 .rectangle img {
+    width: 90vw; /* Width for mobile */
+    top: -10%; /* Adjust the vertical positioning as needed */
   }
+}
 
-  .container:first-child {
-    height: auto; /* Для мобильной версии, чтобы контейнер занимал автоматическую высоту */
+@media only screen and (min-width: 481px) {
+  /* Media query for larger screens */
+  #container {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: stretch;
   }
 }
