@@ -204,9 +204,9 @@ body, html {
 .container4 img {
   width: 20vw;
   height: auto;
-  margin-bottom: -10px; /* Отрицательный отступ для перемещения картинки вверх */
+  margin-bottom: -10px; /* Отрицательный margin для перемещения изображения к рамке */
   position: relative;
-  top: -10px; /* Поднимает изображение вверх */
+  top: -10px; /* Поднимаем изображение над рамкой */
 }
 
 @media only screen and (max-width: 480px) {
@@ -279,8 +279,8 @@ body, html {
   .container3 img, .container4 img {
     width: 90vw;
     height: auto;
-    margin-bottom: -10px;
-    top: -10px;
+    margin-bottom: -10px; /* Отрицательный margin для перемещения изображения к рамке */
+    top: -10px; /* Поднимаем изображение над рамкой */
   }
 
   .container3 .rectangle, .container4 .rectangle {
@@ -292,3 +292,4 @@ body, html {
     height: auto;
   }
 }
+
