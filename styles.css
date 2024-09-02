@@ -189,6 +189,7 @@ body, html {
   align-items: flex-start;
   background-color: black;
   padding: 20px;
+  margin-top: 600px; /* Отступ сверху для размещения изображений вне рамок */
 }
 
 .container4 .rectangle {
@@ -209,7 +210,7 @@ body, html {
   width: 20vw;
   height: auto;
   position: absolute;
-  top: -50px; /* Поднимаем изображение над рамкой */
+  top: -60px; /* Поднимаем изображение над рамкой */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2; /* Изображение должно быть выше рамки */
@@ -285,7 +286,7 @@ body, html {
   .container3 img, .container4 img {
     width: 90vw;
     height: auto;
-    top: -30px; /* Поднимаем изображение над рамкой */
+    top: -30px;
   }
 
   .container3 .rectangle, .container4 .rectangle {
