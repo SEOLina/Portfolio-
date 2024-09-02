@@ -201,15 +201,11 @@ body, html {
   position: relative;
 }
 
-.frame-with-image {
-  position: relative;
-}
-
-.frame-with-image img {
+.container4 img {
   width: 20vw;
   height: auto;
   position: absolute;
-  top: -50px; /* Поднимаем изображение над рамкой */
+  top: -50px; /* Поднятие изображения над рамкой */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2; /* Изображение должно быть выше рамки */
