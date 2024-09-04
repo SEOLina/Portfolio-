@@ -114,6 +114,7 @@ body, html {
 
 .special-frames-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -159,15 +160,15 @@ body, html {
 
 .container3, .container4 {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: black;
   padding: 20px;
 }
 
 .container3 .rectangle, .container4 .rectangle {
-  width: 20vw;
+  width: calc(33.33% - 20px);
+  margin-top: 10px;
   padding: 20px;
   color: white;
   border: 2px solid #ffdc33;
@@ -177,29 +178,18 @@ body, html {
 }
 
 .container4 img {
-  width: 20vw;
+  width: 100%;
   height: auto;
   position: relative;
   z-index: 1;
 }
 
-.container4 .rectangle {
-  position: relative;
-  top: -40px; /* Поднять прямоугольник вплотную к фото */
-  z-index: 2;
-}
-
+/* Mobile Styles */
 @media only screen and (max-width: 480px) {
   .desktop-br {
     display: none;
   }
-.container4 img {
-  width: 600px;
-  height: 600px;
-  position: relative;
-  z-index: 1;
-}
-  
+
   .photo {
     display: none;
   }
@@ -272,11 +262,8 @@ body, html {
 
   .container3 .rectangle, .container4 .rectangle {
     width: 90vw;
+    margin: 10px auto;
     text-align: center;
-  }
-
-  .container4 .rectangle {
-    top: -40px;
   }
 
   .container:first-child {
