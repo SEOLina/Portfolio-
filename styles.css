@@ -174,13 +174,19 @@ body, html {
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
-  margin-top: 600px; /* Отступ сверху, чтобы прямоугольники были ниже фото */
 }
 
 .container4 img {
-  width: 600px; /* Размер фото */
-  height: 600px; /* Высота фото */
+  width: 600px;
+  height: 600px;
   position: relative;
+  z-index: 1;
+}
+
+.container4 .rectangle {
+  position: relative;
+  top: -40px; /* Поднять прямоугольник вплотную к фото */
+  z-index: 2;
 }
 
 @media only screen and (max-width: 480px) {
@@ -253,19 +259,19 @@ body, html {
   .container3 img, .container4 img {
     width: 90vw;
     height: auto;
-    top: 0; /* Фото начинаются с верха контейнера */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .container3 .rectangle, .container4 .rectangle {
     width: 90vw;
-    margin-top: 600px; /* Отступ сверху для размещения прямоугольников */
+    top: -40px; /* Поднять прямоугольник вплотную к фото */
     text-align: center;
   }
 
   .container4 .rectangle {
-    margin-top: 600px; /* Отступ сверху для размещения прямоугольников */
+    top: -40px;
   }
 
   .container:first-child {
