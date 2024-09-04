@@ -177,8 +177,8 @@ body, html {
 }
 
 .container4 img {
-  width: 600px;
-  height: 600px;
+  width: 20vw;
+  height: auto;
   position: relative;
   z-index: 1;
 }
@@ -193,7 +193,13 @@ body, html {
   .desktop-br {
     display: none;
   }
-
+.container4 img {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  z-index: 1;
+}
+  
   .photo {
     display: none;
   }
