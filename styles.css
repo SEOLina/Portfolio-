@@ -266,7 +266,6 @@ body, html {
 
   .container3 .rectangle, .container4 .rectangle {
     width: 90vw;
-    top: -40px; /* Поднять прямоугольник вплотную к фото */
     text-align: center;
   }
 
