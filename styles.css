@@ -174,19 +174,13 @@ body, html {
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
-}
-
-.container3 img, .container4 img {
-  width: 600px; /* Размер фото */
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.container4 .rectangle {
   margin-top: 600px; /* Отступ сверху, чтобы прямоугольники были ниже фото */
+}
+
+.container4 img {
+  width: 600px; /* Размер фото */
+  height: 600px; /* Высота фото */
+  position: relative;
 }
 
 @media only screen and (max-width: 480px) {
