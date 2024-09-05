@@ -157,7 +157,7 @@ body, html {
   color: #ffdc33;
 }
 
-/* Добавляем новый контейнер для экспертов */
+/* Подконтейнер для фото и рамки */
 .container4 {
   display: flex;
   flex-direction: row;
@@ -167,12 +167,10 @@ body, html {
   padding: 20px;
 }
 
-.container4 .expert-column {
-  width: 20vw; /* Устанавливаем ширину колонок */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+.container4 .sub-container {
+  width: 20vw;
+  text-align: center;
+  position: relative;
 }
 
 .container4 img {
@@ -181,15 +179,15 @@ body, html {
 }
 
 .container4 .rectangle {
-  margin: 0;
-  padding: 20px;
   width: 100%;
+  padding: 20px;
   color: white;
   border: 2px solid #ffdc33;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
+/* Мобильная версия */
 @media only screen and (max-width: 480px) {
   .desktop-br {
     display: none;
@@ -252,19 +250,24 @@ body, html {
     color: #ffdc33;
   }
 
-  .container3, .container4 {
+  .container4 {
     flex-direction: column;
     align-items: center;
   }
 
-  .container4 img {
+  .container4 .sub-container {
     width: 90vw;
+    margin-bottom: 20px;
+  }
+
+  .container4 img {
+    width: 100%;
     height: auto;
   }
 
   .container4 .rectangle {
-    width: 90vw;
-    margin-top: 0;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .container:first-child {
