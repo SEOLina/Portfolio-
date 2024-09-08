@@ -1,234 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-  <style>
-    #language-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
+/* Общие стили для всех экранов */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container:first-child {
+  background-image: url(https://i.yapx.ru/WNfLL.jpg);
+  background-size: cover;
+  height: 100vh; /* Высота 100vh для десктопа */
+}
+
+.frame {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid white;
+  z-index: 1;
+}
+
+.portfolio-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: white;
+  z-index: 2;
+}
+
+.frame-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.container:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: black;
+}
+
+.photo {
+  flex: 1;
+  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  max-width: 50%;
+}
+
+.text {
+  flex: 1;
+  background-color: black;
+  padding: 20px;
+  color: white;
+}
+
+#container {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: 2px solid #ffdc33;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.special-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  border: 2px solid #ffdc33;
+  width: calc(33.33% - 40px);
+  height: 100%;
+  font-size: 24px; 
+}
+
+.special-frame:hover {
+  background-color: #333;
+}
+
+.special-frames-container {
+  display: flex;
+  gap: 20px;
+}
+
+.special-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.special-frame img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.special-frame p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.special-frame .frame-description-en {
+  display: block;
+}
+
+.special-frame .frame-description-ru {
+  display: none;
+}
+
+.contact-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.email-link {
+  color: #ffdc33;
+}
+
+/* Подконтейнер для фото и рамки */
+.container4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: black;
+  padding: 20px;
+}
+
+.container4 .sub-container {
+  width: 20vw;
+  text-align: center;
+  position: relative;
+}
+
+.container4 img {
+  width: 100%;
+  height: auto;
+}
+
+.container4 .rectangle {
+  width: 100%;
+  padding: 20px;
+  color: white;
+  border: 2px solid #ffdc33;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Мобильная версия */
+@media only screen and (max-width: 480px) {
+  .desktop-br {
+    display: none;
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .container:nth-child(2) {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .container:nth-child(2) .photo {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .text {
+    padding-top: 0px;
+  }
+
+  .portfolio-title {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  #container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .special-frames-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .special-frame {
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+
+  .text {
+    color: white;
+  }
+
+  .contact-container {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  .email-link {
+    color: #ffdc33;
+  }
+
+  .container4 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container4 .sub-container {
+    width: 90vw;
+    margin-bottom: 20px;
+  }
+
+  .container4 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container4 .rectangle {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .container:first-child {
+    height: 100vh; /* Высота 100vh для мобильной версии */
+  }
     }
-    .text-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="frame">
-      <div class="frame-content">
-        <div class="content">
-          <h1 class="portfolio-title">Portfolio</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="photo">
-  <img src="946bbd50b7b538f4a482d206a49d1147.jpg" alt="Description of image">
-    </div>
-    <div class="text">
-      <div class="text-container">
-        <h1 id="about-heading">About me</h1>
-        <p class="about-text" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
-        <p class="about-text" style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
-        <p class="about-text" style="font-size: 20px;">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="container">
-    <div class="special-frame" onclick="window.location.href = 'Portugalia.html'">
-      <img class="ru" src="Portugal.png" alt="Image 1">
-      <div>
-        <p class="frame-description-en">Planning to travel to Portugal? Explore stunning Atlantic beaches, historic, but modern cities, and local cuisine in our travel guide. Discover attractions and tips tips for your perfect getaway 
-        <p class="frame-description-ru">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики, исторические города и местную кухню в нашем путеводителе. Подробности о достопримечательностях и советы для идеального отдыха.</p>
-      </div>
-    </div>
-    <div class="special-frame" onclick="window.location.href = 'Plants.html'">
-      <img class="ru" src="Plant.png" alt="Image 2">
-      <div>
-        <p class="frame-description-en">Discover essential tips to keep your plants thriving! Learn how to water properly, choose the right sunlight, and tackle common issues like  yellowing leaves, infestations, or mould in this beginner's guide to floriculture.</p>
-        <p class="frame-description-ru">Откройте секреты, которые помогут вашим растениям процветать! Узнайте, как правильно поливать, регулировать освещение и о самых частых ошибках </p>
-      </div>
-    </div>
-    <div class="special-frame" onclick="window.location.href = 'https://bloodthirstywolf.github.io/Blog/Zarabotat_na_neyrosetyakh.html'">
-      <img class="ru" src="Money.png" alt="Image 3">
-      <div>
-        <p class="frame-description-en">Unveiling truth about earning with neural networks: debunking myths of quick money with AI. Who will be able to generate revenue from artificial intelligence, and who will be left with nothing?</p>
-        <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем ?</p>
-      </div>
-    </div>
-  </div>
-
-<div class="container4">
-  <div class="sub-container">
-    <img src="Photo1.png" alt="Image 1">
-    <div class="rectangle">Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox</div>
-  </div>
-  <div class="sub-container">
-    <img src="Photo2.png" alt="Image 2">
-    <div class="rectangle">Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой</div>
-  </div>
-  <div class="sub-container">
-    <img src="Photo3.png" alt="Image 3">
-    <div class="rectangle">Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг»</div>
-  </div>
-</div>
-
-
-  <div class="contact-container">
-    <h1>Contact Me</h1>
-    <p>If you want to contact me, please email me at:</p>
-    <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
-  </div>
-
-  <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
-
-<script>
-    // Initial texts for English and Russian
-    var enTexts = [
-        'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
-        'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
-        'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
-    ];
-
-    var ruTexts = [
-        'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
-        'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было всего лишь немного денег на типичные студенческие развлечения: я превратилась в того, кто стремится к личному и профессиональному росту.',
-        'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она началась как малая группа страстных людей, не уверенных в своем направлении, я внесла свой вклад в перевод важных ресурсов, включая целую книгу, которая по сей день остается ценным активом.'
-    ];
-
-    var fourthEnTexts = [
-        'Trained under Elizaveta Kulachkova, an expert from Skillbox.',
-        'Completed a course with a certified ICF coach-marketer, Oksana Bolashova.',
-        'Studied targeted advertising from the program director of Skillbox in Marketing.'
-    ];
-
-    var fourthRuTexts = [
-        'Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox.',
-        'Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой.',
-        'Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг».'
-    ];
-
-    // Function to set equal heights for items within the same container
-    function setEqualHeight(containerSelector, itemSelector) {
-        var container = document.querySelector(containerSelector);
-        var items = container.querySelectorAll(itemSelector);
-        var maxHeight = 0;
-
-        // Find the maximum height
-        items.forEach(function(item) {
-            item.style.height = 'auto'; // Reset height before measuring
-            var height = item.offsetHeight;
-            if (height > maxHeight) {
-                maxHeight = height;
-            }
-        });
-
-        // Set all items to the maximum height
-        items.forEach(function(item) {
-            item.style.height = maxHeight + 'px';
-        });
-    }
-
-    // Call setEqualHeight for both containers after the DOM content has loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        setEqualHeight('.container3', '.rectangle');
-        setEqualHeight('.container4', '.rectangle');
-    });
-
-    // Call setEqualHeight whenever the window is resized
-    window.addEventListener('resize', function() {
-        setEqualHeight('.container3', '.rectangle');
-        setEqualHeight('.container4', '.rectangle');
-    });
-
-    // Toggle language function
-    function toggleLanguage() {
-        var currentLanguage = document.documentElement.lang || 'en';
-
-        if (currentLanguage === 'en') {
-            document.documentElement.lang = 'ru';
-            document.getElementById('about-heading').innerText = 'Обо мне';
-            document.querySelectorAll('.about-text').forEach(function(el, index) {
-                el.innerText = ruTexts[index];
-            });
-            document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-
-            // Show Russian text for the third container
-            document.querySelectorAll('.frame-description-en').forEach(function(el) {
-                el.style.display = 'none';
-            });
-            document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-                el.style.display = 'block';
-            });
-
-            // Show Russian text for the fourth container
-            document.querySelectorAll('.fourth-frame-description-en').forEach(function(el) {
-                el.style.display = 'none';
-            });
-            document.querySelectorAll('.fourth-frame-description-ru').forEach(function(el) {
-                el.style.display = 'block';
-            });
-
-            document.getElementById('language-toggle').innerText = 'Изменить язык';
-        } else {
-            document.documentElement.lang = 'en';
-            document.getElementById('about-heading').innerText = 'About me';
-            document.querySelectorAll('.about-text').forEach(function(el, index) {
-                el.innerText = enTexts[index];
-            });
-            document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-
-            // Show English text for the third container
-            document.querySelectorAll('.frame-description-en').forEach(function(el) {
-                el.style.display = 'block';
-            });
-            document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-                el.style.display = 'none';
-            });
-
-            // Show English text for the fourth container
-            document.querySelectorAll('.fourth-frame-description-en').forEach(function(el) {
-                el.style.display = 'block';
-            });
-            document.querySelectorAll('.fourth-frame-description-ru').forEach(function(el) {
-                el.style.display = 'none';
-            });
-
-            document.getElementById('language-toggle').innerText = 'Change Language';
-        }
-
-        // Set equal heights after the language switch
-        setTimeout(function() {
-            setEqualHeight('.container3', '.rectangle');
-            setEqualHeight('.container4', '.rectangle');
-        }, 100); // Slight delay to ensure the text has fully changed
-    }
-
-    // Set initial texts for the fourth container on page load
-    function setInitialTexts() {
-        document.querySelectorAll('.fourth-frame-description-en').forEach(function(el, index) {
-            el.innerText = fourthEnTexts[index];
-        });
-
-        document.querySelectorAll('.fourth-frame-description-ru').forEach(function(el, index) {
-            el.innerText = fourthRuTexts[index];
-        });
-    }
-
-    setInitialTexts();
-</script>
-
-</body>
-</html>
