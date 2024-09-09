@@ -273,4 +273,32 @@ body, html {
   .container:first-child {
     height: 100vh; /* Высота 100vh для мобильной версии */
   }
-    }
+}
+
+.container3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 20vw; /* Adjust based on your design */
+}
+
+.sub-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rectangle {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Adjust border style as needed */
+  background-color: #f9f9f9; /* Adjust background color as needed */
+}
