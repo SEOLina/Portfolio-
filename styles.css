@@ -283,19 +283,19 @@ body, html {
   gap: 20px; /* Space between items */
 }
 
-.sub-container {
+.container3 .sub-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 20vw; /* Adjust based on your design */
 }
 
-.sub-container img {
+.container3 .sub-container img {
   max-width: 100%;
   height: auto;
 }
 
-.rectangle {
+.container3 .rectangle {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
