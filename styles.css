@@ -302,3 +302,14 @@ body, html {
   border: 1px solid #ccc; /* Adjust border style as needed */
   background-color: #f9f9f9; /* Adjust background color as needed */
     }
+
+#container .sub-container {
+  display: flex;
+  justify-content: space-between; /* или другой способ выравнивания */
+  align-items: stretch; /* Растягиваем высоту всех .special-frame */
+}
+
+.special-frame {
+  flex: 1; /* Делает все .special-frame одинаковыми по ширине */
+  margin: 10px; /* Пример отступов между элементами */
+}
