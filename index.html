@@ -82,84 +82,81 @@
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
 <script>
-    // Тексты для разных языков
-    const enTexts = [
-      'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
-      'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
-      'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
-    ];
+  // Texts for different languages
+  const enTexts = [
+    'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
+    'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
+    'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
+  ];
 
-    const ruTexts = [
-      'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
-      'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было всего лишь немного денег на типичные студенческие развлечения: я превратилась в того, кто стремится к личному и профессиональному росту.',
-      'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она началась как малая группа страстных людей, не уверенных в своем направлении, я внесла свой вклад в перевод важных ресурсов, включая целую книгу, которая по сей день остается ценным активом.'
-    ];
+  const ruTexts = [
+    'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
+    'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было всего лишь немного денег на типичные студенческие развлечения: я превратилась в того, кто стремится к личному и профессиональному росту.',
+    'С течением времени я поняла, что хочу не только финансового благополучия. Я хотела не только брать, но и отдавать добро обществу и способствовать благополучию других людей. Одним из значительных шагов, который я сделала, было присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами здоровья. Несмотря на то, что она началась как малая группа страстных людей, не уверенных в своем направлении, я внесла свой вклад в перевод важных ресурсов, включая целую книгу, которая по сей день остается ценным активом.'
+  ];
 
-    const fourthEnTexts = [
-      'Trained under Elizaveta Kulachkova, an expert from Skillbox.',
-      'Completed a course with a certified ICF coach-marketer, Oksana Bolashova.',
-      'Studied targeted advertising from the program director of Skillbox in Marketing.'
-    ];
+  const fourthEnTexts = [
+    'Trained under Elizaveta Kulachkova, an expert from Skillbox.',
+    'Completed a course with a certified ICF coach-marketer, Oksana Bolashova.',
+    'Studied targeted advertising from the program director of Skillbox in Marketing.'
+  ];
 
-    const fourthRuTexts = [
-      'Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox.',
-      'Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой.',
-      'Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг».'
-    ];
+  const fourthRuTexts = [
+    'Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox.',
+    'Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой.',
+    'Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг».'
+  ];
 
-    function toggleLanguage() {
-      const isEnglish = document.documentElement.lang === 'en';
+  function toggleLanguage() {
+    const isEnglish = document.documentElement.lang === 'en';
+    
+    // Toggle language
+    document.documentElement.lang = isEnglish ? 'ru' : 'en';
+    
+    // Update text for about me
+    const aboutTexts = isEnglish ? ruTexts : enTexts;
+    document.querySelectorAll('.about-text').forEach((p, index) => p.textContent = aboutTexts[index]);
+    
+    // Update text for the fourth section
+    const fourthTexts = isEnglish ? fourthRuTexts : fourthEnTexts;
+    document.querySelectorAll('.rectangle').forEach((div, index) => div.textContent = fourthTexts[index]);
 
-      // Переключение языка
-      document.documentElement.lang = isEnglish ? 'ru' : 'en';
-
-      // Обновить текст для "обо мне"
-      const aboutTexts = isEnglish ? ruTexts : enTexts;
-      document.querySelectorAll('.about-text').forEach((p, index) => p.textContent = aboutTexts[index]);
-
-      // Обновить текст для четвертого сектора
-      const fourthTexts = isEnglish ? fourthRuTexts : fourthEnTexts;
-      document.querySelectorAll('.rectangle').forEach((div, index) => div.textContent = fourthTexts[index]);
-
-      // Обновить описания для специальных рамок
-      document.querySelectorAll('.frame-description-en').forEach(el => {
-        el.style.display = isEnglish ? 'block' : 'none';
-      });
-      document.querySelectorAll('.frame-description-ru').forEach(el => {
-        el.style.display = isEnglish ? 'none' : 'block';
-      });
-      
-      // Обновить высоты рамок после смены языка
-      updateFrameHeights();
-    }
-
-    function updateFrameHeights() {
-      const frames = document.querySelectorAll('.special-frame');
-      let maxHeight = 0;
-
-      // Найти максимальную высоту среди всех .special-frame
-      frames.forEach(frame => {
-        frame.style.height = 'auto'; // Сброс высоты
-        const height = frame.offsetHeight;
-        if (height > maxHeight) {
-          maxHeight = height;
-        }
-      });
-
-      // Установить одинаковую высоту для всех .special-frame
-      frames.forEach(frame => {
-        frame.style.height = `${maxHeight}px`;
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Обновить высоту при загрузке страницы
-      updateFrameHeights();
-      
-      // Добавить обработчик клика для переключения языка
-      document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+    // Update descriptions for special frames
+    document.querySelectorAll('.frame-description-en, .frame-description-ru').forEach(el => {
+      el.style.display = el.classList.contains(`frame-description-${isEnglish ? 'en' : 'ru'}`) ? 'block' : 'none';
     });
-            </script>
+
+    // Update frame heights after changing language
+    updateFrameHeights();
+  }
+
+  function updateFrameHeights() {
+    const frames = document.querySelectorAll('.special-frame');
+    let maxHeight = 0;
+
+    // Find the maximum height among all .special-frame elements
+    frames.forEach(frame => {
+      frame.style.height = 'auto'; // Reset height
+      const height = frame.offsetHeight;
+      if (height > maxHeight) {
+        maxHeight = height;
+      }
+    });
+
+    // Set the same height for all .special-frame elements
+    frames.forEach(frame => {
+      frame.style.height = `${maxHeight}px`;
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize frame heights
+    updateFrameHeights();
+    
+    // Attach event listener for language toggle button
+    document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+  });
+    </script>
   
 </body>
 </html>
