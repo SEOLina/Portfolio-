@@ -82,7 +82,7 @@
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
 <script>
-    // Texts for different languages
+    // Тексты для разных языков
     const enTexts = [
       'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
       'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
@@ -110,23 +110,26 @@
     function toggleLanguage() {
       const isEnglish = document.documentElement.lang === 'en';
 
-      // Toggle language
+      // Переключение языка
       document.documentElement.lang = isEnglish ? 'ru' : 'en';
 
-      // Update text for about me
+      // Обновить текст для "обо мне"
       const aboutTexts = isEnglish ? ruTexts : enTexts;
       document.querySelectorAll('.about-text').forEach((p, index) => p.textContent = aboutTexts[index]);
 
-      // Update text for the fourth section
+      // Обновить текст для четвертого сектора
       const fourthTexts = isEnglish ? fourthRuTexts : fourthEnTexts;
       document.querySelectorAll('.rectangle').forEach((div, index) => div.textContent = fourthTexts[index]);
 
-      // Update descriptions for special frames
-      document.querySelectorAll('.frame-description-en, .frame-description-ru').forEach(el => {
-        el.style.display = el.classList.contains(`frame-description-${isEnglish ? 'ru' : 'en'}`) ? 'block' : 'none';
+      // Обновить описания для специальных рамок
+      document.querySelectorAll('.frame-description-en').forEach(el => {
+        el.style.display = isEnglish ? 'block' : 'none';
+      });
+      document.querySelectorAll('.frame-description-ru').forEach(el => {
+        el.style.display = isEnglish ? 'none' : 'block';
       });
       
-      // Update heights after changing language
+      // Обновить высоты рамок после смены языка
       updateFrameHeights();
     }
 
@@ -136,7 +139,7 @@
 
       // Найти максимальную высоту среди всех .special-frame
       frames.forEach(frame => {
-        frame.style.height = 'auto'; // Сбрасываем высоту
+        frame.style.height = 'auto'; // Сброс высоты
         const height = frame.offsetHeight;
         if (height > maxHeight) {
           maxHeight = height;
@@ -153,10 +156,10 @@
       // Обновить высоту при загрузке страницы
       updateFrameHeights();
       
-      // Обновить высоту при смене языка
+      // Добавить обработчик клика для переключения языка
       document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
     });
-      </script>
+            </script>
   
 </body>
 </html>
