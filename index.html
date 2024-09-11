@@ -80,6 +80,7 @@
   </div>
 
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
+
 <script>
     // Texts for different languages
     const enTexts = [
@@ -108,14 +109,14 @@
 
     function toggleLanguage() {
       const isEnglish = document.documentElement.lang === 'en';
-      
+
       // Toggle language
       document.documentElement.lang = isEnglish ? 'ru' : 'en';
-      
+
       // Update text for about me
       const aboutTexts = isEnglish ? ruTexts : enTexts;
       document.querySelectorAll('.about-text').forEach((p, index) => p.textContent = aboutTexts[index]);
-      
+
       // Update text for the fourth section
       const fourthTexts = isEnglish ? fourthRuTexts : fourthEnTexts;
       document.querySelectorAll('.rectangle').forEach((div, index) => div.textContent = fourthTexts[index]);
