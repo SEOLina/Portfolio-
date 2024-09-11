@@ -124,9 +124,6 @@
       document.querySelectorAll('.frame-description-en, .frame-description-ru').forEach(el => {
         el.style.display = el.classList.contains(`frame-description-${isEnglish ? 'en' : 'ru'}`) ? 'block' : 'none';
       });
-
-      // Update heights after changing language
-      updateFrameHeights();
     }
 
     function updateFrameHeights() {
@@ -152,10 +149,13 @@
       // Обновить высоту при загрузке страницы
       updateFrameHeights();
       
-      // Обновить высоту при смене языка
-      document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+      // Обновить высоту и текст при смене языка
+      document.getElementById('language-toggle').addEventListener('click', () => {
+        toggleLanguage();
+        updateFrameHeights();
+      });
     });
-        </script>
+</script>
   
 </body>
 </html>
