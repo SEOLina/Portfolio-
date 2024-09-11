@@ -92,20 +92,16 @@ body, html {
 }
 
 .special-frame {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  line-height: 1.5;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px;
   color: white;
   cursor: pointer;
-  margin: 0 10px;
   border: 2px solid #ffdc33;
-  width: calc(33.33% - 40px);
-  height: 100%;
-  font-size: 24px; 
+  margin: 0 10px;
+  box-sizing: border-box;
+  height: 100%; /* Ensure equal height */
 }
 
 .special-frame:hover {
@@ -115,14 +111,6 @@ body, html {
 .special-frames-container {
   display: flex;
   gap: 20px;
-}
-
-.special-frame {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
 }
 
 .special-frame img {
@@ -168,6 +156,9 @@ body, html {
 }
 
 .container4 .sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 20vw;
   text-align: center;
   position: relative;
@@ -301,15 +292,16 @@ body, html {
   box-sizing: border-box;
   border: 1px solid #ccc; /* Adjust border style as needed */
   background-color: #f9f9f9; /* Adjust background color as needed */
-    }
+}
 
 #container .sub-container {
   display: flex;
-  justify-content: space-between; /* или другой способ выравнивания */
-  align-items: stretch; /* Растягиваем высоту всех .special-frame */
+  flex-direction: column;
+  justify-content: stretch; /* Ensure special-frame fills the height of sub-container */
+  align-items: stretch; /* Ensure special-frame fills the height of sub-container */
 }
 
 .special-frame {
-  flex: 1; /* Делает все .special-frame одинаковыми по ширине */
   margin: 10px; /* Пример отступов между элементами */
+  flex: 1; /* Делает все .special-frame одинаковыми по ширине и высоте */
 }
