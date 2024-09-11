@@ -123,8 +123,11 @@
 
       // Update descriptions for special frames
       document.querySelectorAll('.frame-description-en, .frame-description-ru').forEach(el => {
-        el.style.display = el.classList.contains(`frame-description-${isEnglish ? 'en' : 'ru'}`) ? 'block' : 'none';
+        el.style.display = el.classList.contains(`frame-description-${isEnglish ? 'ru' : 'en'}`) ? 'block' : 'none';
       });
+      
+      // Update heights after changing language
+      updateFrameHeights();
     }
 
     function updateFrameHeights() {
@@ -150,13 +153,10 @@
       // Обновить высоту при загрузке страницы
       updateFrameHeights();
       
-      // Обновить высоту и текст при смене языка
-      document.getElementById('language-toggle').addEventListener('click', () => {
-        toggleLanguage();
-        updateFrameHeights();
-      });
+      // Обновить высоту при смене языка
+      document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
     });
-</script>
+      </script>
   
 </body>
 </html>
