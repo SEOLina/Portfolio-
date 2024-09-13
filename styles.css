@@ -101,7 +101,7 @@ body, html {
   border: 2px solid #ffdc33;
   margin: 0 10px;
   box-sizing: border-box;
-  flex: 1; /* Make sure it grows to fill available space */
+  height: 100%; /* Ensure equal height */
 }
 
 .special-frame:hover {
