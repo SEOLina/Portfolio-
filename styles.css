@@ -1,318 +1,229 @@
-/* Общие стили для всех экранов */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* Add your CSS styles here */
+    .container, .container4 {
+      margin: 20px;
+    }
 
-.container {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-}
+    .frame {
+      /* Add your styling here */
+    }
 
-.container:first-child {
-  background-image: url(https://i.yapx.ru/WNfLL.jpg);
-  background-size: cover;
-  height: 100vh; /* Высота 100vh для десктопа */
-}
+    .photo img {
+      width: 100%;
+      height: auto;
+    }
 
-.frame {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 2px solid white;
-  z-index: 1;
-}
+    .text-container {
+      padding: 20px;
+    }
 
-.portfolio-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
-  color: white;
-  z-index: 2;
-}
+    .special-frame {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      color: white;
+      cursor: pointer;
+      border: 2px solid #ffdc33;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
 
-.frame-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
+    .special-frame img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
 
-.container:nth-child(2) {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  background-color: black;
-}
+    .sub-container {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
 
-.photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  max-width: 50%;
-}
+    .frame-description-en, .frame-description-ru {
+      display: none;
+    }
 
-.text {
-  flex: 1;
-  background-color: black;
-  padding: 20px;
-  color: white;
-}
+    .frame-description-en {
+      display: block;
+    }
 
-#container {
-  display: flex;
-  background-color: black;
-  justify-content: space-between;
-  align-items: stretch;
-}
+    .contact-container {
+      margin: 20px;
+    }
 
-#language-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  border: 2px solid #ffdc33;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-}
+    .rectangle {
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="frame">
+      <div class="frame-content">
+        <div class="content">
+          <h1 class="portfolio-title">Portfolio</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
-.special-frame {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  color: white;
-  cursor: pointer;
-  border: 2px solid #ffdc33;
-  margin: 0 10px;
-  box-sizing: border-box;
-  height: 100%; /* Ensure equal height */
-}
+  <div class="container">
+    <div class="photo">
+      <img src="946bbd50b7b538f4a482d206a49d1147.jpg" alt="Description of image">
+    </div>
+    <div class="text">
+      <div class="text-container">
+        <h1 id="about-heading">About me</h1>
+        <p class="about-text">From an early age, my natural talent for languages became evident...</p>
+        <p class="about-text">However, I eventually decided to step away from freelance exchanges...</p>
+        <p class="about-text">As time went on, I realized that I wanted more than just financial rewards...</p>
+      </div>
+    </div>
+  </div>
 
-.special-frame:hover {
-  background-color: #333;
-}
+  <div id="container">
+    <div class="sub-container">
+      <div class="special-frame" onclick="window.location.href = 'Portugalia.html'">
+        <img class="ru" src="Portugal.png" alt="Image 1">
+        <div>
+          <p class="frame-description-en">Planning to travel to Portugal? Explore stunning Atlantic beaches...</p>
+          <p class="frame-description-ru">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики...</p>
+        </div>
+      </div>
+      <div class="special-frame" onclick="window.location.href = 'Plants.html'">
+        <img class="ru" src="Plant.png" alt="Image 2">
+        <div>
+          <p class="frame-description-en">Discover essential tips to keep your plants thriving! Learn how to water properly...</p>
+          <p class="frame-description-ru">Откройте секреты, которые помогут вашим растениям процветать! Узнайте, как правильно поливать...</p>
+        </div>
+      </div>
+      <div class="special-frame" onclick="window.location.href = 'https://bloodthirstywolf.github.io/Blog/Zarabotat_na_neyrosetyakh.html'">
+        <img class="ru" src="Money.png" alt="Image 3">
+        <div>
+          <p class="frame-description-en">Unveiling truth about earning with neural networks: debunking myths of quick money with AI...</p>
+          <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI...</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-.special-frames-container {
-  display: flex;
-  gap: 20px;
-}
+  <div class="container4">
+    <div class="sub-container">
+      <img src="Photo1.png" alt="Image 1">
+      <div class="rectangle">Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox</div>
+    </div>
+    <div class="sub-container">
+      <img src="Photo2.png" alt="Image 2">
+      <div class="rectangle">Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой</div>
+    </div>
+    <div class="sub-container">
+      <img src="Photo3.png" alt="Image 3">
+      <div class="rectangle">Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг»</div>
+    </div>
+  </div>
 
-.special-frame img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
+  <div class="contact-container">
+    <h1>Contact Me</h1>
+    <p>If you want to contact me, please email me at:</p>
+    <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
+  </div>
 
-.special-frame p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
+  <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
-.special-frame .frame-description-en {
-  display: block;
-}
+  <script>
+    // Texts for different languages
+    const enTexts = [
+      'From an early age, my natural talent for languages became evident...',
+      'However, I eventually decided to step away from freelance exchanges...',
+      'As time went on, I realized that I wanted more than just financial rewards...'
+    ];
 
-.special-frame .frame-description-ru {
-  display: none;
-}
+    const ruTexts = [
+      'С самого детства мой врождённый талант к языкам был заметным...',
+      'Однако в конечном итоге я решила уйти из бирж фриланса...',
+      'С течением времени я поняла, что хочу не только финансового благополучия...'
+    ];
 
-.contact-container {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height: auto;
-}
+    const fourthEnTexts = [
+      'Trained under Elizaveta Kulachkova, an expert from Skillbox.',
+      'Completed a course with a certified ICF coach-marketer, Oksana Bolashova.',
+      'Studied targeted advertising from the program director of Skillbox in Marketing.'
+    ];
 
-.email-link {
-  color: #ffdc33;
-}
+    const fourthRuTexts = [
+      'Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox.',
+      'Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой.',
+      'Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг».'
+    ];
 
-/* Подконтейнер для фото и рамки */
-.container4 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color: black;
-  padding: 20px;
-}
+    function toggleLanguage() {
+      const isEnglish = document.documentElement.lang === 'en';
+      
+      // Toggle language
+      document.documentElement.lang = isEnglish ? 'ru' : 'en';
+      
+      // Update text for about me
+      const aboutTexts = isEnglish ? ruTexts : enTexts;
+      document.querySelectorAll('.about-text').forEach((p, index) => p.textContent = aboutTexts[index]);
+      
+      // Update text for the fourth section
+      const fourthTexts = isEnglish ? fourthRuTexts : fourthEnTexts;
+      document.querySelectorAll('.rectangle').forEach((div, index) => div.textContent = fourthTexts[index]);
 
-.container4 .sub-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 20vw;
-  text-align: center;
-  position: relative;
-}
+      // Update descriptions for special frames
+      document.querySelectorAll('.frame-description-en, .frame-description-ru').forEach(el => {
+        el.style.display = el.classList.contains(`frame-description-${isEnglish ? 'en' : 'ru'}`) ? 'block' : 'none';
+      });
 
-.container4 img {
-  width: 100%;
-  height: auto;
-}
+      // Adjust heights of special frames
+      adjustSpecialFrameHeights();
+    }
 
-.container4 .rectangle {
-  width: 100%;
-  padding: 20px;
-  color: white;
-  border: 2px solid #ffdc33;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
+    // Function to set the same height for all special frames within a sub-container
+    function adjustSpecialFrameHeights() {
+      var subContainers = document.querySelectorAll('.sub-container');
 
-/* Мобильная версия */
-@media only screen and (max-width: 480px) {
-  .desktop-br {
-    display: none;
-  }
+      subContainers.forEach(function(subContainer) {
+        var frames = subContainer.querySelectorAll('.special-frame');
+        var maxHeight = 0;
 
-  .photo {
-    display: none;
-  }
+        // Find the maximum height
+        frames.forEach(function(frame) {
+          frame.style.height = 'auto'; // Reset height
+          var height = frame.offsetHeight;
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        });
 
-  .container:nth-child(2) {
-    flex-direction: column;
-    height: auto;
-  }
+        // Set all frames to the maximum height
+        frames.forEach(function(frame) {
+          frame.style.height = maxHeight + 'px';
+        });
+      });
+    }
 
-  .container:nth-child(2) .photo {
-    display: none;
-  }
+    // Adjust heights on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      adjustSpecialFrameHeights();
+    });
 
-  .container {
-    flex-direction: column;
-  }
-
-  .text {
-    padding-top: 0px;
-  }
-
-  .portfolio-title {
-    color: white;
-    font-size: 3em;
-    text-align: center;
-  }
-
-  #container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .special-frames-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .special-frame {
-    width: 80%;
-    margin: 0 auto 20px auto;
-  }
-
-  .text {
-    color: white;
-  }
-
-  .contact-container {
-    padding: 20px;
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
-
-  .email-link {
-    color: #ffdc33;
-  }
-
-  .container4 {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container4 .sub-container {
-    width: 90vw;
-    margin-bottom: 20px;
-  }
-
-  .container4 img {
-    width: 100%;
-    height: auto;
-  }
-
-  .container4 .rectangle {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .container:first-child {
-    height: 100vh; /* Высота 100vh для мобильной версии */
-  }
-}
-
-.container3 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px; /* Space between items */
-}
-
-.sub-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 20vw; /* Adjust based on your design */
-}
-
-.sub-container img {
-  max-width: 100%;
-  height: auto;
-}
-
-.rectangle {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid #ccc; /* Adjust border style as needed */
-  background-color: #f9f9f9; /* Adjust background color as needed */
-}
-
-#container .sub-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch; /* Ensure special-frame fills the height of sub-container */
-  align-items: stretch; /* Ensure special-frame fills the height of sub-container */
-}
-
-.special-frame {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  line-height: 1.5;
-  align-items: center;
-  padding: 20px;
-  color: white;
-  cursor: pointer;
-  margin: 0 10px;
-  border: 2px solid #ffdc33;
-  font-size: 24px; 
-  box-sizing: border-box; /* Убедитесь, что padding и border учитываются в высоте */
-}
+    // Adjust heights on window resize
+    window.addEventListener('resize', function() {
+      adjustSpecialFrameHeights();
+    });
+  </script>
+  
+</body>
+</html>
