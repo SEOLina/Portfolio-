@@ -82,6 +82,7 @@
   </div>
 
   <div id="container">
+  <div class="sub-container">
     <div class="special-frame" onclick="window.location.href = 'Portugalia.html'">
       <img class="ru" src="Portugal.png" alt="Image 1">
       <div>
@@ -103,6 +104,7 @@
         <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем?</p>
       </div>
     </div>
+  </div>
   </div>
 
   <div class="container4">
@@ -129,6 +131,33 @@
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
  <script>
+
+  function adjustFrameHeights() {
+    var frames = document.querySelectorAll('.special-frame');
+    var maxHeight = 0;
+
+    // Reset heights to auto to calculate actual heights
+    frames.forEach(function(frame) {
+        frame.style.height = 'auto';
+    });
+
+    // Find the maximum height
+    frames.forEach(function(frame) {
+        var height = frame.offsetHeight;
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+
+    // Set all frames to the maximum height
+    frames.forEach(function(frame) {
+        frame.style.height = maxHeight + 'px';
+    });
+}
+
+// Adjust heights on page load and window resize
+document.addEventListener('DOMContentLoaded', adjustFrameHeights);
+window.addEventListener('resize', adjustFrameHeights);
 document.addEventListener('DOMContentLoaded', function() {
     setInitialTexts();
     adjustContainerHeights();
@@ -191,17 +220,11 @@ function setInitialTexts() {
     document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'none');
 }
 
-function adjustContainerHeights() {
-    setEqualHeight('.container3', '.rectangle');
-    setEqualHeight('.container4', '.rectangle');
-}
-
-function setEqualHeight(containerSelector, itemSelector) {
-    const container = document.querySelector(containerSelector);
-    const items = container.querySelectorAll(itemSelector);
-    const maxHeight = Math.max(...Array.from(items).map(item => item.offsetHeight));
-    
-    items.forEach(item => item.style.height = `${maxHeight}px`);
+   // Adjust heights after language toggle
+function toggleLanguage() {
+    // Existing language toggle logic...
+    // After updating content, adjust heights
+    adjustFrameHeights();
 }
 </script>
 
