@@ -1,206 +1,150 @@
-/* Общие стили для всех экранов */
-body, html {
+/* Основные стили страницы */
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
+/* Контейнер с фреймом */
 .container {
   position: relative;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.container:first-child {
-  background-image: url(https://i.yapx.ru/WNfLL.jpg);
-  background-size: cover;
+  width: 100vw;
   height: 100vh;
 }
 
 .frame {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 2px solid white;
-  z-index: 1;
-}
-
-.portfolio-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
-  color: white;
-  z-index: 2;
-}
-
-.container:nth-child(2) {
   display: flex;
-  flex-direction: row; /* Горизонтальная ориентация по умолчанию */
-  background-color: black;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* Цвет фона контейнера */
 }
 
-.photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
+.frame-content {
+  position: relative;
+}
+
+.content {
+  text-align: center;
+}
+
+/* Заголовок портфолио */
+.portfolio-title {
+  font-size: 3em;
+  margin: 0;
+}
+
+/* Контейнер с фотографией и текстом */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
-.text {
-  flex: 1;
-  background-color: black;
-  padding: 20px;
-  color: white;
+.photo img {
+  max-width: 100%;
+  height: auto;
 }
 
+.text {
+  padding: 20px;
+}
+
+/* Контейнеры для специальных фреймов */
 #container {
   display: flex;
+  gap: 20px; /* Пространство между фреймами */
+  flex-wrap: wrap;
   justify-content: space-between;
-  flex-direction: row; /* Горизонтальное выравнивание на десктопе */
-  background-color: black;
 }
 
 .special-frame {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  color: white;
+  flex: 1;
+  max-width: 30%; /* Ширина фреймов в ряду */
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  padding: 10px;
+  box-sizing: border-box;
   cursor: pointer;
-  margin: 0 10px;
-  border: 2px solid #ffdc33;
-  width: calc(33.33% - 40px);
 }
 
 .special-frame img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  margin-bottom: 10px;
 }
 
-.frame-description-en {
-  display: block;
+/* Описание внутри специальных фреймов */
+.frame-description-en, .frame-description-ru {
+  display: none; /* По умолчанию скрыто */
 }
 
-.frame-description-ru {
-  display: none;
+/* Контейнер с квадратами */
+.container4 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Пространство между квадратиками */
+  flex-wrap: wrap;
 }
 
+.sub-container {
+  flex: 1;
+  min-width: 0; /* Позволяет флекс-элементам сжиматься при необходимости */
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rectangle {
+  background: white;
+  border: 2px solid black;
+  padding: 20px;
+  color: black;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Фотографии в квадрате */
+.inner-container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Верстка для мобильных устройств */
+@media only screen and (max-width: 480px) {
+  .container4 {
+    flex-direction: column;
+    align-items: center; /* Центрирование элементов в колонке */
+  }
+
+  .sub-container {
+    width: 80%; /* Ширина для мобильных устройств */
+  }
+}
+
+/* Контейнер для контактной информации */
 .contact-container {
-  background-color: black;
-  color: white;
   padding: 20px;
   text-align: center;
 }
 
+#contact-email {
+  color: #ffdc33;
+}
+
+/* Кнопка переключения языка */
 #language-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1000;
-  border: 2px solid #ffdc33;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.sub-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 20vw;
-}
-
-.sub-container img {
-  width: 100%;
-  height: auto;
-}
-
-.rectangle {
-  width: 100%;
-  padding: 10px;
-  color: white;
-  border: 2px solid #ffdc33;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Стили для третьего и четвертого контейнера */
-.container3, .container4 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.container3 .special-frame, .container4 .sub-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%; /* Подкорректируй ширину при необходимости */
-  margin: 10px;
-}
-
-.container3 .rectangle, .container4 .rectangle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.rectangle, .frame-description-en, .frame-description-ru, .fourth-frame-description-en, .fourth-frame-description-ru {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-/* Мобильная версия */
-@media only screen and (max-width: 480px) {
-  .container:nth-child(2) {
-    flex-direction: column; /* Вертикальная ориентация на мобильных */
-  }
-
-  .photo {
-    display: none;
-  }
-
-  .portfolio-title {
-    font-size: 3em;
-    text-align: center;
-  }
-
-  #container {
-    flex-direction: column; /* Вертикальная ориентация на мобильных */
-  }
-
-  .special-frame {
-    width: 80%;
-    margin: 0 auto 20px auto;
-  }
-
-  .container4 {
-    flex-direction: column;
-  }
-
-  .sub-container {
-    width: 90vw;
-    margin-bottom: 20px;
-  }
 }
