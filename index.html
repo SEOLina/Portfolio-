@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
   <style>
     #language-toggle {
       position: fixed;
@@ -12,6 +12,7 @@
       right: 20px;
       z-index: 1000;
     }
+
     .text-container {
       display: flex;
       flex-direction: column;
@@ -19,45 +20,11 @@
       align-items: center;
       height: 100%;
     }
-
-    /* Стили для третьего и четвертого контейнера */
-    .container3, .container4 {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .container3 .special-frame, .container4 .sub-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 30%; /* Подкорректируй ширину при необходимости */
-      margin: 10px;
-    }
-
-    .container3 .rectangle, .container4 .rectangle {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-grow: 1;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .rectangle, .frame-description-en, .frame-description-ru {
-      display: flex;
-      flex-grow: 1;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 10px;
-      box-sizing: border-box;
-      width: 100%;
-    }
   </style>
 </head>
+
 <body>
-  <div class="container">
+  <div class="container1"> <!-- Первый контейнер -->
     <div class="frame">
       <div class="frame-content">
         <div class="content">
@@ -67,7 +34,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container2"> <!-- Второй контейнер -->
     <div class="photo">
       <img src="946bbd50b7b538f4a482d206a49d1147.jpg" alt="Description of image">
     </div>
@@ -82,7 +49,6 @@
   </div>
 
   <div id="container">
-  <div class="sub-container">
     <div class="special-frame" onclick="window.location.href = 'Portugalia.html'">
       <img class="ru" src="Portugal.png" alt="Image 1">
       <div>
@@ -90,6 +56,7 @@
         <p class="frame-description-ru">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики, исторические города и местную кухню в нашем путеводителе. Подробности о достопримечательностях и советы для идеального отдыха.</p>
       </div>
     </div>
+
     <div class="special-frame" onclick="window.location.href = 'Plants.html'">
       <img class="ru" src="Plant.png" alt="Image 2">
       <div>
@@ -97,31 +64,13 @@
         <p class="frame-description-ru">Откройте секреты, которые помогут вашим растениям процветать! Узнайте, как правильно поливать, регулировать освещение и о самых частых ошибках.</p>
       </div>
     </div>
+
     <div class="special-frame" onclick="window.location.href = 'https://bloodthirstywolf.github.io/Blog/Zarabotat_na_neyrosetyakh.html'">
       <img class="ru" src="Money.png" alt="Image 3">
       <div>
         <p class="frame-description-en">Unveiling truth about earning with neural networks: debunking myths of quick money with AI. Who will be able to generate revenue from artificial intelligence, and who will be left with nothing?</p>
         <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем?</p>
       </div>
-    </div>
-  </div>
-  </div>
-
-  <div class="container4">
-    <div class="sub-container">
-      <img src="Photo1.png" alt="Image 1">
-      <div class="rectangle fourth-frame-description-en">Trained under Elizaveta Kulachkova, an expert from Skillbox.</div>
-      <div class="rectangle fourth-frame-description-ru" style="display:none;">Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox.</div>
-    </div>
-    <div class="sub-container">
-      <img src="Photo2.png" alt="Image 2">
-      <div class="rectangle fourth-frame-description-en">Completed a course with a certified ICF coach-marketer, Oksana Bolashova.</div>
-      <div class="rectangle fourth-frame-description-ru" style="display:none;">Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой.</div>
-    </div>
-    <div class="sub-container">
-      <img src="Photo3.png" alt="Image 3">
-      <div class="rectangle fourth-frame-description-en">Studied targeted advertising from the program director of Skillbox in Marketing.</div>
-      <div class="rectangle fourth-frame-description-ru" style="display:none;">Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг».</div>
     </div>
   </div>
 
@@ -133,104 +82,57 @@
 
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
- <script>
+  <script>
+    function toggleLanguage() {
+      var currentLanguage = document.documentElement.lang || 'en';
 
-  function adjustFrameHeights() {
-    var frames = document.querySelectorAll('.special-frame');
-    var maxHeight = 0;
+      if (currentLanguage === 'en') {
+        // Change to Russian
+        document.documentElement.lang = 'ru';
+        document.getElementById('about-heading').innerText = 'Обо мне';
+        document.querySelectorAll('.about-text').forEach(function(el, index) {
+          el.innerText = ruTexts[index];
+        });
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description-en').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+          el.style.display = 'block';
+        });
+        document.getElementById('language-toggle').innerText = 'Изменить язык';
+      } else {
+        // Change to English
+        document.documentElement.lang = 'en';
+        document.getElementById('about-heading').innerText = 'About me';
+        document.querySelectorAll('.about-text').forEach(function(el, index) {
+          el.innerText = enTexts[index];
+        });
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description-en').forEach(function(el) {
+          el.style.display = 'block';
+        });
+        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        document.getElementById('language-toggle').innerText = 'Change Language';
+      }
+    }
 
-    // Reset heights to auto to calculate actual heights
-    frames.forEach(function(frame) {
-        frame.style.height = 'auto';
-    });
+    // Initial texts for English and Russian
+    var enTexts = [
+      'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
+      'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
+      'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
+    ];
 
-    // Find the maximum height
-    frames.forEach(function(frame) {
-        var height = frame.offsetHeight;
-        if (height > maxHeight) {
-            maxHeight = height;
-        }
-    });
-
-    // Set all frames to the maximum height
-    frames.forEach(function(frame) {
-        frame.style.height = maxHeight + 'px';
-    });
-}
-
-// Adjust heights on page load and window resize
-document.addEventListener('DOMContentLoaded', adjustFrameHeights);
-window.addEventListener('resize', adjustFrameHeights);
-document.addEventListener('DOMContentLoaded', function() {
-    setInitialTexts();
-    adjustContainerHeights();
-});
-
-window.addEventListener('resize', adjustContainerHeights);
-
-document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
-
-const enTexts = [
-    'From an early age, my natural talent for languages became evident...',
-    'However, I eventually decided to step away from freelance exchanges...',
-    'As time went on, I realized that I wanted more than just financial rewards...'
-];
-
-const ruTexts = [
-    'С самого детства мой врождённый талант к языкам был заметным...',
-    'Однако в конечном итоге я решила уйти из бирж фриланса...',
-    'С течением времени я поняла, что хочу не только финансового благополучия...'
-];
-
-const fourthEnTexts = [
-    'Trained under Elizaveta Kulachkova, an expert from Skillbox.',
-    'Completed a course with a certified ICF coach-marketer, Oksana Bolashova.',
-    'Studied targeted advertising from the program director of Skillbox in Marketing.'
-];
-
-const fourthRuTexts = [
-    'Обучалась копирайтингу у Елизаветы Кулачковой, эксперта от Skillbox.',
-    'Проходила курс от сертифицированного по международным стандартам ICF коуча-маркетолога, Оксаны Болашовой.',
-    'Проходила обучение по таргетированной рекламе от Программного директора Skillbox по направлению «Маркетинг».'
-];
-
-function toggleLanguage() {
-    const isEnglish = document.documentElement.lang === 'en';
-    document.documentElement.lang = isEnglish ? 'ru' : 'en';
-
-    document.getElementById('about-heading').innerText = isEnglish ? 'Обо мне' : 'About me';
-    updateTextContent('.about-text', isEnglish ? ruTexts : enTexts);
-    updateTextContent('.fourth-frame-description', isEnglish ? fourthRuTexts : fourthEnTexts);
-    toggleFrameDescriptions(isEnglish);
-    document.getElementById('language-toggle').innerText = isEnglish ? 'Change Language' : 'Изменить язык';
-}
-
-function updateTextContent(selector, texts) {
-    document.querySelectorAll(selector).forEach((element, index) => {
-        element.innerText = texts[index] || '';
-    });
-}
-
-function toggleFrameDescriptions(isEnglish) {
-    document.querySelectorAll('.frame-description-en').forEach(el => el.style.display = isEnglish ? 'none' : 'block');
-    document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = isEnglish ? 'block' : 'none');
-}
-
-function setInitialTexts() {
-    updateTextContent('.about-text', enTexts); // Set initial texts to English
-    updateTextContent('.fourth-frame-description-en', fourthEnTexts);
-    updateTextContent('.fourth-frame-description-ru', fourthRuTexts);
-    document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'none');
-}
-
-   // Adjust heights after language toggle
-function toggleLanguage() {
-    // Existing language toggle logic...
-    // After updating content, adjust heights
-    adjustFrameHeights();
-}
-</script>
-
-
+    var ruTexts = [
+      'С самого детства мой врождённый талант к языкам был заметным. Их изучение давалось мне легко и естественно, и когда я решила заработать свои первые деньги, было ясно, какой путь выбрать. Целых четыре года я посвятила себя фрилансу, начав с перевода текста с английского, немецкого и японского. Со временем я расширила свои навыки, включив в них SEO копирайтинг.',
+      'Однако в конечном итоге я решила уйти из бирж фриланса, осознав, что это арена преимущественно для начинающих, где успех часто зависит от делегирования работы менее оплачиваемым лицам. Я поняла, что выросла из фазы, когда мне нужно было лишь немного денег для студенческих развлечений; я превратилась в человека, который желает личностного и профессионального роста.',
+      'С течением времени я поняла, что хочу большего, чем просто финансовые награды. Я хотела вернуть обществу и внести вклад в благополучие других. Один из значительных шагов, который я сделала, — это вступление в организацию, занимающуюся помощью людям с серьезными психическими и физическими проблемами. Хотя это началось как небольшая группа увлеченных людей, не знающих своего направления, я внесла свой вклад, переводя важные ресурсы, включая целую книгу, которая до сих пор остается ценным активом.'
+    ];
+  </script>
 </body>
+
 </html>
+
