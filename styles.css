@@ -6,13 +6,10 @@ body, html {
   overflow-x: hidden;
 }
 
-.container {
+.container1 {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-}
-
-.container:first-child {
   background-image: url(https://i.yapx.ru/WNfLL.jpg);
   background-size: cover;
   height: 100vh; /* Высота 100vh для десктопа */
@@ -49,7 +46,7 @@ body, html {
   z-index: 2;
 }
 
-.container:nth-child(2) {
+.container2 {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -167,12 +164,12 @@ body, html {
     display: none;
   }
 
-  .container:nth-child(2) {
+  .container2 {
     flex-direction: column;
     height: auto;
   }
 
-  .container {
+  .container1 {
     flex-direction: column;
   }
 
@@ -218,7 +215,7 @@ body, html {
     margin-top: 10px;
   }
 
-  .container:first-child {
+  .container1 {
     height: 100vh; /* Высота 100vh для мобильной версии */
   }
 }
