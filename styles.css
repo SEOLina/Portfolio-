@@ -184,10 +184,11 @@ body, html {
     text-align: center;
   }
 
-  #container {
-    flex-direction: column;
-    height: auto;
-  }
+.Flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
   .special-frame {
     width: 80%;
@@ -220,3 +221,18 @@ body, html {
     height: 100vh; /* Высота 100vh для мобильной версии */
   }
 }
+
+/* Сначала скрываем все русские версии описаний */
+.frame-description-ru {
+  display: none;
+}
+
+/* Когда язык меняется на русский */
+.ru-active .frame-description-ru {
+  display: block;
+}
+
+.ru-active .frame-description-en {
+  display: none;
+}
+
