@@ -1,238 +1,179 @@
-/* Общие стили для всех экранов */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+/* Стили для общего контейнера */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
+/* Стили для первой секции */
 .container1 {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  background-image: url(background1.jpg);
-  background-size: cover;
-  height: 100vh; /* Высота 100vh для десктопа */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
 }
 
 .frame {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 2px solid white;
-  z-index: 1;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
-  color: white;
-  z-index: 2;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
 }
 
-.frame-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-
+/* Стили для второй секции */
 .container2 {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
 }
 
 .photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  max-width: 50%;
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .text {
-  flex: 1;
-  background-color: black;
-  padding: 20px;
-  color: white;
+    flex: 2;
+    min-width: 300px;
+    margin: 20px;
 }
 
-#container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Растягивает дочерние элементы на одинаковую высоту */
-  background-color: black;
-}
-
-.special-frame {
-  flex-grow: 1; /* Позволяет контейнерам расширяться равномерно */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Гарантирует правильное распределение содержимого */
-  margin: 0 10px;
-  padding: 20px;
-  border: 2px solid #ffdc33;
-  color: white;
-  cursor: pointer;
-}
-
-.frame-description-en, .frame-description-ru {
-  flex-grow: 1; /* Текст растягивается на доступное пространство */
-  display: flex;
-  align-items: center; /* Текст выравнивается по центру вертикально */
-}
-
-.special-frame:hover {
-  background-color: #333;
-}
-
-#language-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  border: 2px solid #ffdc33;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.contact-container {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height: auto;
-}
-
-.email-link {
-  color: #ffdc33;
-}
-
-/* Подконтейнер для фото и рамки */
-.container4 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: stretch; /* Изменено на stretch для выравнивания по высоте */
-  background-color: black;
-  padding: 20px;
-}
-
-.container4 .sub-container {
-  width: 20vw;
-  text-align: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.container4 img {
-  width: 100%;
-  height: auto;
-}
-
-.container4 .rectangle {
-  width: 100%;
-  padding: 20px;
-  color: white;
-  border: 2px solid #ffdc33;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  flex: 1; /* Позволяет прямоугольнику занимать оставшееся пространство */
-}
-
-/* Мобильная версия */
-@media only screen and (max-width: 480px) {
-  .desktop-br {
-    display: none;
-  }
-
-  .photo {
-    display: none;
-  }
-
-  .container2 {
+.text-container {
+    display: flex;
     flex-direction: column;
-    height: auto;
-  }
+    justify-content: center;
+    height: 100%;
+}
 
-  .container1 {
-    flex-direction: column;
-  }
+.about-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
 
-  .text {
-    padding-top: 0px;
-  }
-
-  .portfolio-title {
-    color: white;
-    font-size: 3em;
-    text-align: center;
-  }
-
-.Flexbox-container {
+/* Стили для третьей секции с работами (container3) */
+.container3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-  .special-frame {
-    width: 80%;
-    margin: 0 auto 20px auto;
-  }
-
-  .contact-container {
     padding: 20px;
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
+    background-color: #fafafa;
+}
 
-  .container4 {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container4 .sub-container {
-    width: 90vw;
-    margin-bottom: 20px;
-  }
-
-  .container4 .rectangle {
+#Flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
-    margin-top: 10px;
-  }
-
-  .container1 {
-    height: 100vh; /* Высота 100vh для мобильной версии */
-  }
 }
 
-/* Сначала скрываем все русские версии описаний */
-.frame-description-ru {
-  display: none;
+.special-frame {
+    flex: 1 0 30%; /* Контролируем ширину каждого элемента */
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Когда язык меняется на русский */
-.ru-active .frame-description-ru {
-  display: block;
+.special-frame:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.ru-active .frame-description-en {
-  display: none;
+.special-frame img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
+.special-frame div {
+    flex-grow: 1;
+}
+
+.special-frame p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .special-frame {
+        flex: 1 0 100%; /* Элементы занимают всю ширину экрана */
+        margin-bottom: 20px;
+    }
+
+    .container2, .container3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo, .text {
+        min-width: 100%;
+        text-align: center;
+    }
+}
+
+/* Стили для кнопки переключения языка */
+#language-toggle {
+    padding: 10px 20px;
+    background-color: #ffdc33;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#language-toggle:hover {
+    background-color: #ffd100;
+}
+
+/* Стили для контактной секции */
+.contact-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222;
+    color: white;
+}
+
+.contact-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    font-size: 18px;
+}
+
+#contact-email {
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#contact-email:hover {
+    text-decoration: underline;
+    color: #ffdc33;
+}
