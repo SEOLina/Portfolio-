@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Your Portfolio</title>
   <style>
     #language-toggle {
       position: fixed;
@@ -22,26 +21,9 @@
       height: 100%;
     }
 
-    /* CSS для container3 */
-    .container3 {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-
-    .special-frame {
-      flex: 1 0 30%; /* Или другое значение, чтобы контролировать ширину */
-      margin: 10px; /* Отступ между рамками */
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #ccc; /* Добавьте рамку для наглядности */
-      padding: 10px; /* Отступ внутри рамки */
-      box-sizing: border-box; /* Чтобы padding и border входили в общую ширину */
-      transition: box-shadow 0.3s; /* Плавный переход для эффекта при наведении */
-    }
-
-    .special-frame:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Эффект при наведении */
+    /* Скрыть русский текст по умолчанию */
+    .frame-description-ru {
+      display: none;
     }
   </style>
 </head>
@@ -71,13 +53,13 @@
     </div>
   </div>
 
-  <div class="container3"> <!-- Третий контейнер -->
-    <div id="Flexbox-container">
+  <div class="container3">
+    <div class="Flexbox-container">
       <div class="special-frame" onclick="window.location.href = 'Portugalia.html'">
         <img class="ru" src="Portugal.png" alt="Image 1">
         <div>
           <p class="frame-description-en">Planning to travel to Portugal? Explore stunning Atlantic beaches, historic, but modern cities, and local cuisine in our travel guide. Discover attractions and tips for your perfect getaway.</p>
-          <p class="frame-description-ru" style="display:none;">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики, исторические города и местную кухню в нашем путеводителе. Подробности о достопримечательностях и советы для идеального отдыха.</p>
+          <p class="frame-description-ru">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики, исторические города и местную кухню в нашем путеводителе. Подробности о достопримечательностях и советы для идеального отдыха.</p>
         </div>
       </div>
 
@@ -85,7 +67,7 @@
         <img class="ru" src="Plant.png" alt="Image 2">
         <div>
           <p class="frame-description-en">Discover essential tips to keep your plants thriving! Learn how to water properly, choose the right sunlight, and tackle common issues like yellowing leaves, infestations, or mould in this beginner's guide to floriculture.</p>
-          <p class="frame-description-ru" style="display:none;">Откройте секреты, которые помогут вашим растениям процветать! Узнайте, как правильно поливать, регулировать освещение и о самых частых ошибках, таких как пожелтение листьев, нашествие насекомых или плесень, в этом руководстве для начинающих по флористике.</p>
+          <p class="frame-description-ru">Откройте секреты, которые помогут вашим растениям процветать! Узнайте, как правильно поливать, регулировать освещение и о самых частых ошибках.</p>
         </div>
       </div>
 
@@ -93,9 +75,12 @@
         <img class="ru" src="Money.png" alt="Image 3">
         <div>
           <p class="frame-description-en">Unveiling truth about earning with neural networks: debunking myths of quick money with AI. Who will be able to generate revenue from artificial intelligence, and who will be left with nothing?</p>
-          <p class="frame-description-ru" style="display:none;">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем?</p>
+          <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем?</p>
         </div>
       </div>
+    </div>
+    <div class="additional-content">
+      <p>Здесь будет дополнительная информация для третьего контейнера.</p>
     </div>
   </div>
 
@@ -107,7 +92,73 @@
 
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
-  <script src="script.js"></script> <!-- Ссылка на файл с JavaScript -->
+  <script>
+    function toggleLanguage() {
+      var currentLanguage = document.documentElement.lang || 'en';
+
+      if (currentLanguage === 'en') {
+        // Change to Russian
+        document.documentElement.lang = 'ru';
+        document.getElementById('about-heading').innerText = 'Обо мне';
+        document.querySelectorAll('.about-text').forEach(function(el, index) {
+          el.innerText = ruTexts[index];
+        });
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description-en').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+          el.style.display = 'block';
+        });
+        document.getElementById('language-toggle').innerText = 'Изменить язык';
+      } else {
+        // Change to English
+        document.documentElement.lang = 'en';
+        document.getElementById('about-heading').innerText = 'About me';
+        document.querySelectorAll('.about-text').forEach(function(el, index) {
+          el.innerText = enTexts[index];
+        });
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description-en').forEach(function(el) {
+          el.style.display = 'block';
+        });
+        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        document.getElementById('language-toggle').innerText = 'Change Language';
+      }
+      // Обновление высоты контейнеров после смены языка
+      updateContainerHeights();
+    }
+
+    // Функция для обновления высоты контейнеров
+    function updateContainerHeights() {
+      const flexboxContainer = document.querySelector('.Flexbox-container');
+      const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
+      const maxHeight = Math.max(...Array.from(specialFrames).map(frame => frame.offsetHeight));
+      specialFrames.forEach(frame => {
+        frame.style.height = `${maxHeight}px`;
+      });
+    }
+
+    // Initial texts for English and Russian
+    var enTexts = [
+      'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
+      'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
+      'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
+    ];
+
+    var ruTexts = [
+      'С самого детства мой природный талант к языкам стал очевиден. Учить их было легко и естественно, и когда я искала, как заработать свои первые деньги в юности, было ясно, какой путь выбрать. В течение четырех лет я посвятила себя фрилансу, изначально работая переводчиком на таких языках, как английский, немецкий и японский. Со временем я расширила свои навыки, чтобы включить SEO-копирайтинг.',
+      'Однако в конечном итоге я решила уйти от фриланса, осознав, что это арена, в основном предназначенная для начинающих, где успех часто зависел от делегирования работы людям с низкой оплатой. Я поняла, что переросла фазу, когда мне нужны были только небольшие деньги для студенческих развлечений; я превратилась в человека, который стремился к личностному и профессиональному росту.',
+      'Со временем я поняла, что хочу большего, чем просто финансовые награды. Я хотела помочь обществу и внести вклад в благополучие других. Один из значительных шагов, которые я предприняла, это присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами. Хотя все начиналось как небольшая группа увлеченных людей, не знающих своего направления, я внесла свой вклад, переводя важные ресурсы, включая целую книгу, которая до сих пор остается ценным активом.'
+    ];
+    
+    // Обновляем высоты контейнеров при загрузке страницы
+    window.onload = function() {
+      updateContainerHeights();
+    };
+  </script>
 </body>
 
 </html>
