@@ -69,18 +69,26 @@ body, html {
   color: white;
 }
 
-.container3 {
-  padding: 20px;
+#container {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: 2px solid #ffdc33;
   background-color: black;
   color: white;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.Flexbox-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Выравнивание по высоте */
-}
-
+/* Стили для специальных фреймов */
 .special-frame {
   flex: 1;
   display: flex;
@@ -102,25 +110,6 @@ body, html {
   background-color: #333;
 }
 
-#container {
-  display: flex;
-  background-color: black;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-#language-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  border: 2px solid #ffdc33;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
 .contact-container {
   background-color: black;
   color: white;
@@ -131,6 +120,33 @@ body, html {
 
 .email-link {
   color: #ffdc33;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Flexbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Растягивает все элементы по высоте */
+  gap: 20px; /* Расстояние между фреймами */
+}
+
+/* Установка одинаковой высоты для всех special-frame */
+.Flexbox-container .special-frame {
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение содержимого внутри */
+  justify-content: space-between; /* Обеспечивает равномерное распределение пространства */
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 100%; /* Устанавливает высоту на 100% */
+}
+
+.additional-content {
+  margin-top: 20px;
 }
 
 /* Мобильная версия */
@@ -162,14 +178,9 @@ body, html {
     text-align: center;
   }
 
-  .container3 {
+  #container {
     flex-direction: column;
-    padding: 20px;
-  }
-
-  .Flexbox-container {
-    flex-direction: column;
-    align-items: center;
+    height: auto;
   }
 
   .special-frame {
@@ -182,5 +193,9 @@ body, html {
     background-color: black;
     color: white;
     text-align: center;
+  }
+
+  .container1 {
+    height: 100vh; /* Высота 100vh для мобильной версии */
   }
 }
