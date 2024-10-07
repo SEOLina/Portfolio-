@@ -194,6 +194,10 @@ body, html {
     margin: 0 auto 20px auto;
   }
 
+  .Flexbox-container {
+    flex-direction: column; /* Изменяем на вертикальное расположение */
+  }
+
   .contact-container {
     padding: 20px;
     background-color: black;
