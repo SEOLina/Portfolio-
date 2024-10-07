@@ -65,7 +65,7 @@ body, html {
 .text {
   flex: 1;
   background-color: black;
-  padding: 20px;
+  padding: 0 20px;
   color: white;
 }
 
