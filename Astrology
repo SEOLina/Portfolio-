@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейсы по Астрологии</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #000;
+            padding: 2vw;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 2vw;
+        }
+
+        h1 {
+            font-size: 3vw;
+            font-weight: bold;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5vh;
+        }
+
+        .image-container {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .intro-text {
+            flex: 1 1 50%;
+        }
+
+        .intro-text h2 {
+            font-size: 2.5vw;
+            margin-bottom: 1vw;
+        }
+
+        .intro-text p {
+            font-size: 1.2vw;
+            line-height: 1.8;
+        }
+
+        .cases {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .case {
+            flex: 1 1 45%;
+            margin-bottom: 4vw;
+            border: 1px solid #fff;
+            padding: 2vw;
+            background-color: #1a1a1a;
+        }
+
+        .case h3 {
+            font-size: 2vw;
+            margin-bottom: 1.5vw;
+        }
+
+        .case p {
+            font-size: 1.2vw;
+            line-height: 1.8;
+            margin-bottom: 1.5vw;
+        }
+
+        .case img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3vw 0;
+            border-top: 1px solid #fff;
+        }
+
+        footer h3 {
+            font-size: 2.2vw;
+            margin-bottom: 1vw;
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: center;
+            gap: 2vw;
+        }
+
+        .contacts a img {
+            width: 3vw;
+            height: 3vw;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .case {
+                flex: 1 1 100%;
+                margin-bottom: 5vw;
+            }
+
+            .intro-text h2, .case h3, footer h3 {
+                font-size: 4vw;
+            }
+
+            .intro-text p, .case p, footer p {
+                font-size: 2.5vw;
+            }
+
+            .contacts a img {
+                width: 7vw;
+                height: 7vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Главная</h1>
+    </header>
+
+    <section class="hero">
+        <div class="image-container">
+            <img src="image.png" alt="Астрологический символ">
+        </div>
+        <div class="intro-text">
+            <h2>Кейсы Астрология</h2>
+            <p>Каждый проект, за который я берусь, опирается на глубокое понимание психологии целевой аудитории и их стремления к личностному росту и гармонии. Благодаря этому я создаю контент, который не просто информирует, но и вдохновляет, вызывая эмоциональный отклик и побуждая к действию.</p>
+        </div>
+    </section>
+
+    <section class="cases">
+        <div class="case">
+            <h3>Кейс 1: Создание цепочки email и постов для привлечения лидов в сообщество духовного развития</h3>
+            <p>В рамках этого проекта я разработала серию email-писем и постов в Telegram, основываясь на ключевых темах, озвученных лидером в сфере эзотерики и саморазвития. Моей задачей было подвести целевую аудиторию — людей, заинтересованных в личностном росте и раскрытии своего потенциала — к вступлению в сообщество через серию видео, затрагивающих важные аспекты их жизни, такие как женская сила и самореализация. Вот одно из писем:</p>
+            <img src="email_mockup.png" alt="Пример письма">
+        </div>
+
+        <div class="case">
+            <h3>Кейс 2: Создание контент-плана для воронки, привлекающей на мероприятие</h3>
+            <p>В этом проекте я создала контент-план для воронки, целью которой было привлечение участников на важное событие в сфере духовного роста. План включал серию постов в Telegram, каждый из которых продвигал основные ценности мероприятия и привлекал внимание к ключевым спикерам и темам. В качестве примера привожу текст одного из постов:</p>
+            <img src="phone_mockup.png" alt="Пример поста в Телеграме">
+        </div>
+    </section>
+
+    <footer>
+        <h3>Связаться со мной можно здесь</h3>
+        <div class="contacts">
+            <a href="mailto:your-email@example.com">
+                <img src="email_icon.svg" alt="Email">
+            </a>
+            <a href="https://t.me/yourtelegram" target="_blank">
+                <img src="telegram_icon.svg" alt="Telegram">
+            </a>
+            <a href="https://wa.me/123456789" target="_blank">
+                <img src="whatsapp_icon.svg" alt="WhatsApp">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
