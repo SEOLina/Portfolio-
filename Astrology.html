@@ -22,18 +22,22 @@
     }
 
     header {
+        position: sticky;
+        top: 0;
+        background-color: #000;
+        padding: 1vw 0;
         text-align: left;
-        margin-bottom: 2vw;
-        border: none;
+        z-index: 1000;
     }
 
     h1 {
         font-size: 3vw;
         font-weight: bold;
+        margin-left: 2vw;
     }
 
     .home-link {
-        color: #E7C182;
+        color: #fff; /* Цвет ссылки "Главная" теперь белый */
         text-decoration: none;
     }
 
@@ -43,7 +47,6 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 5vh;
-        border: none;
     }
 
     .image-container {
@@ -51,18 +54,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: none;
     }
 
     .image-container img {
         max-width: 80%;
         height: auto;
-        border: none;
     }
 
     .intro-text {
         flex: 1 1 50%;
-        border: none;
     }
 
     .intro-text h2 {
@@ -78,16 +78,15 @@
     .cases {
         display: flex;
         flex-wrap: wrap;
-        gap: 5vh; /* Отступ между кейсами */
+        gap: 5vh;
         justify-content: space-between;
     }
 
     .case {
-        flex: 1 1 calc(50% - 2.5vh); /* Задаем ширину для горизонтального расположения */
+        flex: 1 1 calc(50% - 2.5vh);
         margin-bottom: 4vw;
         padding: 2vw;
-        border: 2px solid #E7C182; /* Толщина рамки и цвет */
-        background-color: transparent; /* Убираем фон */
+        border: 2px solid #E7C182;
     }
 
     .case h3 {
@@ -104,13 +103,11 @@
     .case img {
         width: 100%;
         height: auto;
-        border: none;
     }
 
     footer {
         text-align: center;
         padding: 3vw 0;
-        border-top: 1px solid #fff;
     }
 
     footer h3 {
@@ -125,37 +122,26 @@
     }
 
     .contacts a img {
-        width: 5vw; /* Размер иконок на десктопе */
+        width: 5vw;
         height: 5vw;
-        border: none;
     }
 
     /* Настройки для мобильных устройств */
     @media (max-width: 768px) {
-        .hero {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .cases {
-            flex-direction: column; /* Вертикальное расположение на мобильных */
-        }
-
-        .case {
-            flex: 1 1 100%; /* Полная ширина кейсов на мобильных */
-            margin-bottom: 5vw;
+        h1 {
+            font-size: 6vw;
         }
 
         .intro-text h2, .case h3, footer h3 {
-            font-size: 4vw;
+            font-size: 8vw; /* Увеличение шрифта в 2 раза */
         }
 
         .intro-text p, .case p, footer p {
-            font-size: 2.5vw;
+            font-size: 5vw;
         }
 
         .contacts a img {
-            width: 10vw; /* Размер иконок на мобильных */
+            width: 10vw;
             height: 10vw;
         }
     }
