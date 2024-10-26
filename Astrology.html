@@ -6,7 +6,7 @@
     <title>Кейсы по Астрологии</title>
     <meta name="robots" content="noindex, nofollow">
     
-   <style>
+    <style>
     * {
         margin: 0;
         padding: 0;
@@ -72,13 +72,13 @@
 
     .cases {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
-        gap: 5vh; /* отступ между кейсами */
+        gap: 5vh; /* Отступ между кейсами */
+        justify-content: space-between;
     }
 
     .case {
-        flex: 1 1 45%; /* Горизонтальное расположение на больших экранах */
+        flex: 1 1 calc(50% - 2.5vh); /* Задаем ширину для горизонтального расположения */
         margin-bottom: 4vw;
         padding: 2vw;
         background-color: #1a1a1a;
@@ -154,7 +154,7 @@
             height: 7vw;
         }
     }
-            </style>
+    </style>
 </head>
 <body>
 
