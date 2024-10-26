@@ -5,150 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кейсы по Астрологии</title>
     <meta name="robots" content="noindex, nofollow">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    
+   <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background-color: #000;
-            padding: 2vw;
-        }
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #fff;
+        background-color: #000;
+        padding: 2vw;
+    }
 
-        header {
-            text-align: left;
-            margin-bottom: 2vw;
-            border: none;
-        }
+    header {
+        text-align: left;
+        margin-bottom: 2vw;
+        border: none;
+    }
 
-        h1 {
-            font-size: 3vw;
-            font-weight: bold;
-        }
+    h1 {
+        font-size: 3vw;
+        font-weight: bold;
+    }
 
+    .hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5vh;
+        border: none;
+    }
+
+    .image-container {
+        flex: 1 1 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
+
+    .image-container img {
+        max-width: 80%;
+        height: auto;
+        border: none;
+    }
+
+    .intro-text {
+        flex: 1 1 50%;
+        border: none;
+    }
+
+    .intro-text h2 {
+        font-size: 2.5vw;
+        margin-bottom: 1vw;
+    }
+
+    .intro-text p {
+        font-size: 1.2vw;
+        line-height: 1.8;
+    }
+
+    .cases {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 5vh; /* отступ между кейсами */
+    }
+
+    .case {
+        flex: 1 1 45%; /* Горизонтальное расположение на больших экранах */
+        margin-bottom: 4vw;
+        padding: 2vw;
+        background-color: #1a1a1a;
+        border: 1px solid #fff; /* Оставляем рамку только у кейсов */
+    }
+
+    .case h3 {
+        font-size: 2vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .case p {
+        font-size: 1.2vw;
+        line-height: 1.8;
+        margin-bottom: 1.5vw;
+    }
+
+    .case img {
+        width: 100%;
+        height: auto;
+        border: none;
+    }
+
+    footer {
+        text-align: center;
+        padding: 3vw 0;
+        border-top: 1px solid #fff;
+    }
+
+    footer h3 {
+        font-size: 2.2vw;
+        margin-bottom: 1vw;
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+    }
+
+    .contacts a img {
+        width: 3vw;
+        height: 3vw;
+        border: none;
+    }
+
+    /* Настройки для мобильных устройств */
+    @media (max-width: 768px) {
         .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5vh;
-            border: none;
-        }
-
-        .image-container {
-            flex: 1 1 40%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-        }
-
-        .image-container img {
-            max-width: 80%;
-            height: auto;
-            border: none;
-        }
-
-        .intro-text {
-            flex: 1 1 50%;
-            border: none;
-        }
-
-        .intro-text h2 {
-            font-size: 2.5vw;
-            margin-bottom: 1vw;
-        }
-
-        .intro-text p {
-            font-size: 1.2vw;
-            line-height: 1.8;
+            flex-direction: column;
+            text-align: center;
         }
 
         .cases {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 5vh; /* отступ между кейсами */
+            flex-direction: column; /* Вертикальное расположение на мобильных */
         }
 
         .case {
-            flex: 1 1 45%;
-            margin-bottom: 4vw;
-            padding: 2vw;
-            background-color: #1a1a1a;
-            border: 1px solid #fff; /* Оставляем рамку только у кейсов */
+            flex: 1 1 100%; /* Полная ширина кейсов на мобильных */
+            margin-bottom: 5vw;
         }
 
-        .case h3 {
-            font-size: 2vw;
-            margin-bottom: 1.5vw;
+        .intro-text h2, .case h3, footer h3 {
+            font-size: 4vw;
         }
 
-        .case p {
-            font-size: 1.2vw;
-            line-height: 1.8;
-            margin-bottom: 1.5vw;
-        }
-
-        .case img {
-            width: 100%;
-            height: auto;
-            border: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3vw 0;
-            border-top: 1px solid #fff;
-        }
-
-        footer h3 {
-            font-size: 2.2vw;
-            margin-bottom: 1vw;
-        }
-
-        .contacts {
-            display: flex;
-            justify-content: center;
-            gap: 2vw;
+        .intro-text p, .case p, footer p {
+            font-size: 2.5vw;
         }
 
         .contacts a img {
-            width: 3vw;
-            height: 3vw;
-            border: none;
+            width: 7vw;
+            height: 7vw;
         }
-
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .case {
-                flex: 1 1 100%;
-                margin-bottom: 5vw;
-            }
-
-            .intro-text h2, .case h3, footer h3 {
-                font-size: 4vw;
-            }
-
-            .intro-text p, .case p, footer p {
-                font-size: 2.5vw;
-            }
-
-            .contacts a img {
-                width: 7vw;
-                height: 7vw;
-            }
-        }
-    </style>
+    }
+            </style>
 </head>
 <body>
 
