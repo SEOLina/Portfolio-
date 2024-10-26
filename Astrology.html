@@ -43,6 +43,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border: none; /* Убираем рамки у контейнера с изображением */
         }
 
         .image-container img {
@@ -52,6 +53,7 @@
 
         .intro-text {
             flex: 1 1 50%;
+            border: none; /* Убираем рамки у текстового контейнера */
         }
 
         .intro-text h2 {
@@ -68,14 +70,16 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            border: 1px solid #fff; /* Рамка вокруг контейнера с кейсами */
+            padding: 2vw; /* Добавляем отступы для внутреннего содержимого */
         }
 
         .case {
             flex: 1 1 45%;
             margin-bottom: 4vw;
-            border: 1px solid #fff;
             padding: 2vw;
             background-color: #1a1a1a;
+            border: 1px solid #fff; /* Рамка только для кейсов */
         }
 
         .case h3 {
@@ -92,7 +96,7 @@
         .case img {
             width: 100%;
             height: auto;
-            border: 1px solid #fff;
+            border: none; /* Убираем границу у изображений */
         }
 
         footer {
