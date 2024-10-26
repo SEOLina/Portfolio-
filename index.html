@@ -1,196 +1,164 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кейсы по Астрологии</title>
-    <meta name="robots" content="noindex, nofollow">
-    
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    #language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
     }
 
-    body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        color: #fff;
-        background-color: #000;
-        padding: 2vw;
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
 
-    header {
-        position: sticky;
-        top: 0;
-        background-color: #000;
-        padding: 1vw 0;
-        text-align: left;
-        z-index: 1000;
+    /* Скрыть русский текст по умолчанию */
+    .frame-description-ru {
+      display: none;
     }
-
-    h1 {
-        font-size: 3vw;
-        font-weight: bold;
-        margin-left: 2vw;
-    }
-
-    .home-link {
-        color: #fff; /* Цвет ссылки "Главная" теперь белый */
-        text-decoration: none;
-    }
-
-    .hero {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 5vh;
-    }
-
-    .image-container {
-        flex: 1 1 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .image-container img {
-        max-width: 80%;
-        height: auto;
-    }
-
-    .intro-text {
-        flex: 1 1 50%;
-    }
-
-    .intro-text h2 {
-        font-size: 2.5vw;
-        margin-bottom: 1vw;
-    }
-
-    .intro-text p {
-        font-size: 1.2vw;
-        line-height: 1.8;
-    }
-
-    .cases {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5vh;
-        justify-content: space-between;
-    }
-
-    .case {
-        flex: 1 1 calc(50% - 2.5vh);
-        margin-bottom: 4vw;
-        padding: 2vw;
-        border: 2px solid #E7C182;
-    }
-
-    .case h3 {
-        font-size: 2vw;
-        margin-bottom: 1.5vw;
-    }
-
-    .case p {
-        font-size: 1.2vw;
-        line-height: 1.8;
-        margin-bottom: 1.5vw;
-    }
-
-    .case img {
-        width: 100%;
-        height: auto;
-    }
-
-    footer {
-        text-align: center;
-        padding: 3vw 0;
-    }
-
-    footer h3 {
-        font-size: 2.2vw;
-        margin-bottom: 1vw;
-    }
-
-    .contacts {
-        display: flex;
-        justify-content: center;
-        gap: 2vw;
-    }
-
-    .contacts a img {
-        width: 5vw;
-        height: 5vw;
-    }
-
-    /* Настройки для мобильных устройств */
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 6vw;
-        }
-
-        .intro-text h2, .case h3, footer h3 {
-            font-size: 8vw; /* Увеличение шрифта в 2 раза */
-        }
-
-        .intro-text p, .case p, footer p {
-            font-size: 5vw;
-        }
-
-        .contacts a img {
-            width: 10vw;
-            height: 10vw;
-        }
-    }
-    </style>
+  </style>
 </head>
+
 <body>
-
-    <header>
-        <h1><a href="index.html" class="home-link">Главная</a></h1>
-    </header>
-
-    <section class="hero">
-        <div class="image-container">
-            <img src="Image.png" alt="Астрологический символ">
+  <div class="container1"> <!-- Первый контейнер -->
+    <div class="frame">
+      <div class="frame-content">
+        <div class="content">
+          <h1 class="portfolio-title">Portfolio</h1>
         </div>
-        <div class="intro-text">
-            <h2>Кейсы Астрология</h2>
-            <p>Каждый проект, за который я берусь, опирается на глубокое понимание психологии целевой аудитории и их стремления к личностному росту и гармонии. Благодаря этому я создаю контент, который не просто информирует, но и вдохновляет, вызывая эмоциональный отклик и побуждая к действию.</p>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <section class="cases">
-        <div class="case">
-            <h3>Кейс 1: Создание цепочки email и постов для привлечения лидов в сообщество духовного развития</h3>
-            <p>В рамках этого проекта я разработала серию email-писем и постов в Telegram, основываясь на ключевых темах, озвученных лидером в сфере эзотерики и саморазвития. Моей задачей было подвести целевую аудиторию — людей, заинтересованных в личностном росте и раскрытии своего потенциала — к вступлению в сообщество через серию видео, затрагивающих важные аспекты их жизни, такие как женская сила и самореализация. Вот одно из писем:</p>
-            <img src="email_mockup.png" alt="Пример письма">
-        </div>
+  <div class="container2"> <!-- Второй контейнер -->
+    <div class="photo">
+      <img src="946bbd50b7b538f4a482d206a49d1147.jpg" alt="Description of image">
+    </div>
+    <div class="text">
+      <div class="text-container">
+        <h1 id="about-heading">About me</h1>
+        <p class="about-text" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
+        <p class="about-text" style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
+        <p class="about-text" style="font-size: 20px;">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
+      </div>
+    </div>
+  </div>
 
-        <div class="case">
-            <h3>Кейс 2: Создание контент-плана для воронки, привлекающей на мероприятие</h3>
-            <p>В этом проекте я создала контент-план для воронки, целью которой было привлечение участников на важное событие в сфере духовного роста. План включал серию постов в Telegram, каждый из которых продвигал основные ценности мероприятия и привлекал внимание к ключевым спикерам и темам. В качестве примера привожу текст одного из постов:</p>
-            <img src="phone_mockup.png" alt="Пример поста в Телеграме">
+  <div class="container3">
+    <div class="Flexbox-container">
+      <div class="special-frame" onclick="window.location.href = 'Portugalia.html'">
+        <img class="ru" src="Portugal.png" alt="Image 1">
+        <div>
+          <p class="frame-description-en">Planning to travel to Portugal? Explore stunning Atlantic beaches, historic, but modern cities, and local cuisine in our travel guide. Discover attractions and tips for your perfect getaway.</p>
+          <p class="frame-description-ru">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики, исторические города и местную кухню в нашем путеводителе. Подробности о достопримечательностях и советы для идеального отдыха.</p>
         </div>
-    </section>
+      </div>
 
-    <footer>
-        <h3>Связаться со мной можно здесь</h3>
-        <div class="contacts">
-            <a href="mailto:your-email@example.com">
-                <img src="email_icon.png" alt="Email">
-            </a>
-            <a href="https://t.me/yourtelegram" target="_blank">
-                <img src="telegram_icon.png" alt="Telegram">
-            </a>
-            <a href="https://wa.me/123456789" target="_blank">
-                <img src="whatsapp_icon.png" alt="WhatsApp">
-            </a>
+      <div class="special-frame" onclick="window.location.href = 'Plants.html'">
+        <img class="ru" src="Plant.png" alt="Image 2">
+        <div>
+          <p class="frame-description-en">Discover essential tips to keep your plants thriving! Learn how to water properly, choose the right sunlight, and tackle common issues like yellowing leaves, infestations, or mould in this beginner's guide to floriculture.</p>
+          <p class="frame-description-ru">Откройте секреты, которые помогут вашим растениям процветать! Узнайте, как правильно поливать, регулировать освещение и о самых частых ошибках.</p>
         </div>
-    </footer>
+      </div>
 
+      <div class="special-frame" onclick="window.location.href = 'https://bloodthirstywolf.github.io/Blog/Zarabotat_na_neyrosetyakh.html'">
+        <img class="ru" src="Money.png" alt="Image 3">
+        <div>
+          <p class="frame-description-en">Unveiling truth about earning with neural networks: debunking myths of quick money with AI. Who will be able to generate revenue from artificial intelligence, and who will be left with nothing?</p>
+          <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем?</p>
+        </div>
+      </div>
+    </div>
+    <div class="additional-content">
+      <p>Здесь будет дополнительная информация для третьего контейнера.</p>
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <h1>Contact Me</h1>
+    <p>If you want to contact me, please email me at:</p>
+    <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
+  </div>
+
+  <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
+
+  <script>
+    function toggleLanguage() {
+      var currentLanguage = document.documentElement.lang || 'en';
+
+      if (currentLanguage === 'en') {
+        // Change to Russian
+        document.documentElement.lang = 'ru';
+        document.getElementById('about-heading').innerText = 'Обо мне';
+        document.querySelectorAll('.about-text').forEach(function(el, index) {
+          el.innerText = ruTexts[index];
+        });
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description-en').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+          el.style.display = 'block';
+        });
+        document.getElementById('language-toggle').innerText = 'Изменить язык';
+      } else {
+        // Change to English
+        document.documentElement.lang = 'en';
+        document.getElementById('about-heading').innerText = 'About me';
+        document.querySelectorAll('.about-text').forEach(function(el, index) {
+          el.innerText = enTexts[index];
+        });
+        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+        document.querySelectorAll('.frame-description-en').forEach(function(el) {
+          el.style.display = 'block';
+        });
+        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        document.getElementById('language-toggle').innerText = 'Change Language';
+      }
+      // Обновление высоты контейнеров после смены языка
+      updateContainerHeights();
+    }
+
+    // Функция для обновления высоты контейнеров
+    function updateContainerHeights() {
+      const flexboxContainer = document.querySelector('.Flexbox-container');
+      const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
+      const maxHeight = Math.max(...Array.from(specialFrames).map(frame => frame.offsetHeight));
+      specialFrames.forEach(frame => {
+        frame.style.height = `${maxHeight}px`;
+      });
+    }
+
+    // Initial texts for English and Russian
+    var enTexts = [
+      'From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.',
+      'However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.',
+      'As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.'
+    ];
+
+    var ruTexts = [
+      'С самого детства мой природный талант к языкам стал очевиден. Учить их было легко и естественно, и когда я искала, как заработать свои первые деньги в юности, было ясно, какой путь выбрать. В течение четырех лет я посвятила себя фрилансу, изначально работая переводчиком на таких языках, как английский, немецкий и японский. Со временем я расширила свои навыки, чтобы включить SEO-копирайтинг.',
+      'Однако в конечном итоге я решила уйти от фриланса, осознав, что это арена, в основном предназначенная для начинающих, где успех часто зависел от делегирования работы людям с низкой оплатой. Я поняла, что переросла фазу, когда мне нужны были только небольшие деньги для студенческих развлечений; я превратилась в человека, который стремился к личностному и профессиональному росту.',
+      'Со временем я поняла, что хочу большего, чем просто финансовые награды. Я хотела помочь обществу и внести вклад в благополучие других. Один из значительных шагов, которые я предприняла, это присоединение к организации, посвященной помощи людям с серьезными психическими и физическими проблемами. Хотя все начиналось как небольшая группа увлеченных людей, не знающих своего направления, я внесла свой вклад, переводя важные ресурсы, включая целую книгу, которая до сих пор остается ценным активом.'
+    ];
+    
+    // Обновляем высоты контейнеров при загрузке страницы
+    window.onload = function() {
+      updateContainerHeights();
+    };
+  </script>
 </body>
+
 </html>
