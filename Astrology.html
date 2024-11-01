@@ -71,22 +71,21 @@
         }
 
         .cases {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
-            gap: 5vh; /* Отступ между кейсами */
-            width: 100%; /* Занимает полную ширину контейнера */
-            max-width: 1200px; /* Максимальная ширина для больших экранов */
-        }
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5vh; /* отступ между кейсами */
+    width: 80vw; /* Ширина контейнера кейсов 80% от ширины экрана */
+    margin: 0 auto; /* Центрируем контейнер */
+}
 
-        .case {
-            flex: 1 1 45%; /* Ширина 45% с возможностью роста */
-            max-width: 55%; /* Максимальная ширина 45% */
-            margin-bottom: 4vw; /* Отступ снизу для всех кейсов */
-            padding: 2vw;
-            background-color: transparent; /* Убираем фон */
-            border: 2px solid #E7C182; /* Рамка 2px с цветом */
-        }
+.case {
+    flex: 1 1 45%; /* Горизонтальное расположение на больших экранах */
+    margin-bottom: 4vw;
+    padding: 2vw;
+    background-color: transparent; /* Без фона */
+    border: 2px solid #E7C182; /* Цвет рамки */
+}
 
         .case h3 {
             font-size: 2vw;
