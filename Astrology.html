@@ -5,180 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кейсы по Астрологии</title>
     <meta name="robots" content="noindex, nofollow">
-    
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        color: #fff;
-        background-color: #000;
-        padding: 2vw;
-    }
-
-    header {
-        background-color: #000; /* Черный фон для хедера */
-        position: sticky; /* Липкий хедер */
-        top: 0; /* Привязываем к верхней части экрана */
-        z-index: 1000; /* Повышаем уровень видимости */
-        padding: 1vw 0; /* Отступы для хедера */
-    }
-
-    h1 {
-        font-size: 3vw;
-        font-weight: bold;
-        text-align: left;
-    }
-
-    .home-link {
-        color: #E7C182;
-        text-decoration: none;
-    }
-
-    .hero {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 5vh;
-        border: none;
-    }
-
-    .image-container {
-        flex: 1 1 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-    }
-
-    .image-container img {
-        max-width: 80%;
-        height: auto;
-        border: none;
-    }
-
-    .intro-text {
-        flex: 1 1 50%;
-        border: none;
-    }
-
-    .intro-text h2 {
-        font-size: 2.5vw;
-        margin-bottom: 1vw;
-    }
-
-    .intro-text p {
-        font-size: 1.2vw;
-        line-height: 1.8;
-    }
-
-    .cases {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5vh; /* Отступ между кейсами */
-        justify-content: space-between;
-    }
-
-    .case {
-        flex: 1 1 calc(50% - 2.5vh); /* Задаем ширину для горизонтального расположения */
-        margin-bottom: 4vw;
-        padding: 2vw;
-        border: 2px solid #E7C182; /* Толщина рамки и цвет */
-        background-color: transparent; /* Убираем фон */
-    }
-
-    .case h3 {
-        font-size: 2vw;
-        margin-bottom: 1.5vw;
-    }
-
-    .case p {
-        font-size: 1.2vw;
-        line-height: 1.8;
-        margin-bottom: 1.5vw;
-    }
-
-    .case img {
-        width: 100%;
-        height: auto;
-        border: none;
-    }
-
-    footer {
-        text-align: center;
-        padding: 3vw 0;
-    }
-
-    footer h3 {
-        font-size: 2.2vw;
-        margin-bottom: 1vw;
-    }
-
-    .contacts {
-        display: flex;
-        justify-content: center;
-        gap: 2vw;
-    }
-
-    .contacts a img {
-        width: 5vw; /* Размер иконок на десктопе */
-        height: 5vw;
-        border: none;
-    }
-
-    /* Настройки для мобильных устройств */
-    @media (max-width: 600px) {
         body {
-            padding: 4vw; /* Увеличиваем отступы на мобильных */
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #000;
+            padding: 2vw;
         }
 
         header {
-            padding: 2vw 0; /* Увеличиваем отступы в хедере на мобильных */
+            text-align: left;
+            margin-bottom: 2vw;
+            background-color: #000; /* Липкий хедер с черным фоном */
+            position: sticky; /* Делает хедер липким */
+            top: 0; /* Привязывает к верхней части окна */
+            z-index: 100; /* Обеспечивает, что хедер будет сверху других элементов */
         }
 
         h1 {
-            font-size: 6vw; /* Увеличиваем заголовок в 2 раза */
+            font-size: 3vw;
+            font-weight: bold;
+            color: #E7C182; /* Золотой цвет для заголовка */
+            cursor: pointer; /* Указатель, чтобы показать, что это кликабельно */
         }
 
         .hero {
-            flex-direction: column;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5vh;
+        }
+
+        .image-container {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .intro-text {
+            flex: 1 1 50%;
         }
 
         .intro-text h2 {
-            font-size: 5vw; /* Увеличиваем заголовок в 2 раза */
+            font-size: 2.5vw;
+            margin-bottom: 1vw;
         }
 
-        .intro-text p, .case h3, footer h3, .case p {
-            font-size: 5vw; /* Увеличиваем текст в 2 раза */
+        .intro-text p {
+            font-size: 1.2vw;
+            line-height: 1.8;
         }
 
         .cases {
-            flex-direction: column; /* Вертикальное расположение на мобильных */
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+            gap: 5vh; /* Отступ между кейсами */
+            width: 100%; /* Занимает полную ширину контейнера */
+            max-width: 1200px; /* Максимальная ширина для больших экранов */
         }
 
         .case {
-            flex: 1 1 100%; /* Полная ширина кейсов на мобильных */
-            margin-bottom: 5vw;
+            flex: 1 1 45%; /* Ширина 45% с возможностью роста */
+            max-width: 45%; /* Максимальная ширина 45% */
+            margin-bottom: 4vw; /* Отступ снизу для всех кейсов */
+            padding: 2vw;
+            background-color: transparent; /* Убираем фон */
+            border: 2px solid #E7C182; /* Рамка 2px с цветом */
+        }
+
+        .case h3 {
+            font-size: 2vw;
+            margin-bottom: 1.5vw;
+        }
+
+        .case p {
+            font-size: 1.2vw;
+            line-height: 1.8;
+            margin-bottom: 1.5vw;
+        }
+
+        .case img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3vw 0;
+        }
+
+        footer h3 {
+            font-size: 2.2vw;
+            margin-bottom: 1vw;
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: center;
+            gap: 2vw;
         }
 
         .contacts a img {
-            width: 10vw; /* Размер иконок на мобильных */
-            height: 10vw;
+            width: 5vw; /* Размер иконок в десктопной версии */
+            height: 5vw;
         }
-    }
+
+        /* Настройки для мобильных устройств */
+        @media (max-width: 768px) {
+            header {
+                background-color: #000; /* Липкий хедер с черным фоном */
+            }
+
+            h1 {
+                font-size: 6vw; /* Увеличиваем размер заголовка в мобильной версии */
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cases {
+                flex-direction: column; /* Вертикальное расположение на мобильных */
+            }
+
+            .case {
+                flex: 1 1 100%; /* Полная ширина кейсов на мобильных */
+                max-width: 100%; /* Ограничиваем ширину до 100% */
+            }
+
+            .intro-text h2, .case h3, footer h3 {
+                font-size: 4vw; /* Увеличиваем шрифт заголовков в мобильной версии */
+            }
+
+            .intro-text p, .case p, footer p {
+                font-size: 2.5vw; /* Увеличиваем шрифт текста в мобильной версии */
+            }
+
+            .contacts a img {
+                width: 10vw; /* Размер иконок в мобильной версии */
+                height: 10vw;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1><a href="index.html" class="home-link">Главная</a></h1>
+        <h1 onclick="window.location.href='index.html'">Главная</h1>
     </header>
 
     <section class="hero">
