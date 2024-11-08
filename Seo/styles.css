@@ -1,0 +1,211 @@
+/* Общие стили для всех экранов */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container1 {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url(background1.jpg);
+  background-size: cover;
+  height: 100vh; /* Высота 100vh для десктопа */
+}
+
+.frame {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid white;
+  z-index: 1;
+}
+
+.portfolio-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: white;
+  z-index: 2;
+}
+
+.frame-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: black;
+}
+
+.photo {
+  flex: 1;
+  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  max-width: 50%;
+}
+
+.text {
+  flex: 1;
+  background-color: black;
+  padding: 0 20px;
+  color: white;
+}
+
+#container {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: 2px solid #ffdc33;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Стили для специальных фреймов */
+.special-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  border: 2px solid #ffdc33 !important;
+  width: calc(33.33% - 40px);
+  height: 100%;
+  font-size: 24px; 
+}
+
+.special-frame:hover {
+  background-color: #333;
+}
+
+.contact-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.email-link {
+  color: #ffdc33;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+.Flexbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Растягивает все элементы по высоте */
+  gap: 20px; /* Расстояние между фреймами */
+}
+
+/* Установка одинаковой высоты для всех special-frame */
+.Flexbox-container .special-frame {
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение содержимого внутри */
+  justify-content: space-between; /* Обеспечивает равномерное распределение пространства */
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 100%; /* Устанавливает высоту на 100% */
+}
+
+.additional-content {
+  margin-top: 20px;
+}
+
+/* Скрытие русского текста по умолчанию */
+.frame-description-ru {
+  display: none;
+}
+
+/* Мобильная версия */
+@media only screen and (max-width: 480px) {
+  .desktop-br {
+    display: none;
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .container2 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .container1 {
+    flex-direction: column;
+  }
+
+  .text {
+    padding-top: 0px;
+  }
+
+  .portfolio-title {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  #container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .special-frame {
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+
+  .Flexbox-container {
+    flex-direction: column; /* Изменяем на вертикальное расположение */
+  }
+
+  .contact-container {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  .container1 {
+    height: 100vh; /* Высота 100vh для мобильной версии */
+  }
+}
