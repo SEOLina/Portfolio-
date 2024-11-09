@@ -93,12 +93,16 @@
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
 <script>
-  // Функция для обновления высоты контейнеров
   function updateContainerHeights() {
     const flexboxContainer = document.querySelector('.Flexbox-container');
     const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
 
-    // Пересчитываем максимальную высоту каждый раз при смене языка
+    // Сначала сбрасываем высоту всех рамок
+    specialFrames.forEach(frame => {
+      frame.style.height = 'auto';
+    });
+
+    // Рассчитываем максимальную высоту на основе текущего контента
     const newMaxHeight = Math.max(...Array.from(specialFrames).map(frame => frame.scrollHeight));
 
     // Применяем максимальную высоту ко всем рамкам
@@ -164,6 +168,7 @@
     updateContainerHeights();
   };
 </script>
+
 
 </body>
 
