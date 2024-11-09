@@ -92,73 +92,79 @@
 
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
-  <script>
-    function toggleLanguage() {
-      var currentLanguage = document.documentElement.lang || 'en';
+<script>
+  // Функция для обновления высоты контейнеров
+  function updateContainerHeights() {
+    const flexboxContainer = document.querySelector('.Flexbox-container');
+    const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
 
-      if (currentLanguage === 'en') {
-        // Change to Russian
-        document.documentElement.lang = 'ru';
-        document.getElementById('about-heading').innerText = 'Обо мне';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = ruTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.getElementById('language-toggle').innerText = 'Изменить язык';
-      } else {
-        // Change to English
-        document.documentElement.lang = 'en';
-        document.getElementById('about-heading').innerText = 'About me';
-        document.querySelectorAll('.about-text').forEach(function(el, index) {
-          el.innerText = enTexts[index];
-        });
-        document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
-        document.querySelectorAll('.frame-description-en').forEach(function(el) {
-          el.style.display = 'block';
-        });
-        document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.getElementById('language-toggle').innerText = 'Change Language';
-      }
-      // Обновление высоты контейнеров после смены языка
-      updateContainerHeights();
-    }
+    // Пересчитываем максимальную высоту каждый раз при смене языка
+    const newMaxHeight = Math.max(...Array.from(specialFrames).map(frame => frame.scrollHeight));
 
-    // Функция для обновления высоты контейнеров
-    function updateContainerHeights() {
-      const flexboxContainer = document.querySelector('.Flexbox-container');
-      const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
-      const maxHeight = Math.max(...Array.from(specialFrames).map(frame => frame.offsetHeight));
-      specialFrames.forEach(frame => {
-        frame.style.height = `${maxHeight}px`;
+    // Применяем максимальную высоту ко всем рамкам
+    specialFrames.forEach(frame => {
+      frame.style.height = `${newMaxHeight}px`;
+    });
+  }
+
+  function toggleLanguage() {
+    var currentLanguage = document.documentElement.lang || 'en';
+
+    if (currentLanguage === 'en') {
+      // Изменение на русский
+      document.documentElement.lang = 'ru';
+      document.getElementById('about-heading').innerText = 'Обо мне';
+      document.querySelectorAll('.about-text').forEach(function(el, index) {
+        el.innerText = ruTexts[index];
       });
+      document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+      document.querySelectorAll('.frame-description-en').forEach(function(el) {
+        el.style.display = 'none';
+      });
+      document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+        el.style.display = 'block';
+      });
+      document.getElementById('language-toggle').innerText = 'Изменить язык';
+    } else {
+      // Изменение на английский
+      document.documentElement.lang = 'en';
+      document.getElementById('about-heading').innerText = 'About me';
+      document.querySelectorAll('.about-text').forEach(function(el, index) {
+        el.innerText = enTexts[index];
+      });
+      document.getElementById('contact-email').innerText = 'alina.gladkova.05@mail.ru';
+      document.querySelectorAll('.frame-description-en').forEach(function(el) {
+        el.style.display = 'block';
+      });
+      document.querySelectorAll('.frame-description-ru').forEach(function(el) {
+        el.style.display = 'none';
+      });
+      document.getElementById('language-toggle').innerText = 'Change Language';
     }
 
-    // Initial texts for English and Russian
-    var enTexts = [
-      'My copywriting career started in 2020 on freelance platforms, where I took on simple projects for low rates. However, I’ve always been more interested in offering solutions that truly help my clients rather than just completing a task. I soon noticed that SEO copywriting was in higher demand, so I deepened my expertise in this area. I learned how to not just insert keywords, but to analyze content for effective search engine optimization.',
-      'Realizing that I couldn’t fully develop my skills or grow beyond a certain point on freelance platforms, I shifted focus to conducting SEO audits, identifying errors, and providing optimization recommendations. My approach has always been about solving real problems for clients, not just fulfilling an order.',
-      'Since 2022, I’ve expanded my knowledge into social media marketing, recognizing that successful copywriting today requires building full strategies. I began creating sales funnels, content plans, and helping experts with their online positioning. My goal has always been to create high-quality content that directly addresses the needs of the audience and contributes to business growth.'
-    ];
+    // Обновляем высоту рамок после смены языка
+    updateContainerHeights();
+  }
 
-    var ruTexts = [
-      'Моя карьера в копирайтинге началась в 2020 году на фриланс-биржах, где я выполняла простые заказы за небольшую плату. Но меня всегда интересовало не просто «выполнение задания», а то, как я могу предложить решение, которое действительно помогает клиенту. Увидев, что SEO-копирайтинг востребован больше, я углубила свои знания в этой области. Я научилась не только вставлять ключевые слова, но и анализировать контент для эффективного продвижения в поисковых системах.',
-      'Понимая, что на биржах не получится развить навыки и выйти на новый уровень, я начала заниматься SEO-аудитами сайтов, выявлять ошибки и давать рекомендации по оптимизации контента. Мой подход всегда был ориентирован на решение реальных проблем клиента, а не просто выполнение заказа.',
-      'С 2022 года я расширила свои знания в SMM, поняв, что для успешного копирайтинга нужно строить целые стратегии. Я начала создавать воронки продаж, контент-планы и помогать экспертам развивать их онлайн-позиционирование. Моя цель всегда была не просто создать качественный контент, а сделать так, чтобы он отвечал реальным потребностям аудитории и помогал бизнесу расти.'
-    ];
-    
-    // Обновляем высоты контейнеров при загрузке страницы
-    window.onload = function() {
-      updateContainerHeights();
-    };
-  </script>
+  // Изначальные тексты для английского и русского
+  var enTexts = [
+    'My copywriting career started in 2020 on freelance platforms, where I took on simple projects for low rates...',
+    'Realizing that I couldn’t fully develop my skills or grow beyond a certain point on freelance platforms...',
+    'Since 2022, I’ve expanded my knowledge into social media marketing, recognizing that successful copywriting today requires building full strategies...'
+  ];
+
+  var ruTexts = [
+    'Моя карьера в копирайтинге началась в 2020 году на фриланс-биржах, где я выполняла простые заказы...',
+    'Понимая, что на биржах не получится развить навыки и выйти на новый уровень...',
+    'С 2022 года я расширила свои знания в SMM, поняв, что для успешного копирайтинга нужно строить целые стратегии...'
+  ];
+
+  // Обновляем высоты контейнеров при загрузке страницы
+  window.onload = function() {
+    updateContainerHeights();
+  };
+</script>
+
 </body>
 
 </html>
