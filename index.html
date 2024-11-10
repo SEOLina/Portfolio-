@@ -231,14 +231,16 @@
       document.getElementById('about-heading').innerText = 'Обо мне';
       updateTexts(ruTexts);
       toggleTextVisibility('ru');
-      document.getElementById('language-toggle').innerText = 'Изменить язык';
+      document.getElementById('language-toggle').innerText = 'Change Language';
+      document.querySelector('.contact-button').innerText = 'Оставить заявку'; // Обновление текста кнопки
     } else {
       // Изменение на английский
       document.documentElement.lang = 'en';
       document.getElementById('about-heading').innerText = 'About me';
       updateTexts(enTexts);
       toggleTextVisibility('en');
-      document.getElementById('language-toggle').innerText = 'Change Language';
+      document.getElementById('language-toggle').innerText = 'Изменить язык';
+      document.querySelector('.contact-button').innerText = 'Contact Me'; // Обновление текста кнопки
     }
 
     // Обновляем высоту рамок после смены языка
