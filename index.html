@@ -175,128 +175,96 @@
 
   <!-- Контейнер для кнопки "Оставить заявку" -->
   <div class="contact-container">
-  <p>Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и мы реализуем ваш проект.</p>
+  <p id="contact-text">Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">CONTACT ME</a>, and I will implement your project.</p>
   </div>
 
-  <!-- Всплывающее окно -->
-<div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
-<div class="popup" id="popup">
-  <h2 style="color: #ffdc33;">Contact Us</h2>
-  <form action="https://formspree.io/f/myzyjkev" method="POST">
-    <label for="name" style="color: #ffdc33;">Your Name:</label>
-    <input type="text" id="name" name="name" required placeholder="Your Name">
+<script>
+  // Обновление высот контейнеров для корректного отображения
+function updateContainerHeights() {
+  const flexboxContainer = document.querySelector('.Flexbox-container');
+  const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
+  specialFrames.forEach(frame => {
+    frame.style.height = 'auto';
+  });
+}
 
-    <label for="email" style="color: #ffdc33;">Your Email:</label>
-    <input type="email" id="email" name="email" required placeholder="Your Email">
+// Открытие всплывающего окна
+function openPopup(event) {
+  event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
+  document.getElementById('popup').style.display = 'block';
+  document.getElementById('popup-overlay').style.display = 'block';
+}
 
-    <label for="message" style="color: #ffdc33;">Your Message:</label>
-    <textarea id="message" name="message" required placeholder="Your Message" rows="4"></textarea>
+// Закрытие всплывающего окна
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+  document.getElementById('popup-overlay').style.display = 'none';
+}
 
-    <button type="submit" style="background-color: #ffdc33; color: black; padding: 10px 20px; border-radius: 5px;">Submit</button>
-  </form>
-</div>
+// Переключение языка сайта
+function toggleLanguage() {
+  var currentLanguage = document.documentElement.lang || 'en';
 
-
-  
-  <button id="language-toggle" onclick="toggleLanguage()">Изменить язык</button>
-
-  <script>
-  // Обновление высот контейнеров
-  function updateContainerHeights() {
-    const flexboxContainer = document.querySelector('.Flexbox-container');
-    const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
-    specialFrames.forEach(frame => {
-      frame.style.height = 'auto';
-    });
+  if (currentLanguage === 'en') {
+    document.documentElement.lang = 'ru';
+    document.getElementById('about-heading').innerText = 'Обо мне';
+    updateTexts(ruTexts);
+    toggleTextVisibility('ru');
+    document.getElementById('language-toggle').innerText = 'Изменить язык';
+    document.querySelector('.contact-button').innerText = 'ОСТАВЬТЕ ЗАЯВКУ';
+    // Обновляем текст кнопки и описания
+    document.getElementById('contact-text').innerHTML = `Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и мы реализуем ваш проект.`;
+  } else {
+    document.documentElement.lang = 'en';
+    document.getElementById('about-heading').innerText = 'About me';
+    updateTexts(enTexts);
+    toggleTextVisibility('en');
+    document.getElementById('language-toggle').innerText = 'Change Language';
+    document.querySelector('.contact-button').innerText = 'CONTACT ME';
+    // Обновляем текст кнопки и описания
+    document.getElementById('contact-text').innerHTML = `Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a> and I will implement your project.`;
   }
 
-  // Открытие всплывающего окна
-  function openPopup(event) {
-    event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('popup-overlay').style.display = 'block';
+  // Обновляем высоту рамок после смены языка
+  updateContainerHeights();
+}
+
+// Обновление текста на основе выбранного языка
+function updateTexts(texts) {
+  document.querySelectorAll('.about-text').forEach((el, index) => {
+    el.innerText = texts[index];
+  });
+}
+
+// Переключение видимости текста в зависимости от языка
+function toggleTextVisibility(language) {
+  if (language === 'ru') {
+    document.querySelectorAll('.frame-description-en').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'block');
+  } else {
+    document.querySelectorAll('.frame-description-en').forEach(el => el.style.display = 'block');
+    document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'none');
   }
+}
 
-  // Закрытие всплывающего окна
-  function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-    document.getElementById('popup-overlay').style.display = 'none';
-  }
+// Тексты для английского
+const enTexts = [
+  'My copywriting career started in 2020 on freelance platforms, where I took on simple projects for low rates. However, I’ve always been more interested in offering solutions that truly help my clients rather than just completing a task. I soon noticed that SEO copywriting was in higher demand, so I deepened my expertise in this area. I learned how to not just insert keywords, but to analyze content for effective search engine optimization.',
+  'Realizing that I couldn’t fully develop my skills or grow beyond a certain point on freelance platforms, I shifted focus to conducting SEO audits, identifying errors, and providing optimization recommendations. My approach has always been about solving real problems for clients, not just fulfilling an order.',
+  'Since 2022, I’ve expanded my knowledge into social media marketing, recognizing that successful copywriting today requires building full strategies. I began creating sales funnels, content plans, and helping experts with their online positioning. My goal has always been to create high-quality content that directly addresses the needs of the audience and contributes to business growth.'
+];
 
-  // Переключение языка сайта
-  function toggleLanguage() {
-    var currentLanguage = document.documentElement.lang || 'en';
+// Тексты для русского
+const ruTexts = [
+  'Моя карьера в копирайтинге началась в 2020 году на фриланс-биржах, где я выполняла простые заказы за небольшую плату. Но меня всегда интересовало не просто «выполнение задания», а то, как я могу предложить решение, которое действительно помогает клиенту. Увидев, что SEO-копирайтинг востребован больше, я углубила свои знания в этой области. Я научилась не только вставлять ключевые слова, но и анализировать контент для эффективного продвижения в поисковых системах.',
+  'Понимая, что на биржах не получится развить навыки и выйти на новый уровень, я начала заниматься SEO-аудитами сайтов, выявлять ошибки и давать рекомендации по оптимизации контента. Мой подход всегда был ориентирован на решение реальных проблем клиента, а не просто выполнение заказа.',
+  'С 2022 года я расширила свои знания в SMM, поняв, что для успешного копирайтинга нужно строить целые стратегии. Я начала создавать воронки продаж, контент-планы и помогать экспертам развивать их онлайн-позиционирование. Моя цель всегда была не просто создать качественный контент, а сделать так, чтобы он отвечал реальным потребностям аудитории и помогал бизнесу расти.'
+];
 
-    if (currentLanguage === 'en') {
-      document.documentElement.lang = 'ru';
-      document.getElementById('about-heading').innerText = 'Обо мне';
-      updateTexts(ruTexts);
-      toggleTextVisibility('ru');
-      document.getElementById('language-toggle').innerText = 'Изменить язык';
-      document.querySelector('.contact-button').innerText = 'Оставить заявку';
-
-      // Обновление текста во всплывающем окне
-      document.querySelector('.popup h2').innerText = 'Контакты';
-      document.querySelector('.popup label[for="name"]').innerText = 'Ваше имя:';
-      document.querySelector('.popup label[for="email"]').innerText = 'Ваш Email:';
-      document.querySelector('.popup label[for="message"]').innerText = 'Ваше сообщение:';
-      document.querySelector('.popup button').innerText = 'Отправить';
-    } else {
-      document.documentElement.lang = 'en';
-      document.getElementById('about-heading').innerText = 'About me';
-      updateTexts(enTexts);
-      toggleTextVisibility('en');
-      document.getElementById('language-toggle').innerText = 'Change Language';
-      document.querySelector('.contact-button').innerText = 'Contact Me';
-
-      // Обновление текста во всплывающем окне
-      document.querySelector('.popup h2').innerText = 'Contact Us';
-      document.querySelector('.popup label[for="name"]').innerText = 'Your Name:';
-      document.querySelector('.popup label[for="email"]').innerText = 'Your Email:';
-      document.querySelector('.popup label[for="message"]').innerText = 'Your Message:';
-      document.querySelector('.popup button').innerText = 'Submit';
-    }
-
-    // Обновляем высоту рамок после смены языка
-    updateContainerHeights();
-  }
-
-  // Обновление текстов на основе выбранного языка
-  function updateTexts(texts) {
-    document.querySelectorAll('.about-text').forEach((el, index) => {
-      el.innerText = texts[index];
-    });
-  }
-
-  // Переключение видимости текста
-  function toggleTextVisibility(language) {
-    if (language === 'ru') {
-      document.querySelectorAll('.frame-description-en').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'block');
-    } else {
-      document.querySelectorAll('.frame-description-en').forEach(el => el.style.display = 'block');
-      document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'none');
-    }
-  }
-
-  // Тексты для английского
-  const enTexts = [
-    'My copywriting career started in 2020 on freelance platforms, where I took on simple projects for low rates. However, I’ve always been more interested in offering solutions that truly help my clients rather than just completing a task. I soon noticed that SEO copywriting was in higher demand, so I deepened my expertise in this area. I learned how to not just insert keywords, but to analyze content for effective search engine optimization.',
-    'Realizing that I couldn’t fully develop my skills or grow beyond a certain point on freelance platforms, I shifted focus to conducting SEO audits, identifying errors, and providing optimization recommendations. My approach has always been about solving real problems for clients, not just fulfilling an order.',
-    'Since 2022, I’ve expanded my knowledge into social media marketing, recognizing that successful copywriting today requires building full strategies. I began creating sales funnels, content plans, and helping experts with their online positioning. My goal has always been to create high-quality content that directly addresses the needs of the audience and contributes to business growth.'
-  ];
-
-  // Тексты для русского
-  const ruTexts = [
-    'Моя карьера в копирайтинге началась в 2020 году на фриланс-биржах, где я выполняла простые заказы за небольшую плату. Но меня всегда интересовало не просто «выполнение задания», а то, как я могу предложить решение, которое действительно помогает клиенту. Увидев, что SEO-копирайтинг востребован больше, я углубила свои знания в этой области. Я научилась не только вставлять ключевые слова, но и анализировать контент для эффективного продвижения в поисковых системах.',
-    'Понимая, что на биржах не получится развить навыки и выйти на новый уровень, я начала заниматься SEO-аудитами сайтов, выявлять ошибки и давать рекомендации по оптимизации контента. Мой подход всегда был ориентирован на решение реальных проблем клиента, а не просто выполнение заказа.',
-    'С 2022 года я расширила свои знания в SMM, поняв, что для успешного копирайтинга нужно строить целые стратегии. Я начала создавать воронки продаж, контент-планы и помогать экспертам развивать их онлайн-позиционирование. Моя цель всегда была не просто создать качественный контент, а сделать так, чтобы он отвечал реальным потребностям аудитории и помогал бизнесу расти.'
-  ];
-
-  // Обновляем высоты контейнеров при загрузке страницы
-  window.onload = function() {
-    updateContainerHeights();
-  };
+// Обновляем высоты контейнеров при загрузке страницы
+window.onload = function() {
+  updateContainerHeights();
+};
   </script>
 
 </body>
