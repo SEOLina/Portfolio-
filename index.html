@@ -187,7 +187,8 @@
   
   <button id="language-toggle" onclick="toggleLanguage()">Изменить язык</button>
 
-<script>
+  <script>
+  // Обновление высот контейнеров
   function updateContainerHeights() {
     const flexboxContainer = document.querySelector('.Flexbox-container');
     const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
@@ -197,7 +198,8 @@
   }
 
   // Открытие всплывающего окна
-  function openPopup() {
+  function openPopup(event) {
+    event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup-overlay').style.display = 'block';
   }
@@ -219,6 +221,13 @@
       toggleTextVisibility('ru');
       document.getElementById('language-toggle').innerText = 'Изменить язык';
       document.querySelector('.contact-button').innerText = 'Оставить заявку';
+
+      // Обновление текста во всплывающем окне
+      document.querySelector('.popup h2').innerText = 'Контакты';
+      document.querySelector('.popup label[for="name"]').innerText = 'Ваше имя:';
+      document.querySelector('.popup label[for="email"]').innerText = 'Ваш Email:';
+      document.querySelector('.popup label[for="message"]').innerText = 'Ваше сообщение:';
+      document.querySelector('.popup button').innerText = 'Отправить';
     } else {
       document.documentElement.lang = 'en';
       document.getElementById('about-heading').innerText = 'About me';
@@ -226,16 +235,14 @@
       toggleTextVisibility('en');
       document.getElementById('language-toggle').innerText = 'Change Language';
       document.querySelector('.contact-button').innerText = 'Contact Me';
-    }
 
-    // Обновление текста во всплывающем окне
-    document.querySelector('.popup h2').innerText = 'Контакты';
-    document.querySelector('.popup label[for="name"]').innerText = 'Ваше имя:';
-    document.querySelector('.popup label[for="email"]').innerText = 'Ваш Email:';
-    document.querySelector('.popup label[for="message"]').innerText = 'Ваше сообщение:';
-    document.querySelector('.popup button').innerText = 'Отправить';
-  } else {
-    document.documentElement.lang = 'en';
+      // Обновление текста во всплывающем окне
+      document.querySelector('.popup h2').innerText = 'Contact Us';
+      document.querySelector('.popup label[for="name"]').innerText = 'Your Name:';
+      document.querySelector('.popup label[for="email"]').innerText = 'Your Email:';
+      document.querySelector('.popup label[for="message"]').innerText = 'Your Message:';
+      document.querySelector('.popup button').innerText = 'Submit';
+    }
 
     // Обновляем высоту рамок после смены языка
     updateContainerHeights();
@@ -277,14 +284,7 @@
   window.onload = function() {
     updateContainerHeights();
   };
-
-  function openPopup(event) {
-  event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
-  document.getElementById('popup').style.display = 'block';
-  document.getElementById('popup-overlay').style.display = 'block';
-  }
-</script>
-  
+  </script>
 
 </body>
 
