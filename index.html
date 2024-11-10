@@ -178,6 +178,25 @@
   <p id="contact-text">Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">CONTACT ME</a>, and I will implement your project.</p>
   </div>
 
+    <!-- Всплывающее окно -->
+<div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <h2 style="color: #ffdc33;">Contact Us</h2>
+  <form action="https://formspree.io/f/myzyjkev" method="POST">
+    <label for="name" style="color: #ffdc33;">Your Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Your Name">
+
+    <label for="email" style="color: #ffdc33;">Your Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Your Email">
+
+    <label for="message" style="color: #ffdc33;">Your Message:</label>
+    <textarea id="message" name="message" required placeholder="Your Message" rows="4"></textarea>
+
+    <button type="submit" style="background-color: #ffdc33; color: black; padding: 10px 20px; border-radius: 5px;">Submit</button>
+  </form>
+</div>
+
+    <button id="language-toggle" onclick="toggleLanguage()">Изменить язык</button>
 <script>
   // Обновление высот контейнеров для корректного отображения
 function updateContainerHeights() {
