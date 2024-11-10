@@ -291,6 +291,69 @@
   window.onload = function() {
     updateContainerHeights();
   };
+
+  // Тексты для английского
+const enFormTexts = {
+  heading: 'Contact Us',
+  namePlaceholder: 'Your Name',
+  emailPlaceholder: 'Your Email',
+  messagePlaceholder: 'Your Message',
+  submitButton: 'Submit'
+};
+
+// Тексты для русского
+const ruFormTexts = {
+  heading: 'Обратная связь',
+  namePlaceholder: 'Ваше имя',
+  emailPlaceholder: 'Ваш email',
+  messagePlaceholder: 'Сообщение',
+  submitButton: 'Отправить'
+};
+
+// Функция для обновления текста в форме
+function updateFormTexts(language) {
+  const formHeading = document.querySelector('.popup h2');
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const messageTextarea = document.getElementById('message');
+  const submitButton = document.querySelector('.popup button');
+
+  if (language === 'ru') {
+    formHeading.innerText = ruFormTexts.heading;
+    nameInput.placeholder = ruFormTexts.namePlaceholder;
+    emailInput.placeholder = ruFormTexts.emailPlaceholder;
+    messageTextarea.placeholder = ruFormTexts.messagePlaceholder;
+    submitButton.innerText = ruFormTexts.submitButton;
+  } else {
+    formHeading.innerText = enFormTexts.heading;
+    nameInput.placeholder = enFormTexts.namePlaceholder;
+    emailInput.placeholder = enFormTexts.emailPlaceholder;
+    messageTextarea.placeholder = enFormTexts.messagePlaceholder;
+    submitButton.innerText = enFormTexts.submitButton;
+  }
+}
+
+// Обновление формы при смене языка
+function toggleLanguage() {
+  var currentLanguage = document.documentElement.lang || 'en';
+
+  if (currentLanguage === 'en') {
+    document.documentElement.lang = 'ru';
+    updateTexts(ruTexts); // Обновляем текст на русском
+    updateFormTexts('ru'); // Обновляем текст формы на русский
+    toggleTextVisibility('ru'); // Переключаем видимость текста
+    document.getElementById('language-toggle').innerText = 'Изменить язык';
+  } else {
+    document.documentElement.lang = 'en';
+    updateTexts(enTexts); // Обновляем текст на английский
+    updateFormTexts('en'); // Обновляем текст формы на английский
+    toggleTextVisibility('en'); // Переключаем видимость текста
+    document.getElementById('language-toggle').innerText = 'Change Language';
+  }
+
+  updateContainerHeights();
+}
+
 </script>
 
 </body>
