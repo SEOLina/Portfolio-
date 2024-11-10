@@ -191,8 +191,6 @@
   function updateContainerHeights() {
     const flexboxContainer = document.querySelector('.Flexbox-container');
     const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
-
-    // Сброс высоты всех рамок
     specialFrames.forEach(frame => {
       frame.style.height = 'auto';
     });
@@ -210,70 +208,45 @@
     document.getElementById('popup-overlay').style.display = 'none';
   }
 
-  // Обработка отправки формы
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Предотвращаем отправку формы
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Вывод данных на консоль (в реальной ситуации можно отправить их на сервер или на почту)
-    console.log('Имя:', name);
-    console.log('Email:', email);
-    console.log('Сообщение:', message);
-
-    // Закрытие popup после отправки
-    closePopup();
-
-    // Сообщение пользователю
-    alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
-  });
-
+  // Переключение языка сайта
   function toggleLanguage() {
     var currentLanguage = document.documentElement.lang || 'en';
 
     if (currentLanguage === 'en') {
       document.documentElement.lang = 'ru';
-      updateTexts(ruTexts); // Обновляем текст на русском
-      updateFormTexts('ru'); // Обновляем текст формы на русский
-      toggleTextVisibility('ru'); // Переключаем видимость текста
+      document.getElementById('about-heading').innerText = 'Обо мне';
+      updateTexts(ruTexts);
+      toggleTextVisibility('ru');
       document.getElementById('language-toggle').innerText = 'Изменить язык';
-      document.querySelector('.contact-button').innerText = 'Оставить заявку'; // Обновление текста кнопки
+      document.querySelector('.contact-button').innerText = 'Оставить заявку';
     } else {
       document.documentElement.lang = 'en';
-      updateTexts(enTexts); // Обновляем текст на английский
-      updateFormTexts('en'); // Обновляем текст формы на английский
-      toggleTextVisibility('en'); // Переключаем видимость текста
+      document.getElementById('about-heading').innerText = 'About me';
+      updateTexts(enTexts);
+      toggleTextVisibility('en');
       document.getElementById('language-toggle').innerText = 'Change Language';
-      document.querySelector('.contact-button').innerText = 'Contact Me'; // Обновление текста кнопки
+      document.querySelector('.contact-button').innerText = 'Contact Me';
     }
 
+    // Обновляем высоту рамок после смены языка
     updateContainerHeights();
   }
 
-  // Функция для обновления текста
+  // Обновление текстов на основе выбранного языка
   function updateTexts(texts) {
     document.querySelectorAll('.about-text').forEach((el, index) => {
       el.innerText = texts[index];
     });
   }
 
-  // Функция для переключения видимости текста
+  // Переключение видимости текста
   function toggleTextVisibility(language) {
     if (language === 'ru') {
-      document.querySelectorAll('.frame-description-en').forEach(function(el) {
-        el.style.display = 'none';
-      });
-      document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-        el.style.display = 'block';
-      });
+      document.querySelectorAll('.frame-description-en').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'block');
     } else {
-      document.querySelectorAll('.frame-description-en').forEach(function(el) {
-        el.style.display = 'block';
-      });
-      document.querySelectorAll('.frame-description-ru').forEach(function(el) {
-        el.style.display = 'none';
-      });
+      document.querySelectorAll('.frame-description-en').forEach(el => el.style.display = 'block');
+      document.querySelectorAll('.frame-description-ru').forEach(el => el.style.display = 'none');
     }
   }
 
@@ -291,52 +264,12 @@
     'С 2022 года я расширила свои знания в SMM, поняв, что для успешного копирайтинга нужно строить целые стратегии. Я начала создавать воронки продаж, контент-планы и помогать экспертам развивать их онлайн-позиционирование. Моя цель всегда была не просто создать качественный контент, а сделать так, чтобы он отвечал реальным потребностям аудитории и помогал бизнесу расти.'
   ];
 
-  // Тексты для английского в форме
-  const enFormTexts = {
-    heading: 'Contact Us',
-    namePlaceholder: 'Your Name',
-    emailPlaceholder: 'Your Email',
-    messagePlaceholder: 'Your Message',
-    submitButton: 'Submit'
-  };
-
-  // Тексты для русского в форме
-  const ruFormTexts = {
-    heading: 'Обратная связь',
-    namePlaceholder: 'Ваше имя',
-    emailPlaceholder: 'Ваш email',
-    messagePlaceholder: 'Сообщение',
-    submitButton: 'Отправить'
-  };
-
-  // Функция для обновления текста в форме
-  function updateFormTexts(language) {
-    const formHeading = document.querySelector('.popup h2');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageTextarea = document.getElementById('message');
-    const submitButton = document.querySelector('.popup button');
-
-    if (language === 'ru') {
-      formHeading.innerText = ruFormTexts.heading;
-      nameInput.placeholder = ruFormTexts.namePlaceholder;
-      emailInput.placeholder = ruFormTexts.emailPlaceholder;
-      messageTextarea.placeholder = ruFormTexts.messagePlaceholder;
-      submitButton.innerText = ruFormTexts.submitButton;
-    } else {
-      formHeading.innerText = enFormTexts.heading;
-      nameInput.placeholder = enFormTexts.namePlaceholder;
-      emailInput.placeholder = enFormTexts.emailPlaceholder;
-      messageTextarea.placeholder = enFormTexts.messagePlaceholder;
-      submitButton.innerText = enFormTexts.submitButton;
-    }
-  }
-
   // Обновляем высоты контейнеров при загрузке страницы
   window.onload = function() {
     updateContainerHeights();
   };
 </script>
+  
 
 </body>
 
