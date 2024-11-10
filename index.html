@@ -228,6 +228,15 @@
       document.querySelector('.contact-button').innerText = 'Contact Me';
     }
 
+    // Обновление текста во всплывающем окне
+    document.querySelector('.popup h2').innerText = 'Контакты';
+    document.querySelector('.popup label[for="name"]').innerText = 'Ваше имя:';
+    document.querySelector('.popup label[for="email"]').innerText = 'Ваш Email:';
+    document.querySelector('.popup label[for="message"]').innerText = 'Ваше сообщение:';
+    document.querySelector('.popup button').innerText = 'Отправить';
+  } else {
+    document.documentElement.lang = 'en';
+
     // Обновляем высоту рамок после смены языка
     updateContainerHeights();
   }
