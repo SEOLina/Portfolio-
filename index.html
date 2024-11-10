@@ -41,6 +41,19 @@
       transition: background-color 0.3s, transform 0.3s;
     }
 
+    .text-container p {
+  font-size: 18px;
+  color: #fff; /* Цвет текста */
+  text-align: center;
+}
+
+.text-container a.contact-button {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+    
     /* Стиль кнопки при наведении */
     .contact-button:hover {
       background-color: #ffdc33;
@@ -161,8 +174,8 @@
   </div>
 
   <!-- Контейнер для кнопки "Оставить заявку" -->
-  <div class="contact-container">
-    <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a>
+  <div class="text-container">
+  <p>Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и мы реализуем ваш проект.</p>
   </div>
 
   <!-- Всплывающее окно -->
