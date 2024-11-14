@@ -6,6 +6,24 @@ body, html {
   overflow-x: hidden;
 }
 
+/* Эффект для рамок */
+.special-frame {
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
+}
+
+.special-frame:hover {
+  transform: scale(1.05); /* Увеличение */
+  border-color: #ffb300; /* Изменение цвета рамки на оранжевый при наведении */
+}
+
+.special-frame img {
+  transition: transform 0.3s ease; /* Плавное изменение */
+}
+
+.special-frame:hover img {
+  transform: scale(1.05); /* Немного увеличиваем изображение при наведении */
+}
+
 .container1 {
   position: relative;
   width: 100%;
@@ -129,14 +147,16 @@ body, html {
   background-color: black;
 }
 
+/* Используем CSS Grid для контейнера с кейсами */
 .Flexbox-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Растягивает все элементы по высоте */
+  display: grid; /* Переходим на CSS Grid */
+  grid-template-columns: repeat(3, 1fr); /* Три колонки на больших экранах */
   gap: 20px; /* Расстояние между фреймами */
+  justify-items: center; /* Центрируем элементы в пределах колонок */
+  grid-auto-rows: 1fr; /* Чтобы все строки имели одинаковую высоту */
+  padding: 20px;
 }
 
-/* Установка одинаковой высоты для всех special-frame */
 .Flexbox-container .special-frame {
   display: flex;
   flex-direction: column; /* Вертикальное расположение содержимого внутри */
@@ -144,15 +164,6 @@ body, html {
   border: 1px solid #ccc;
   padding: 10px;
   height: 100%; /* Устанавливает высоту на 100% */
-}
-
-.additional-content {
-  margin-top: 20px;
-}
-
-/* Скрытие русского текста по умолчанию */
-.frame-description-ru {
-  display: none;
 }
 
 /* Мобильная версия */
@@ -195,7 +206,8 @@ body, html {
   }
 
   .Flexbox-container {
-    flex-direction: column; /* Изменяем на вертикальное расположение */
+    grid-template-columns: 1fr; /* Для мобильных устройств показываем по одному элементу в ряду */
+    gap: 10px; /* Меньше расстояние между элементами */
   }
 
   .contact-container {
