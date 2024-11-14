@@ -6,6 +6,24 @@ body, html {
   overflow-x: hidden;
 }
 
+/* Эффект для рамок */
+.special-frame {
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
+}
+
+.special-frame:hover {
+  transform: scale(1.05); /* Увеличение */
+  border-color: #ffb300; /* Изменение цвета рамки на оранжевый при наведении */
+}
+
+.special-frame img {
+  transition: transform 0.3s ease; /* Плавное изменение */
+}
+
+.special-frame:hover img {
+  transform: scale(1.05); /* Немного увеличиваем изображение при наведении */
+}
+
 .container1 {
   position: relative;
   width: 100%;
