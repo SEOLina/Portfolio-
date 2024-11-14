@@ -149,11 +149,12 @@ body, html {
 
 /* Используем CSS Grid для контейнера с кейсами */
 .Flexbox-container {
-  display: grid; /* Переходим на CSS Grid */
+  display: grid; /* Переход на CSS Grid */
   grid-template-columns: repeat(3, 1fr); /* Три колонки на больших экранах */
   gap: 20px; /* Расстояние между фреймами */
   justify-items: center; /* Центрируем элементы в пределах колонок */
-  grid-auto-rows: 1fr; /* Чтобы все строки имели одинаковую высоту */
+  grid-auto-rows: 1fr; /* Высота строк автоматически растягивается до равного значения */
+  align-items: stretch; /* Все ячейки растягиваются по высоте */
   padding: 20px;
 }
 
