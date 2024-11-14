@@ -119,7 +119,7 @@ body, html {
   cursor: pointer;
   margin: 0 10px;
   border: 2px solid #ffdc33 !important;
-  width: calc(33.33% - 40px);
+  width: 100%;
   height: 100%;
   font-size: 24px; 
 }
@@ -149,12 +149,10 @@ body, html {
 
 /* Используем CSS Grid для контейнера с кейсами */
 .Flexbox-container {
-  display: grid; /* Переход на CSS Grid */
+  display: grid;
   grid-template-columns: repeat(3, 1fr); /* Три колонки на больших экранах */
   gap: 20px; /* Расстояние между фреймами */
   justify-items: center; /* Центрируем элементы в пределах колонок */
-  grid-auto-rows: 1fr; /* Высота строк автоматически растягивается до равного значения */
-  align-items: stretch; /* Все ячейки растягиваются по высоте */
   padding: 20px;
 }
 
