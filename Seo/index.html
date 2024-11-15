@@ -106,16 +106,56 @@
       </div>
     </div>
 
-
-  <div class="contact-container">
-    <h1>Contact Me</h1>
-    <p>If you want to contact me, please email me at:</p>
-    <a id="contact-email" href="mailto:Alina.gladkova.05@mail.ru" style="color: #ffdc33;">alina.gladkova.05@mail.ru</a>
+    <div class="special-frame" onclick="window.location.href = 'https://bloodthirstywolf.github.io/Blog/Zarabotat_na_neyrosetyakh.html'">
+      <img class="ru" src="Money.png" alt="Image 3">
+      <div>
+        <p class="frame-description-en">Unveiling truth about earning with neural networks: debunking myths of quick money with AI. Who will be able to generate revenue from artificial intelligence, and who will be left with nothing?</p>
+        <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем?</p>
+      </div>
+    </div>
   </div>
+  </div>
+
+   <!-- Контейнер для кнопки "Оставить заявку" -->
+  <div class="contact-container">
+  <p id="contact-text">Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">CONTACT ME</a>, and I will implement your project.</p>
+  </div>
+
+    <!-- Всплывающее окно -->
+<div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <h2 style="color: #ffdc33;">Contact Us</h2>
+  <form action="https://formspree.io/f/myzyjkev" method="POST">
+    <label for="name" style="color: #ffdc33;">Your Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Your Name">
+
+    <label for="email" style="color: #ffdc33;">Your Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Your Email">
+
+    <label for="message" style="color: #ffdc33;">Your Message:</label>
+    <textarea id="message" name="message" required placeholder="Your Message" rows="4"></textarea>
+
+    <button type="submit" style="background-color: #ffdc33; color: black; padding: 10px 20px; border-radius: 5px;">Submit</button>
+  </form>
+</div>
 
   <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
 
   <script>
+
+    // Открытие всплывающего окна
+  function openPopup(event) {
+    event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('popup-overlay').style.display = 'block';
+  }
+
+  // Закрытие всплывающего окна
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('popup-overlay').style.display = 'none';
+  }
+
   // Функция для переключения языка
   function toggleLanguage() {
     var currentLanguage = document.documentElement.lang || 'en';
@@ -168,6 +208,29 @@
       // Перевод текста в блоке "case-header"
       document.getElementById('case-heading').innerText = 'Cases';
       document.getElementById('case-description').innerText = 'Here you can explore some of my best projects. Each of them is the result of a personalized approach and creative solutions to meet the task';
+    
+      // Перевод всплывающей формы
+      document.querySelector('.popup h2').innerText = 'Связаться с нами';
+      document.querySelector('label[for="name"]').innerText = 'Ваше имя:';
+      document.querySelector('label[for="email"]').innerText = 'Ваш email:';
+      document.querySelector('label[for="message"]').innerText = 'Ваше сообщение:';
+      document.querySelector('button[type="submit"]').innerText = 'Отправить';
+    } else {
+      document.documentElement.lang = 'en';
+      document.getElementById('about-heading').innerText = 'About me';
+      updateTexts(enTexts);
+      toggleTextVisibility('en');
+      document.getElementById('language-toggle').innerText = 'Change Language';
+      document.querySelector('.contact-button').innerText = 'CONTACT ME';
+      // Обновляем текст кнопки и описания
+      document.getElementById('contact-text').innerHTML = `Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a> and I will implement your project.`;
+      
+      // Перевод всплывающей формы
+      document.querySelector('.popup h2').innerText = 'Contact Us';
+      document.querySelector('label[for="name"]').innerText = 'Your Name:';
+      document.querySelector('label[for="email"]').innerText = 'Your Email:';
+      document.querySelector('label[for="message"]').innerText = 'Your Message:';
+      document.querySelector('button[type="submit"]').innerText = 'Submit';
     }
     // Обновление высоты контейнеров после смены языка
     updateContainerHeights();
