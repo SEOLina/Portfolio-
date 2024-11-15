@@ -24,6 +24,13 @@
     .frame-description-ru {
       display: none;
     }
+
+    /* Центрирование заголовка и увеличение его размера */
+    .case-header {
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+    }
   </style>
 </head>
 
@@ -53,61 +60,14 @@
   </div>
   
   <div class="container3">
-<div class="case-header">
-    <h2 id="case-heading">Cases</h2>
-    <p id="case-description">Here you can explore some of my best projects. Each of them is the result of a personalized approach and creative solutions to meet the task</p>
-  </div>
+    <div class="case-header">
+      <h2 id="case-heading">Cases</h2>
+      <p id="case-description">Here you can explore some of my best projects. Each of them is the result of a personalized approach and creative solutions to meet the task</p>
+    </div>
     
-  <div class="Flexbox-container">
-    <div class="special-frame" onclick="window.location.href = 'https://nva-house.ru/gotovye-proekty/proekt-doma-iz-gazobetona/'">
-      <img class="ru" src="https://i.ibb.co/vBfG3vW/be5-Abu-Qph-Xrbu-Tq-Sy-A24-Oq-PXIofwtai-Crtb-O66fs.png" alt="Image 1">
-      <div>
-        <p class="frame-description-en">Turnkey aerated concrete house project in 6 months. Photos, detailed description, full technical specifications.</p>
-        <p class="frame-description-ru">Проект дома из газобетона под ключ за 6 месяцев. Фотографии, подробное описание, полные технические характеристики.</p>
-      </div>
+    <div class="Flexbox-container">
+      <!-- Ваши case элементы здесь -->
     </div>
-
-    <div class="special-frame" onclick="window.location.href = '/Seo/Yogurt.html'">
-      <img class="ru" src="https://i.ibb.co/F56QNks/g-FCHQgm-6c-Q-round.png" alt="Image 2">
-      <div>
-        <p class="frame-description-en">Frozen yogurt is a healthy alternative to classic ice cream, which combines a natural composition and low calorie content. In the article about the benefits of this dessert, the variety of flavors, how to choose quality yogurt and where to try the best options.</p>
-        <p class="frame-description-ru">Замороженный йогурт — это здоровая альтернатива классическому мороженому, которая сочетает натуральный состав и низкое содержание калорий. В статье о пользе этого десерта, разнообразии вкусов, как выбрать качественный йогурт и где попробовать лучшие варианты.</p>
-      </div>
-    </div>
-
-    <div class="special-frame" onclick="window.location.href = '/Seo/Cosmetology.html'">
-      <img class="ru" src="https://i.ibb.co/fMNgryq/obucheniye-apparatnoy-kosmetologii-round.png" alt="Image 3">
-      <div>
-        <p class="frame-description-en">Modern hardware cosmetology offers effective methods to rejuvenate and improve your appearance without pain and long rehabilitation. Learn how to choose the right method and why it is important to consult an experienced professional for safe and effective skin care.</p>
-        <p class="frame-description-ru">Современная аппаратная косметология предлагает эффективные методы омоложения и улучшения внешности без боли и долгой реабилитации. Узнайте, как выбрать подходящий метод и почему важно проконсультироваться с опытным специалистом для безопасного и эффективного ухода за кожей.</p>
-      </div>
-    </div>
-
-    <!-- Закрывающий div для 3-го блока, который был утерян в вашем коде -->
-    <div class="special-frame" onclick="window.location.href = 'Portugalia.html'">
-      <img class="ru" src="Portugal.png" alt="Image 1">
-      <div>
-        <p class="frame-description-en">Planning to travel to Portugal? Explore stunning Atlantic beaches, historic, but modern cities, and local cuisine in our travel guide. Discover attractions and tips for your perfect getaway.</p>
-        <p class="frame-description-ru">Планируете поехать в Португалию? Откройте удивительные пляжи Атлантики, исторические города и местную кухню в нашем путеводителе. Подробности о достопримечательностях и советы для идеального отдыха.</p>
-      </div>
-    </div>
-
-    <div class="special-frame" onclick="window.location.href = 'Plants.html'">
-      <img class="ru" src="Plant.png" alt="Image 2">
-      <div>
-        <p class="frame-description-en">Discover essential tips to keep your plants thriving! Learn how to water properly, choose the right sunlight, and tackle common issues like yellowing leaves, infestations, or mould in this beginner's guide to floriculture.</p>
-        <p class="frame-description-ru">Откройте секреты, которые помогут вашим растениям процветать! Узнайте, как правильно поливать, регулировать освещение и о самых частых ошибках.</p>
-      </div>
-    </div>
-
-    <div class="special-frame" onclick="window.location.href = 'https://bloodthirstywolf.github.io/Blog/Zarabotat_na_neyrosetyakh.html'">
-      <img class="ru" src="Money.png" alt="Image 3">
-      <div>
-        <p class="frame-description-en">Unveiling truth about earning with neural networks: debunking myths of quick money with AI. Who will be able to generate revenue from artificial intelligence, and who will be left with nothing?</p>
-        <p class="frame-description-ru">Правда о заработке на нейросетях: развенчиваем мифы о быстрых деньгах с помощью AI. Кому удастся получать доход от искусственного интеллекта, а кто в итоге останется ни с чем?</p>
-      </div>
-    </div>
-  </div>
   </div>
 
   <div class="contact-container">
@@ -144,6 +104,9 @@
       document.querySelectorAll('.frame-title-ru').forEach(function(el) {
         el.style.display = 'block';
       });
+      // Перевод текста в блоке "case-header"
+      document.getElementById('case-heading').innerText = 'Кейсы';
+      document.getElementById('case-description').innerText = 'Здесь вы можете ознакомиться с лучшими из моих проектов. Каждый из них — результат индивидуального подхода и творческого решения задачи.';
     } else {
       // Переключение на английский
       document.documentElement.lang = 'en';
@@ -165,6 +128,9 @@
       document.querySelectorAll('.frame-title-ru').forEach(function(el) {
         el.style.display = 'none';
       });
+      // Перевод текста в блоке "case-header"
+      document.getElementById('case-heading').innerText = 'Cases';
+      document.getElementById('case-description').innerText = 'Here you can explore some of my best projects. Each of them is the result of a personalized approach and creative solutions to meet the task';
     }
     // Обновление высоты контейнеров после смены языка
     updateContainerHeights();
@@ -188,17 +154,10 @@
   ];
 
   var ruTexts = [
-    'Моя карьера в копирайтинге началась в 2020 году на фриланс-биржах, где я выполняла простые заказы за небольшую плату. Но меня всегда интересовало не просто «выполнение задания», а то, как я могу предложить решение, которое действительно помогает клиенту. Увидев, что SEO-копирайтинг востребован больше, я углубила свои знания в этой области. Я научилась не только вставлять ключевые слова, но и анализировать контент для эффективного продвижения в поисковых системах.',
-    'Понимая, что на биржах не получится развить навыки и выйти на новый уровень, я начала заниматься SEO-аудитами сайтов, выявлять ошибки и давать рекомендации по оптимизации контента. Мой подход всегда был ориентирован на решение реальных проблем клиента, а не просто выполнение заказа.',
-    'С 2022 года я расширила свои знания в SMM, поняв, что для успешного копирайтинга нужно строить целые стратегии. Я начала создавать воронки продаж, контент-планы и помогать экспертам развивать их онлайн-позиционирование. Моя цель всегда была не просто создать качественный контент, а сделать так, чтобы он отвечал реальным потребностям аудитории и помогал бизнесу расти.'
+    'Моя карьера в копирайтинге началась в 2020 году на фриланс-биржах, где я выполняла простые заказы за небольшую плату. Но меня всегда интересовало не просто «выполнение задания», а то, как я могу предложить решение, которое действительно помогает клиенту. Увидев, что на SEO-копирайтинг повышенный спрос, я углубила свои знания в этой области. Я научилась не просто вставлять ключевые слова, а анализировать текст для эффективной оптимизации под поисковые системы.',
+    'Поняв, что я не могу полноценно развиваться и выйти за рамки заданных условий на фриланс-платформах, я сосредоточилась на проведении SEO-аудитов, выявлении ошибок и предоставлении рекомендаций по оптимизации. Мой подход всегда заключался в решении реальных задач клиента, а не просто в выполнении заказа.',
+    'С 2022 года я расширила свои знания в области маркетинга в социальных сетях, понимая, что успешный копирайтинг сегодня — это создание комплексных стратегий. Я начала работать над созданием воронок продаж, контент-планов и помогать экспертам с онлайн-позиционированием. Моя цель всегда заключалась в создании качественного контента, который прямо отвечает потребностям аудитории и способствует развитию бизнеса.'
   ];
-
-  // Обновляем высоты контейнеров при загрузке страницы
-  window.onload = function() {
-    updateContainerHeights();
-  };
-</script>
-
+  </script>
 </body>
-
 </html>
