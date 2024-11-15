@@ -165,7 +165,7 @@ body, html {
   justify-content: space-between; /* Обеспечивает равномерное распределение пространства */
   border: 1px solid #ccc;
   padding: 10px;
-  font-size: 18px;
+  font-size: 20px;
   height: 100%; /* Устанавливает высоту на 100% */
   box-sizing: border-box; /* Учитываем границы в размере */
 }
