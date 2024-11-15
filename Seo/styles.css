@@ -119,8 +119,10 @@ body, html {
   margin: 0 10px;
   border: 2px solid #ffdc33 !important;
   height: 100%;
+   width: 80%;
   font-size: 24px;
   box-sizing: border-box; /* Учитываем границы в размере */
+  
 }
 
 
@@ -165,7 +167,6 @@ body, html {
   border: 1px solid #ccc;
   padding: 10px;
   height: 100%; /* Устанавливает высоту на 100% */
-  width: 80%; /* Ширина ячеек — 50% от контейнера */
   box-sizing: border-box; /* Учитываем границы в размере */
 }
 
