@@ -166,7 +166,7 @@ body, html {
   border: 1px solid #ccc;
   padding: 10px;
   height: 100%; /* Устанавливает высоту на 100% */
-  width: 100%; /* Ширина ячеек — 1/3 от контейнера */
+  width: 50%; /* Ширина ячеек — 50% от контейнера */
   box-sizing: border-box; /* Учитываем границы в размере */
 }
 
@@ -207,6 +207,7 @@ body, html {
   .special-frame {
     width: 80%; /* Для мобильной версии ячейки занимают 80% ширины */
     margin: 0 auto 20px auto;
+    height: auto; /* Делаем высоту автоматической для мобильной версии */
   }
 
   .Flexbox-container {
