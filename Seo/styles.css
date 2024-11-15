@@ -124,6 +124,13 @@ body, html {
   
 }
 
+.contact-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}
 
 .special-frame:hover {
   background-color: #333;
