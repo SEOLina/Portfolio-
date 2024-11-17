@@ -6,6 +6,40 @@ body, html {
   overflow-x: hidden;
 }
 
+.contact-container {
+  background-color: #000000; /* Черный фон */
+  padding: 40px 20px; /* Отступы внутри контейнера */
+  text-align: center;
+  border-radius: 10px; /* Скругленные углы */
+  margin-top: 40px; /* Отступ сверху */
+}
+
+#contact-text {
+  font-size: 20px;
+  color: #ffffff; /* Белый цвет текста */
+  margin-bottom: 20px;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: #000000; /* Черный фон */
+  color: #ffffff; /* Белый текст */
+  padding: 15px 30px;
+  font-size: 24px;
+  border-radius: 25px; /* Закругленные углы */
+  border: 2px solid #ffb300; /* Золотая рамка */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #ffb300; /* Золотой фон при наведении */
+  color: #000000; /* Черный текст */
+  transform: scale(1.1);
+}
+
 /* Эффект для рамок */
 .special-frame {
   transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
