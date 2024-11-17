@@ -244,6 +244,62 @@
   window.onload = function() {
     updateContainerHeights();
   };
+
+  // Открытие всплывающего окна
+function openPopup(event) {
+  event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
+  document.getElementById('popup').style.display = 'block';
+  document.getElementById('popup-overlay').style.display = 'block';
+}
+
+// Закрытие всплывающего окна
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+  document.getElementById('popup-overlay').style.display = 'none';
+}
+
+// Переключение языка сайта
+function toggleLanguage() {
+  var currentLanguage = document.documentElement.lang || 'en';
+
+  if (currentLanguage === 'en') {
+    document.documentElement.lang = 'ru';
+    document.getElementById('about-heading').innerText = 'Обо мне';
+    updateTexts(ruTexts);
+    toggleTextVisibility('ru');
+    document.getElementById('language-toggle').innerText = 'Изменить язык';
+    document.querySelector('.contact-button').innerText = 'ОСТАВЬТЕ ЗАЯВКУ';
+    // Обновляем текст кнопки и описания
+    document.getElementById('contact-text').innerHTML = `Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и я реализую ваш проект.`;
+    
+    // Перевод всплывающей формы
+    document.querySelector('.popup h2').innerText = 'Связаться с нами';
+    document.querySelector('label[for="name"]').innerText = 'Ваше имя:';
+    document.querySelector('label[for="email"]').innerText = 'Ваш email:';
+    document.querySelector('label[for="message"]').innerText = 'Ваше сообщение:';
+    document.querySelector('button[type="submit"]').innerText = 'Отправить';
+  } else {
+    document.documentElement.lang = 'en';
+    document.getElementById('about-heading').innerText = 'About me';
+    updateTexts(enTexts);
+    toggleTextVisibility('en');
+    document.getElementById('language-toggle').innerText = 'Change Language';
+    document.querySelector('.contact-button').innerText = 'CONTACT ME';
+    // Обновляем текст кнопки и описания
+    document.getElementById('contact-text').innerHTML = `Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a> and I will implement your project.`;
+    
+    // Перевод всплывающей формы
+    document.querySelector('.popup h2').innerText = 'Contact Us';
+    document.querySelector('label[for="name"]').innerText = 'Your Name:';
+    document.querySelector('label[for="email"]').innerText = 'Your Email:';
+    document.querySelector('label[for="message"]').innerText = 'Your Message:';
+    document.querySelector('button[type="submit"]').innerText = 'Submit';
+  }
+
+  // Обновляем высоту рамок после смены языка
+  updateContainerHeights();
+}
+
 </script>
 
 </body>
