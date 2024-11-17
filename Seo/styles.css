@@ -6,23 +6,29 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Эффект для рамок */
-.special-frame {
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
-}
+.container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+  }
 
-.special-frame:hover {
-  transform: scale(1.05); /* Увеличение */
-  border-color: #ffb300; /* Изменение цвета рамки на оранжевый при наведении */
-}
+  .Flexbox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+  }
 
-.special-frame img {
-  transition: transform 0.3s ease; /* Плавное изменение */
-}
-
-.special-frame:hover img {
-  transform: scale(1.05); /* Немного увеличиваем изображение при наведении */
-}
+  .special-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 100%;
+    cursor: pointer;
+  }
 
 .container1 {
   position: relative;
