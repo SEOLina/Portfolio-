@@ -6,40 +6,6 @@ body, html {
   overflow-x: hidden;
 }
 
-.contact-container {
-  background-color: #000000; /* Черный фон */
-  padding: 40px 20px; /* Отступы внутри контейнера */
-  text-align: center;
-  border-radius: 10px; /* Скругленные углы */
-  margin-top: 40px; /* Отступ сверху */
-}
-
-#contact-text {
-  font-size: 20px;
-  color: #ffffff; /* Белый цвет текста */
-  margin-bottom: 20px;
-}
-
-.contact-button {
-  display: inline-block;
-  background-color: #000000; /* Черный фон */
-  color: #ffffff; /* Белый текст */
-  padding: 15px 30px;
-  font-size: 24px;
-  border-radius: 25px; /* Закругленные углы */
-  border: 2px solid #ffb300; /* Золотая рамка */
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.contact-button:hover {
-  background-color: #ffb300; /* Золотой фон при наведении */
-  color: #000000; /* Черный текст */
-  transform: scale(1.1);
-}
-
 /* Эффект для рамок */
 .special-frame {
   transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
@@ -142,6 +108,7 @@ body, html {
 
 /* Стили для специальных фреймов */
 .special-frame {
+  flex: 1;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
@@ -152,18 +119,9 @@ body, html {
   cursor: pointer;
   margin: 0 10px;
   border: 2px solid #ffdc33 !important;
+  width: calc(33.33% - 40px);
   height: 100%;
-   width: 80%;
-  box-sizing: border-box; /* Учитываем границы в размере */
-  
-}
-
-.contact-container {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height: auto;
+  font-size: 24px; 
 }
 
 .special-frame:hover {
@@ -189,26 +147,30 @@ body, html {
   background-color: black;
 }
 
-/* Используем CSS Grid для контейнера с кейсами */
 .Flexbox-container {
-  display: grid; /* Переход на CSS Grid */
-  grid-template-columns: repeat(3, 1fr); /* Три колонки на больших экранах */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Растягивает все элементы по высоте */
   gap: 20px; /* Расстояние между фреймами */
-  justify-items: center; /* Центрируем элементы в пределах колонок */
-  grid-auto-rows: 1fr; /* Высота строк автоматически растягивается до равного значения */
-  align-items: stretch; /* Все ячейки растягиваются по высоте */
-  padding: 20px;
 }
 
+/* Установка одинаковой высоты для всех special-frame */
 .Flexbox-container .special-frame {
   display: flex;
   flex-direction: column; /* Вертикальное расположение содержимого внутри */
   justify-content: space-between; /* Обеспечивает равномерное распределение пространства */
   border: 1px solid #ccc;
   padding: 10px;
-  font-size: 18px;
   height: 100%; /* Устанавливает высоту на 100% */
-  box-sizing: border-box; /* Учитываем границы в размере */
+}
+
+.additional-content {
+  margin-top: 20px;
+}
+
+/* Скрытие русского текста по умолчанию */
+.frame-description-ru {
+  display: none;
 }
 
 /* Мобильная версия */
@@ -246,14 +208,12 @@ body, html {
   }
 
   .special-frame {
-    width: 80%; /* Для мобильной версии ячейки занимают 80% ширины */
+    width: 80%;
     margin: 0 auto 20px auto;
-    height: auto; /* Делаем высоту автоматической для мобильной версии */
   }
 
   .Flexbox-container {
-    grid-template-columns: 1fr; /* Для мобильных устройств показываем по одному элементу в ряду */
-    gap: 10px; /* Меньше расстояние между элементами */
+    flex-direction: column; /* Изменяем на вертикальное расположение */
   }
 
   .contact-container {
