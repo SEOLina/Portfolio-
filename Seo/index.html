@@ -245,18 +245,20 @@
     updateContainerHeights();
   };
 
-  // Открытие всплывающего окна
-function openPopup(event) {
-  event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
-  document.getElementById('popup').style.display = 'block';
-  document.getElementById('popup-overlay').style.display = 'block';
-}
 
-// Закрытие всплывающего окна
-function closePopup() {
-  document.getElementById('popup').style.display = 'none';
-  document.getElementById('popup-overlay').style.display = 'none';
-}
+  // Открытие всплывающего окна
+  function openPopup(event) {
+    event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('popup-overlay').style.display = 'block';
+  }
+
+  // Закрытие всплывающего окна
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('popup-overlay').style.display = 'none';
+  }
+
 
 // Переключение языка сайта
 function toggleLanguage() {
