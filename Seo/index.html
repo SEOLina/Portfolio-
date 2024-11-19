@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +26,96 @@
       display: none;
     }
 
-    /* Центрирование заголовка и увеличение его размера */
-    .case-header {
+    /* Стиль для кнопки */
+    .contact-button {
+      display: inline-block;
+      background-color: #000000; /* Черный фон */
+      color: #ffdc33; /* Золотой цвет текста */
+      padding: 20px 40px;
+      font-size: 24px;
+      border-radius: 25px;
+      border: 2px solid #ffdc33; /* Золотая рамка */
+      cursor: pointer;
       text-align: center;
-      color: white;
-      font-size: 2rem;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .text-container p {
+  font-size: 18px;
+  color: #fff; /* Цвет текста */
+  text-align: center;
+}
+
+.text-container a.contact-button {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+    
+    /* Стиль кнопки при наведении */
+    .contact-button:hover {
+      background-color: #ffdc33;
+      color: #000000; /* Черный текст при наведении */
+      transform: scale(1.1);
+    }
+
+    /* Стиль для всплывающего окна */
+    .popup {
+      display: none; /* Скрыто по умолчанию */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #000000;
+      border: 2px solid #ffdc33;
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+      z-index: 1000;
+    }
+
+    /* Стиль для формы внутри всплывающего окна */
+    .popup form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .popup input, .popup textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid #ffdc33;
+    }
+
+    .popup button {
+      padding: 10px;
+      background-color: #ffdc33;
+      color: #000000;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Стиль для кнопки отправки */
+    .popup button:hover {
+      background-color: #ffb300;
+    }
+
+    /* Фон для затемнения при открытом окне */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
     }
   </style>
 </head>
@@ -52,13 +138,13 @@
     <div class="text">
       <div class="text-container">
         <h1 id="about-heading">About me</h1>
-        <p class="about-text" style="font-size: 20px;">My copywriting career started in 2020 on freelance platforms, where I took on simple projects for low rates. However, I’ve always been more interested in offering solutions that truly help my clients rather than just completing a task. I soon noticed that SEO copywriting was in higher demand, so I deepened my expertise in this area. I learned how to not just insert keywords, but to analyze content for effective search engine optimization.</p>
-        <p class="about-text" style="font-size: 20px;">Realizing that I couldn’t fully develop my skills or grow beyond a certain point on freelance platforms, I shifted focus to conducting SEO audits, identifying errors, and providing optimization recommendations. My approach has always been about solving real problems for clients, not just fulfilling an order.</p>
-        <p class="about-text" style="font-size: 20px;">Since 2022, I’ve expanded my knowledge into social media marketing, recognizing that successful copywriting today requires building full strategies. I began creating sales funnels, content plans, and helping experts with their online positioning. My goal has always been to create high-quality content that directly addresses the needs of the audience and contributes to business growth.</p>
+        <p class="about-text" style="font-size: 20px;">From an early age, my natural talent for languages became evident. Learning them came effortlessly and naturally, and when I sought to earn my first money in my youth, it was clear which path to choose. For a solid four years, I dedicated myself to freelancing, initially as a translator in languages like English, German, and Japanese. As time went on, I expanded my skills to include SEO copywriting.</p>
+        <p class="about-text" style="font-size: 20px;">However, I eventually decided to step away from freelance exchanges, recognizing that it was an arena primarily for beginners, where success often hinged on delegating work to lower-paid individuals. I realized that I had outgrown the phase of needing just a little money for student entertainment; I had transformed into someone who desired personal and professional growth.</p>
+        <p class="about-text" style="font-size: 20px;">As time went on, I realized that I wanted more than just financial rewards. I wanted to give back to society and contribute to the well-being of others. One significant step I took was joining an organization dedicated to helping individuals with serious mental and physical health challenges. Although it started as a small group of passionate individuals unsure of their direction, I contributed by translating essential resources, including an entire book that continues to be a valuable asset today.</p>
       </div>
     </div>
   </div>
-  
+
   <div class="container3">
     <div class="case-header">
       <h2 id="case-heading">Cases</h2>
@@ -116,7 +202,7 @@
   </div>
   </div>
 
-   <!-- Контейнер для кнопки "Оставить заявку" -->
+  <!-- Контейнер для кнопки "Оставить заявку" -->
   <div class="contact-container">
   <p id="contact-text">Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">CONTACT ME</a>, and I will implement your project.</p>
   </div>
@@ -139,9 +225,9 @@
   </form>
 </div>
 
-  <button id="language-toggle" onclick="toggleLanguage()">Change Language</button>
+    <button id="language-toggle" onclick="toggleLanguage()">Изменить язык</button>
 
-<script>
+  <script>
   // Обновление высот контейнеров для корректного отображения
   function updateContainerHeights() {
     const flexboxContainer = document.querySelector('.Flexbox-container');
@@ -176,8 +262,7 @@
       document.getElementById('language-toggle').innerText = 'Изменить язык';
       document.querySelector('.contact-button').innerText = 'ОСТАВЬТЕ ЗАЯВКУ';
       // Обновляем текст кнопки и описания
-      document.getElementById('contact-text').innerHTML = 
-        'Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и я реализую ваш проект.';
+      document.getElementById('contact-text').innerHTML = Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и я реализую ваш проект.;
       
       // Перевод всплывающей формы
       document.querySelector('.popup h2').innerText = 'Связаться с нами';
@@ -193,8 +278,7 @@
       document.getElementById('language-toggle').innerText = 'Change Language';
       document.querySelector('.contact-button').innerText = 'CONTACT ME';
       // Обновляем текст кнопки и описания
-      document.getElementById('contact-text').innerHTML = 
-        'Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a> and I will implement your project.';
+      document.getElementById('contact-text').innerHTML = Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a> and I will implement your project.;
       
       // Перевод всплывающей формы
       document.querySelector('.popup h2').innerText = 'Contact Us';
@@ -244,65 +328,8 @@
   window.onload = function() {
     updateContainerHeights();
   };
-
-
-  // Открытие всплывающего окна
-  function openPopup(event) {
-    event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('popup-overlay').style.display = 'block';
-  }
-
-  // Закрытие всплывающего окна
-  function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-    document.getElementById('popup-overlay').style.display = 'none';
-  }
-
-
-// Переключение языка сайта
-function toggleLanguage() {
-  var currentLanguage = document.documentElement.lang || 'en';
-
-  if (currentLanguage === 'en') {
-    document.documentElement.lang = 'ru';
-    document.getElementById('about-heading').innerText = 'Обо мне';
-    updateTexts(ruTexts);
-    toggleTextVisibility('ru');
-    document.getElementById('language-toggle').innerText = 'Изменить язык';
-    document.querySelector('.contact-button').innerText = 'ОСТАВЬТЕ ЗАЯВКУ';
-    // Обновляем текст кнопки и описания
-    document.getElementById('contact-text').innerHTML = `Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и я реализую ваш проект.`;
-    
-    // Перевод всплывающей формы
-    document.querySelector('.popup h2').innerText = 'Связаться с нами';
-    document.querySelector('label[for="name"]').innerText = 'Ваше имя:';
-    document.querySelector('label[for="email"]').innerText = 'Ваш email:';
-    document.querySelector('label[for="message"]').innerText = 'Ваше сообщение:';
-    document.querySelector('button[type="submit"]').innerText = 'Отправить';
-  } else {
-    document.documentElement.lang = 'en';
-    document.getElementById('about-heading').innerText = 'About me';
-    updateTexts(enTexts);
-    toggleTextVisibility('en');
-    document.getElementById('language-toggle').innerText = 'Change Language';
-    document.querySelector('.contact-button').innerText = 'CONTACT ME';
-    // Обновляем текст кнопки и описания
-    document.getElementById('contact-text').innerHTML = `Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a> and I will implement your project.`;
-    
-    // Перевод всплывающей формы
-    document.querySelector('.popup h2').innerText = 'Contact Us';
-    document.querySelector('label[for="name"]').innerText = 'Your Name:';
-    document.querySelector('label[for="email"]').innerText = 'Your Email:';
-    document.querySelector('label[for="message"]').innerText = 'Your Message:';
-    document.querySelector('button[type="submit"]').innerText = 'Submit';
-  }
-
-  // Обновляем высоту рамок после смены языка
-  updateContainerHeights();
-}
-
-</script>
+  </script>
 
 </body>
+
 </html>
