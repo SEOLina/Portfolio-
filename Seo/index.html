@@ -227,32 +227,32 @@
 
     <button id="language-toggle" onclick="toggleLanguage()">Изменить язык</button>
 
-  <script>
+<script>
   // Обновление высот контейнеров для корректного отображения
   function updateContainerHeights() {
     const flexboxContainer = document.querySelector('.Flexbox-container');
-    const specialFrames = flexboxContainer.querySelectorAll('.special-frame');
-    specialFrames.forEach(frame => {
+    const specialFrames = flexboxContainer?.querySelectorAll('.special-frame');
+    specialFrames?.forEach(frame => {
       frame.style.height = 'auto';
     });
   }
 
   // Открытие всплывающего окна
-  function openPopup(event) {
+  window.openPopup = function(event) {
     event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup-overlay').style.display = 'block';
-  }
+  };
 
   // Закрытие всплывающего окна
-  function closePopup() {
+  window.closePopup = function() {
     document.getElementById('popup').style.display = 'none';
     document.getElementById('popup-overlay').style.display = 'none';
-  }
+  };
 
   // Переключение языка сайта
-  function toggleLanguage() {
-    var currentLanguage = document.documentElement.lang || 'en';
+  window.toggleLanguage = function() {
+    const currentLanguage = document.documentElement.lang || 'en';
 
     if (currentLanguage === 'en') {
       document.documentElement.lang = 'ru';
@@ -260,9 +260,8 @@
       updateTexts(ruTexts);
       toggleTextVisibility('ru');
       document.getElementById('language-toggle').innerText = 'Изменить язык';
-      document.querySelector('.contact-button').innerText = 'ОСТАВЬТЕ ЗАЯВКУ';
-      // Обновляем текст кнопки и описания
-      document.getElementById('contact-text').innerHTML = Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и я реализую ваш проект.;
+      document.getElementById('contact-text').innerHTML = 
+        'Готовы к следующему шагу? <a href="#" class="contact-button" onclick="openPopup(event)">Оставьте заявку</a>, и я реализую ваш проект.';
       
       // Перевод всплывающей формы
       document.querySelector('.popup h2').innerText = 'Связаться с нами';
@@ -276,9 +275,8 @@
       updateTexts(enTexts);
       toggleTextVisibility('en');
       document.getElementById('language-toggle').innerText = 'Change Language';
-      document.querySelector('.contact-button').innerText = 'CONTACT ME';
-      // Обновляем текст кнопки и описания
-      document.getElementById('contact-text').innerHTML = Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a> and I will implement your project.;
+      document.getElementById('contact-text').innerHTML = 
+        'Are you ready for the next step? <a href="#" class="contact-button" onclick="openPopup(event)">Contact me</a>, and I will implement your project.';
       
       // Перевод всплывающей формы
       document.querySelector('.popup h2').innerText = 'Contact Us';
@@ -290,7 +288,7 @@
 
     // Обновляем высоту рамок после смены языка
     updateContainerHeights();
-  }
+  };
 
   // Обновление текста на основе выбранного языка
   function updateTexts(texts) {
@@ -328,7 +326,7 @@
   window.onload = function() {
     updateContainerHeights();
   };
-  </script>
+</script>
 
 </body>
 
