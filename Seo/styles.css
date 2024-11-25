@@ -152,7 +152,7 @@ body, html {
 .Flexbox-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* Одностолбцовая сетка по умолчанию для мобильных устройств */
-  gap: 20px; /* Расстояние между фреймами */
+  gap: 20px 30px; /* 20px между колонками, 30px между строками */
   margin-top: 20px;
   width: 100%;
 }
