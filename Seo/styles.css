@@ -14,15 +14,23 @@ body, html {
 .special-frame:hover {
   transform: scale(1.05); /* Увеличение */
   border-color: #ffb300; /* Изменение цвета рамки на оранжевый при наведении */
+  overflow: hidden;
 }
 
 .special-frame img {
-  transition: transform 0.3s ease; /* Плавное изменение */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1) hue-rotate(40deg) saturate(3); /* Золотой оттенок */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Плавные переходы для всех изменений */
 }
 
 .special-frame:hover img {
-  transform: scale(1.05); /* Немного увеличиваем изображение при наведении */
+  transform: scale(1.05); /* Легкое увеличение при наведении */
+  filter: none; /* Возвращаем естественные цвета */
 }
+
 
 .container1 {
   position: relative;
