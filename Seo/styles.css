@@ -23,7 +23,7 @@ body, html {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  filter: sepia(1) saturate(1.5) hue-rotate(340deg) brightness(0.7); /* Уменьшена насыщенность и яркость */
+  filter: sepia(1) saturate(1.5) hue-rotate(360deg) brightness(0.7); /* Уменьшена насыщенность и яркость */
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
