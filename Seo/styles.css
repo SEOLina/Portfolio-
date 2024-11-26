@@ -22,13 +22,14 @@ body, html {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  filter: sepia(1) saturate(5) hue-rotate(40deg); /* Золотой оттенок */
-  transition: filter 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+  filter: grayscale(0) sepia(1) saturate(5) hue-rotate(40deg); /* Золотой оттенок */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Плавный переход */
 }
 
 .special-frame:hover img {
   transform: scale(1.05); /* Легкое увеличение при наведении */
-  filter: none; /* Возвращаем изображение в нормальные цвета */
+  filter: none; /* Возвращаем естественные цвета */
+}
 
 .container1 {
   position: relative;
