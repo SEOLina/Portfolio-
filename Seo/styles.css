@@ -23,7 +23,7 @@ body, html {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  filter: sepia(1) saturate(5) hue-rotate(45deg); /* Более насыщенный золотой эффект */
+  filter: sepia(1) saturate(2) hue-rotate(30deg) brightness(1.2); /* Теплый золотой оттенок */
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -31,6 +31,7 @@ body, html {
   transform: scale(1.05); /* Легкое увеличение при наведении */
   filter: none; /* Убираем фильтр, возвращая естественные цвета */
 }
+
 
 
 /* Стили для контейнеров */
