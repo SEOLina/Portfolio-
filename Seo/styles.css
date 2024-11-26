@@ -8,25 +8,13 @@ body, html {
 
 /* Эффект для рамок */
 .special-frame {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  color: white;
-  cursor: pointer;
-  margin: 0 10px;
-  border: 2px solid #ffdc33;
-  width: calc(100% - 40px);
-  height: 100%;
-  font-size: 24px; 
-  transition: transform 0.3s ease, border-color 0.3s ease, filter 0.3s ease; /* Плавный переход */
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
 }
 
 .special-frame:hover {
   transform: scale(1.05); /* Увеличение */
   border-color: #ffb300; /* Изменение цвета рамки на оранжевый при наведении */
-  background-color: #333;
+  overflow: hidden;
 }
 
 .special-frame img {
@@ -34,14 +22,15 @@ body, html {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  filter: grayscale(0) sepia(1) saturate(5) hue-rotate(40deg); /* Золотой оттенок */
-  transition: filter 0.3s ease, transform 0.3s ease; /* Плавный переход */
+  filter: grayscale(1) hue-rotate(40deg) saturate(3); /* Золотой оттенок */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Плавные переходы для всех изменений */
 }
 
 .special-frame:hover img {
   transform: scale(1.05); /* Легкое увеличение при наведении */
   filter: none; /* Возвращаем естественные цвета */
 }
+
 
 .container1 {
   position: relative;
@@ -123,6 +112,48 @@ body, html {
   color: white;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+/* Стили для специальных фреймов */
+.special-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 0 10px;
+  border: 2px solid #ffdc33 !important;
+  width: calc(100% - 40px);
+  height: 100%;
+  font-size: 24px; 
+}
+
+.special-frame:hover {
+  background-color: #333;
+}
+
+.contact-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.email-link {
+  color: #ffdc33;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding: 20px 0; /* Отступы по вертикали для контейнера */
 }
 
 /* Новый стиль для Flexbox контейнера, теперь это grid */
