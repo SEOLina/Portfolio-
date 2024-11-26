@@ -23,14 +23,15 @@ body, html {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  filter: grayscale(1) hue-rotate(40deg) saturate(3); /* Золотой оттенок */
-  transition: filter 0.3s ease, transform 0.3s ease; /* Плавное изменение фильтра и увеличения */
+  filter: sepia(1) saturate(5) hue-rotate(45deg); /* Более насыщенный золотой эффект */
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .special-frame:hover img {
   transform: scale(1.05); /* Легкое увеличение при наведении */
   filter: none; /* Убираем фильтр, возвращая естественные цвета */
 }
+
 
 /* Стили для контейнеров */
 .container1 {
