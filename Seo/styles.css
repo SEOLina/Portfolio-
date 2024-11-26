@@ -8,12 +8,13 @@ body, html {
 
 /* Эффект для рамок */
 .special-frame {
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Плавный переход с тенью */
 }
 
 .special-frame:hover {
   transform: scale(1.05); /* Увеличение */
   border-color: #ffb300; /* Изменение цвета рамки на оранжевый при наведении */
+  box-shadow: 0 0 15px rgba(255, 179, 0, 0.6); /* Плавное добавление золотистой тени */
   overflow: hidden;
 }
 
@@ -31,7 +32,7 @@ body, html {
   filter: none; /* Убираем фильтр, возвращая естественные цвета */
 }
 
-
+/* Стили для контейнеров */
 .container1 {
   position: relative;
   width: 100%;
