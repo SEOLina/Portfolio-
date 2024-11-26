@@ -23,7 +23,7 @@ body, html {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  filter: sepia(1) saturate(1.8) hue-rotate(40deg) brightness(1); /* Теплый золотистый оттенок с меньшей контрастностью */
+  filter: sepia(1) saturate(1.5) hue-rotate(40deg) brightness(0.9); /* Уменьшена насыщенность и яркость */
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -31,8 +31,6 @@ body, html {
   transform: scale(1.05); /* Легкое увеличение при наведении */
   filter: none; /* Убираем фильтр, возвращая естественные цвета */
 }
-
-
 
 /* Стили для контейнеров */
 .container1 {
