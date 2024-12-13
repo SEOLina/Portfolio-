@@ -1,229 +1,489 @@
-/* Общие стили для всех экранов */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+@font-face {
+    font-family: 'mr_ITCSerifGothic';
+    src: url('18094.ttf') format('truetype');
 }
 
-/* Эффект для рамок */
-.special-frame {
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Плавный переход */
+body {
+    font-family: 'mr_ITCSerifGothic', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* высота хедера */
+    background-color: #EEF0ED;
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    overflow-x: hidden;
 }
 
-.special-frame:hover {
-  transform: scale(1.05); /* Увеличение */
-  border-color: #ffb300; /* Изменение цвета рамки на оранжевый при наведении */
+/* Стили для хедера */
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-.special-frame img {
-  transition: transform 0.3s ease; /* Плавное изменение */
+.logo img {
+    width: 150px;
+    height: auto;
 }
 
-.special-frame:hover img {
-  transform: scale(1.05); /* Немного увеличиваем изображение при наведении */
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
-.container1 {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  background-image: url(background1.jpg);
-  background-size: cover;
-  height: 100vh; /* Высота 100vh для десктопа */
+.nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-.frame {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border: 2px solid white;
-  z-index: 1;
+.nav-links ul li {
+    margin-right: 20px;
+    position: relative; /* Для правильного отображения выпадающего меню */
 }
 
-.portfolio-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
-  color: white;
-  z-index: 2;
+.nav-links ul li a {
+    text-decoration: none;
+    color: #2A562B;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    position: relative;
 }
 
-.frame-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
+.nav-links .dropdown-menu {
+    display: none; /* Скрываем меню по умолчанию */
+    position: absolute;
+    top: 100%; /* Подкладываем меню под родительский элемент */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1000;
 }
 
-.container2 {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  background-color: black;
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
 }
 
-.photo {
-  flex: 1;
-  background-image: url(https://i.pinimg.com/564x/94/6b/bd/946bbd50b7b538f4a482d206a49d1147.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  max-width: 50%;
+.nav-links .dropdown-menu li a {
+    padding: 0;
+    color: #333;
 }
 
-.text {
-  flex: 1;
-  background-color: black;
-  padding: 0 20px;
-  color: white;
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* Показываем меню при наведении */
 }
 
-#container {
-  display: flex;
-  background-color: black;
-  justify-content: space-between;
-  align-items: stretch;
+.nav-links .dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    display: inline-block;
+    margin-left: 5px;
 }
 
-#language-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  border: 2px solid #ffdc33;
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
+.nav-links .dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg); /* Поворот стрелки при наведении */
 }
 
-/* Стили для специальных фреймов */
-.special-frame {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  color: white;
-  cursor: pointer;
-  margin: 0 10px;
-  border: 2px solid #ffdc33 !important;
-  width: calc(33.33% - 40px);
-  height: 100%;
-  font-size: 24px; 
+/* Мобильное меню */
+.nav-links .mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-.special-frame:hover {
-  background-color: #333;
+.nav-links .mobile-menu li {
+    border-bottom: 1px solid #eee;
 }
 
-.contact-container {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height: auto;
+.nav-links .mobile-menu li a {
+    padding: 15px;
+    text-align: center;
 }
 
-.email-link {
-  color: #ffdc33;
+.nav-links .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.container3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
-}
-
-.Flexbox-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Растягивает все элементы по высоте */
-  gap: 20px; /* Расстояние между фреймами */
-}
-
-/* Установка одинаковой высоты для всех special-frame */
-.Flexbox-container .special-frame {
-  display: flex;
-  flex-direction: column; /* Вертикальное расположение содержимого внутри */
-  justify-content: space-between; /* Обеспечивает равномерное распределение пространства */
-  border: 1px solid #ccc;
-  padding: 10px;
-  height: 100%; /* Устанавливает высоту на 100% */
-}
-
-.additional-content {
-  margin-top: 20px;
-}
-
-/* Скрытие русского текста по умолчанию */
-.frame-description-ru {
-  display: none;
+.nav-links .mobile-menu-toggle .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: #2A562B;
+    margin: 4px 0;
 }
 
 /* Мобильная версия */
-@media only screen and (max-width: 480px) {
-  .desktop-br {
-    display: none;
-  }
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: none;
+    }
 
-  .photo {
-    display: none;
-  }
+    .nav-links .mobile-menu-toggle {
+        display: flex;
+    }
 
-  .container2 {
-    flex-direction: column;
-    height: auto;
-  }
+    .nav-links .mobile-menu-toggle.active + .mobile-menu {
+        display: flex;
+    }
 
-  .container1 {
-    flex-direction: column;
-  }
+    .nav-links .mobile-menu {
+        display: none;
+    }
 
-  .text {
-    padding-top: 0px;
-  }
+    .nav-links ul li {
+        margin: 10px 0;
+    }
 
-  .portfolio-title {
-    color: white;
-    font-size: 3em;
+    .mobile-menu-toggle.active + .mobile-menu {
+        display: flex;
+    }
+}
+
+/* Отступ сверху для контейнера */
+body {
+    margin-top: 80px; /* Замените 80px на высоту вашего хедера */
+}
+
+/* Добавим отступ сверху для всего контента */
+body {
+    padding-top: 80px; /* высота хедера */
+}
+
+
+.hero {
     text-align: center;
-  }
+    position: relative;
+    padding: 40px 20px;
+    overflow: hidden;
+}
 
-  #container {
-    flex-direction: column;
+.hero h1 {
+    font-size: 3rem;
+    color: #006400;
+    line-height: 1;
+    z-index: 2;
+    margin: 10px 0;
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 100%;
     height: auto;
-  }
+    z-index: 1;
+}
 
-  .special-frame {
-    width: 80%;
-    margin: 0 auto 20px auto;
-  }
+.right-column p.subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+}
 
-  .Flexbox-container {
-    flex-direction: column; /* Изменяем на вертикальное расположение */
-  }
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    z-index: 2;
+}
 
-  .contact-container {
+.btn {
+    padding: 10px 30px;
+    background-color: #006400;
+    color: #fff;
+    margin-top: -10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 20px;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+/* Стиль для стрелочки */
+.dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Стиль для выпадающего меню */
+.dropdown-content {
+    display: none; /* Скрыто по умолчанию */
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.nav-links ul li:hover .dropdown-content {
+    display: block; /* Появляется при наведении */
+}
+
+/* При активном состоянии, стрелка поворачивается */
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);  /* Поворот на 180 градусов */
+}
+
+/* CSS для работы с мобильной версией */
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-links .mobile-menu-toggle.active + .nav-links ul {
+        display: flex;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.mission, .who-we-are {
+    flex: 1;
+    text-align: left;
+    padding: 40px 20px;
+}
+
+.mission .content, .who-we-are .content {
+    max-width: 100%;
+    text-align: left;
+}
+
+.mission .content h2, .who-we-are .content h2 {
+    font-size: 2rem;
+    color: #2A562B;
+    margin-bottom: 20px;
+}
+
+.mission .content p, .who-we-are .content p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.mission .content .btn, .who-we-are .content .btn {
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.mission .content .btn:hover, .who-we-are .content .btn:hover {
+    background-color: #004d00;
+}
+
+.columns-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.arrow-2 {
+    position: absolute;
+    top: 10vh;
+    left: 30vw;
+    width: 15vw;
+    height: auto;
+    z-index: 2;
+}
+
+.stats {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.stats h3 {
+    color: #333;
+}
+
+.stat-block {
+    margin: 20px;
+}
+
+.who-we-help .help-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.help-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 20px;
+}
+
+.help-content ul li {
+    margin: 10px 0;
+}
+
+.faq details {
+    margin: 20px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.info-blocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    margin: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.info-block img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
+    background-color: #006400;
+    color: #fff;
+}
 
-  .container1 {
-    height: 100vh; /* Высота 100vh для мобильной версии */
-  }
+.footer-content nav ul {
+    display: flex;
+}
+
+.footer-content nav ul li a {
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .columns-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mission .content, .who-we-are .content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .arrow-2 {
+        top: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-links ul {
+        display: none;
+    }
+
+    .nav-links .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links .mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links .mobile-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links .mobile-menu li a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle.active + .mobile-menu {
+        display: flex;
+    }
 }
