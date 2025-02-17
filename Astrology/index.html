@@ -174,8 +174,9 @@
             <img src="Image.png" alt="Астрологический символ">
         </div>
         <div class="intro-text">
-            <h2>Кейсы по духовным практикам</h2>
-            <p>Каждый проект, за который я берусь, будь то астрология, таро или родовая магиия, опирается на глубокое понимание психологии целевой аудитории и их стремления к личностному росту и гармонии. Благодаря этому я создаю контент, который не просто информирует, но и вдохновляет, вызывая эмоциональный отклик и побуждая к действию.</p>
+            <h2>52 продажи за 17 дней без рекламы. Как я помогла продать мастер-класс по магии рода на 643 188₽.</h2>
+            <button id="language-toggle" onclick="toggleLanguage()">Хочу такой же результат!</button>
+
         </div>
     </section>
 
@@ -208,5 +209,38 @@
         </div>
     </footer>
 
+<!-- Всплывающее окно -->
+<div class="popup-overlay" id="popup-overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <h2 style="color: #ffdc33;">Запрос на сотрудничество</h2>
+  <form action="https://formspree.io/f/myzyjkev" method="POST">
+    <label for="name" style="color: #ffdc33;">Ваше имя:</label>
+    <input type="text" id="name" name="name" required placeholder="Иван">
+
+    <label for="email" style="color: #ffdc33;">Ваш Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Ivan.Ivanov@mail.ru">
+
+    <label for="message" style="color: #ffdc33;">Чем я могу вам помочь?:</label>
+    <textarea id="message" name="message" required placeholder="Сообщение" rows="4"></textarea>
+
+    <button type="submit" style="background-color: #ffdc33; color: black; padding: 10px 20px; border-radius: 5px;">Submit</button>
+  </form>
+</div>
+    
+<script>
+  // Открытие всплывающего окна
+  function openPopup(event) {
+    event.preventDefault();  // Предотвращаем стандартное поведение (перенос в начало страницы)
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('popup-overlay').style.display = 'block';
+  }
+
+  // Закрытие всплывающего окна
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('popup-overlay').style.display = 'none';
+    }
+    
+    
 </body>
 </html>
