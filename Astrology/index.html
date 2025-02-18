@@ -124,6 +124,98 @@
             height: 5vw;
         }
 
+        /* Стиль для кнопки */
+    .contact-button {
+      display: inline-block;
+      background-color: #000000; /* Черный фон */
+      color: #ffdc33; /* Золотой цвет текста */
+      padding: 20px 40px;
+      font-size: 24px;
+      border-radius: 25px;
+      border: 2px solid #ffdc33; /* Золотая рамка */
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .text-container p {
+  font-size: 18px;
+  color: #fff; /* Цвет текста */
+  text-align: center;
+}
+
+.text-container a.contact-button {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+    
+    /* Стиль кнопки при наведении */
+    .contact-button:hover {
+      background-color: #ffdc33;
+      color: #000000; /* Черный текст при наведении */
+      transform: scale(1.1);
+    }
+
+    /* Стиль для всплывающего окна */
+    .popup {
+      display: none; /* Скрыто по умолчанию */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #000000;
+      border: 2px solid #ffdc33;
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+      z-index: 1000;
+    }
+
+    /* Стиль для формы внутри всплывающего окна */
+    .popup form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .popup input, .popup textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid #ffdc33;
+    }
+
+    .popup button {
+      padding: 10px;
+      background-color: #ffdc33;
+      color: #000000;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Стиль для кнопки отправки */
+    .popup button:hover {
+      background-color: #ffb300;
+    }
+
+    /* Фон для затемнения при открытом окне */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
         /* Настройки для мобильных устройств */
         @media (max-width: 768px) {
             header {
