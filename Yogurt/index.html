@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: Продвижение кафе</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            overflow-x: hidden;
+        }
+        .section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .hero {
+            background: linear-gradient(to bottom, #dbeafe, #fde2e4);
+            flex-direction: column;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: white;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 10px;
+        }
+        .parallax-img {
+            position: absolute;
+            width: 5vw;
+            height: auto;
+            transition: transform 0.1s ease-out;
+        }
+        .section:nth-child(even) {
+            background: #dbeafe;
+        }
+        .section:nth-child(odd) {
+            background: #fde2e4;
+        }
+    </style>
+</head>
+<body>
+    <div class="section hero">
+        <h1>Как я помогла кафе продвинуть уникальный продукт</h1>
+        <p>Публикация привела к росту ссылочной массы и помогла бренду привлечь новых клиентов.</p>
+        <img src="yogurt1.png" class="parallax-img" style="top: 20%; left: 15%;">
+        <img src="yogurt2.png" class="parallax-img" style="top: 50%; left: 50%;">
+        <img src="yogurt3.png" class="parallax-img" style="top: 70%; left: 80%;">
+    </div>
+    <div class="section">
+        <h2>О задаче</h2>
+    </div>
+    <div class="section">
+        <h2>Как я работала над проектом</h2>
+    </div>
+    <div class="section">
+        <h2>Результаты</h2>
+    </div>
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            document.querySelectorAll(".parallax-img").forEach(img => {
+                let speed = 5;
+                let x = (window.innerWidth - e.pageX * speed) / 100;
+                let y = (window.innerHeight - e.pageY * speed) / 100;
+                img.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
